@@ -6,3 +6,5 @@ Slick2D
 The code will not work properly if you didn't follow these:
 1. Edit the main code's (game_.java) run configuration's VM options to -Djava.library.path="path to Slick2D library"
 2. Add paths of the libraries and resources_ used.
+# Installation (for non-programmers)
+Download the latest release.
