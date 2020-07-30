@@ -36,9 +36,7 @@ public class laserpointer_ extends gameobject_ {
 
         if (game_.gameState == game_.STATE.GameBeta) {
 
-            if (levels_.levelid == 2) {
-                spawntimer = (60000/126) / 16;
-            }
+            spawntimer = 1;
 
         }
     }
@@ -46,8 +44,7 @@ public class laserpointer_ extends gameobject_ {
     public void tick() {
         if (spawntimer == 0) {
 
-            if (x <= 0 || x >= game_.WIDTH - 50) handler.removeObject(this);
-            if (y <= 0 || y >= game_.HEIGHT - 50) handler.removeObject(this);
+            if (y <= 0 || y >= game_.HEIGHT) handler.removeObject(this);
             // execute AI
             pathX = (float) ((-30.0 / distance) * diffX);
             pathY = (float) ((-30.0 / distance) * diffY);

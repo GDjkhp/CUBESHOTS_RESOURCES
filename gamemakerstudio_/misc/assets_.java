@@ -7,8 +7,8 @@ import java.awt.image.BufferedImage;
 
 public class assets_ {
 
-    public static BufferedImage tile1, tile2, tile3, xgamer, heartimage, soundiconon, soundiconoff;
-    public static Image upscaledxgamer;
+    public static BufferedImage tile1, tile2, tile3, xgamer, heartimage, soundiconon, soundiconoff, crazyboss;
+    public static Image upscaledxgamer, upscaledcrazyboss;
 
     public static void init() {
         SpriteSheet ss = new SpriteSheet(game_.spritesheet);
@@ -23,6 +23,8 @@ public class assets_ {
         // test for upscale
         xgamer = ss.grabImage(2, 2, 32, 32);
         upscaledxgamer = xgamer.getScaledInstance(256, 256,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+        crazyboss = ss.grabImage(1, 2, 32, 32);
+        upscaledcrazyboss = crazyboss.getScaledInstance(256, 256, Image.SCALE_SMOOTH);
     }
 
 }

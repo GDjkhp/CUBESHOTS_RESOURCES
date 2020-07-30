@@ -36,12 +36,12 @@ public class hud2_ {
         // player hud
         // health bar
         g.setColor(Color.gray);
-        g.fillRect(15, 100, 200 + bounds, 32);
+        g.fillRect(15, 103, 200 + bounds, 32);
         g.setColor(new Color(75, greenValue, 0));
-        g.fillRect(15, 100, HEALTH * 2, 32);
+        g.fillRect(15, 103, HEALTH * 2, 32);
         // boarder
         g.setColor(Color.green);
-        g.drawRect(15, 100, 200 + bounds, 32);
+        g.drawRect(15, 103, 200 + bounds, 32);
         // level and score and health
 //        g.drawString("Level: " + level, 450, 64);
         g.drawString("Score: " + score, 15, 149);

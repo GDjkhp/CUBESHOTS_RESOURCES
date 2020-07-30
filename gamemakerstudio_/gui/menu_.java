@@ -15,11 +15,10 @@ import gamemakerstudio_.misc.assets_;
 import gamemakerstudio_.misc.audioplayer_;
 import gamemakerstudio_.world.levels_;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.geom.AffineTransform;
 import java.util.Random;
 
 /**
@@ -27,16 +26,23 @@ import java.util.Random;
  * @author ACER
  */
 public class menu_ extends MouseAdapter{
+    // classes
     private game_ game;
     private handler_ handler;
     private hud_ hud;
     private hud2_ hud2;
+
     private Random r = new Random();
     private String p1help = "help me_";
     private String p2help = "help me_";
 //    private BufferedImage soundiconon, soundiconoff;
 //    private BufferedImage ldm;
     private Color col;
+
+    // animation
+    boolean isRotating = true;
+    int rotateTick = -90;
+
     // easter egg
     private  gameobject_ ghost;
     int tempGhostX;
@@ -61,6 +67,10 @@ public class menu_ extends MouseAdapter{
         if (game.gameState == STATE.Menu) {
             // play
             if (mouseOver(mx, my, game_.WIDTH / 3, 100, 200, 50)) {
+                // test rotate
+//                isRotating = true;
+//                rotateTick++;
+
                 game.gameState = STATE.Select;
                 if (game_.music) audioplayer_.getSound("click_sound").play();
                 return;
@@ -173,6 +183,7 @@ public class menu_ extends MouseAdapter{
             if (mouseOver(mx, my, game_.WIDTH / 3, 325, 200, 50)) {
                 game.gameState = STATE.LevelSelect;
                 if (game_.music) audioplayer_.getSound("tick").play();
+                levels_.lazyDelayFix = 50;
             }
         }
         // help options
@@ -210,6 +221,7 @@ public class menu_ extends MouseAdapter{
                 if (game_.music) audioplayer_.getSound("click_sound").play();
             }
         }
+        // credits
         if (game.gameState != STATE.Game && game.gameState != STATE.LevelSelect && game.gameState != STATE.GameBeta) {
             if (mouseOver(mx, my,0, game_.HEIGHT - 65, 220, 20)) {
                 game.gameState = STATE.Credits;
@@ -222,11 +234,16 @@ public class menu_ extends MouseAdapter{
     }
     
     public void mouseReleased(MouseEvent e) {
-        // easter egg
+
+    }
+
+    public void mouseMoved(MouseEvent e) {
         int mx = e.getX();
         int my = e.getY();
-        if (mouseOver(mx, my, (int)ghost.getX(), (int)ghost.getY(), 30, 30)) {
-            ghost_.isControlled = false;
+        // easter egg
+        if (ghost_.isControlled) {
+            tempGhostX = mx - 15;
+            tempGhostY = my - 15;
         }
     }
     
@@ -247,7 +264,13 @@ public class menu_ extends MouseAdapter{
         }
     }
     public void render(Graphics g) {
-        
+        // start rotate
+        rotateAnimation();
+
+        Graphics2D g2d = (Graphics2D) g;
+        AffineTransform old = g2d.getTransform();
+//        if (isRotating) g2d.rotate(Math.toRadians(rotateTick), 0, 0);
+
         if (game.gameState == STATE.Menu) {
             Font fnthead = new Font("mojangles", 1, 50);
             Font fnt = new Font("mojangles", 0, 20);
@@ -268,7 +291,6 @@ public class menu_ extends MouseAdapter{
             g.setColor(Color.cyan);
             g.drawRect(game_.WIDTH / 3, 250, 200, 50);
             g.drawString("go fuck urself_", game_.WIDTH / 3 + 10, 275);
-
             // sounds and sfx
             if (game_.music) {
                 g.drawImage(assets_.soundiconon, game_.WIDTH / 3 + 32, 333, null);
@@ -287,7 +309,6 @@ public class menu_ extends MouseAdapter{
             g.drawString("LDM", game_.WIDTH / 3 + 130, 355);
             g.drawRect(game_.WIDTH / 3 + 100, 325, 100, 50);
         }
-
         if (game.gameState == STATE.Help) {
             Font fnthead = new Font("mojangles", 1, 50);
             Font fnt = new Font("mojangles", 0, 20);
@@ -355,18 +376,32 @@ public class menu_ extends MouseAdapter{
             g.drawRect(game_.WIDTH / 3, 325, 200, 50);
         }
         if (game.gameState == STATE.Credits) {
+            // credits
+//        g.drawString("Engine based on RealTutsGML's Wave© game", 0, game_.HEIGHT - 100);
+//        g.drawString("© Kennedy \"HACKER EXPOSER\" Peña", 0, game_.HEIGHT - 50);
             g.drawString("Creator: John Kennedy Haringa Peña", 100, 100);
         }
+
+        // end rotate
+        g2d.setTransform(old);
+
         // default
         g.setFont(new Font("mojangles", 0, 15));
         // fps
         g.setColor(Color.green);
         g.drawString("FPS: " + game_.throwframes, game_.WIDTH - 100, game_.HEIGHT - 75);
         g.drawString("Objects: " + handler.object.size(), game_.WIDTH - 130, game_.HEIGHT - 50);
-        // credits
-//        g.drawString("Engine based on RealTutsGML's Wave© game", 0, game_.HEIGHT - 100);
-//        g.drawString("© Kennedy \"HACKER EXPOSER\" Peña", 0, game_.HEIGHT - 50);
         g.drawString("© The Karakters Kompany", 0, game_.HEIGHT - 50);
         g.drawRect(0, game_.HEIGHT - 65, 220, 20);
+    }
+    // still unimplemented
+    void rotateAnimation() {
+        if (rotateTick != 0) rotateTick++;
+        else {
+            isRotating = false;
+        }
+        if (rotateTick == 90) {
+            rotateTick = -90;
+        }
     }
 }

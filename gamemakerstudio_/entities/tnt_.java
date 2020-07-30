@@ -40,11 +40,12 @@ public class tnt_ extends gameobject_ {
     public void tick() {
         x += velX;
         y += velY;
+
         // screen limit
 //        if (x <= 0 || x >= game_.WIDTH - 50) velX *= -1;
 //        if (y <= 0 || y >= game_.HEIGHT - 50) velY *= -1;
-        if (x <= 0 || x >= game_.WIDTH - 50) handler.removeObject(this);
-        if (y <= 0 || y >= game_.HEIGHT - 50) handler.removeObject(this);
+
+        if (y <= 0 || y >= game_.HEIGHT) handler.removeObject(this);
         // trail
         if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, Color.red, 10, 10, 0.1f, handler));
     }

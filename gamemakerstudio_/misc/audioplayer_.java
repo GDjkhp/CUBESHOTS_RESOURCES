@@ -36,46 +36,74 @@ public class audioplayer_ {
             // new code for custom music
             switch (key) {
                 case "dead_meme":
-                    musicMap.put("dead_meme", new Music("resources_/music_/dead meme.ogg"));
+                    musicMap.put(key, new Music("resources_/music_/dead meme.ogg"));
                     break;
                 case "dead_meme_2":
-                    musicMap.put("dead_meme_2", new Music("resources_/music_/dead meme 2.ogg"));
+                    musicMap.put(key, new Music("resources_/music_/dead meme 2.ogg"));
                     break;
                 case "eschew":
-                    musicMap.put("eschew", new Music("resources_/music_/eschew.ogg"));
+                    musicMap.put(key, new Music("resources_/music_/eschew.ogg"));
                     break;
                 case "rock_the_house":
-                    musicMap.put("rock_the_house", new Music("resources_/music_/rock the house.ogg"));
+                    musicMap.put(key, new Music("resources_/music_/rock the house.ogg"));
                     break;
                 case "end_of_time":
-                    musicMap.put("end_of_time", new Music("resources_/music_/end of time.ogg"));
+                    musicMap.put(key, new Music("resources_/music_/end of time.ogg"));
                     break;
                 case "nova_music":
-                    musicMap.put("nova_music", new Music("resources_/music_/nova music.ogg"));
+                    musicMap.put(key, new Music("resources_/music_/nova music.ogg"));
                     break;
                 case "time_leaper":
-                    musicMap.put("time_leaper", new Music("resources_/music_/time leaper.ogg"));
+                    musicMap.put(key, new Music("resources_/music_/time leaper.ogg"));
                     break;
                 case "gg":
-                    musicMap.put("gg", new Music("resources_/music_/gg.ogg"));
+                    musicMap.put(key, new Music("resources_/music_/gg.ogg"));
                     break;
                 case "namice1":
-                    musicMap.put("namice1", new Music("resources_/music_/namice1.ogg"));
+                    musicMap.put(key, new Music("resources_/music_/namice1.ogg"));
                     break;
                 case "namice2":
-                    musicMap.put("namice2", new Music("resources_/music_/namice2.ogg"));
+                    musicMap.put(key, new Music("resources_/music_/namice2.ogg"));
                     break;
                 case "namice3":
-                    musicMap.put("namice3", new Music("resources_/music_/namice3.ogg"));
+                    musicMap.put(key, new Music("resources_/music_/namice3.ogg"));
                     break;
                 case "there":
-                    musicMap.put("there", new Music("resources_/music_/there.ogg"));
+                    musicMap.put(key, new Music("resources_/music_/there.ogg"));
                     break;
                 case "fisher_price":
-                    musicMap.put("fisher_price", new Music("resources_/music_/fisher price.ogg"));
+                    musicMap.put(key, new Music("resources_/music_/fisher price.ogg"));
                     break;
                 case "dance_violins":
-                    musicMap.put("dance_violins", new Music("resources_/music_/dance violins.ogg"));
+                    musicMap.put(key, new Music("resources_/music_/dance violins.ogg"));
+                    break;
+                    // new
+                case "aether":
+                    musicMap.put(key, new Music("resources_/music_/aether.ogg"));
+                    break;
+                case "clickbait":
+                    musicMap.put(key, new Music("resources_/music_/clickbait.ogg"));
+                    break;
+                case "debug":
+                    musicMap.put(key, new Music("resources_/music_/debug.ogg"));
+                    break;
+                case "iy":
+                    musicMap.put(key, new Music("resources_/music_/iy.ogg"));
+                    break;
+                case "ye":
+                    musicMap.put(key, new Music("resources_/music_/ye.ogg"));
+                    break;
+                case "mocha":
+                    musicMap.put(key, new Music("resources_/music_/mocha.ogg"));
+                    break;
+                case "everything_falls":
+                    musicMap.put(key, new Music("resources_/music_/everything falls.ogg"));
+                    break;
+                case "lovely_forest":
+                    musicMap.put(key, new Music("resources_/music_/lovely forest.ogg"));
+                    break;
+                case "saxophone":
+                    musicMap.put(key, new Music("resources_/music_/saxophone.ogg"));
                     break;
             }
         } catch (SlickException e) {

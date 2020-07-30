@@ -26,5 +26,6 @@ public enum ID {
     Laser(),
     GHOST(),
     Star(),
+    CrazyBoss(),
     Enemy();
 }

@@ -15,7 +15,7 @@ import javax.swing.*;
 public class window_ extends Canvas{
     public window_ (int width, int height, String title, game_ game) {
         
-        ImageIcon icon = new ImageIcon("resources_/icon remastered.png");
+        ImageIcon icon = new ImageIcon("resources_/image_/icon remastered.png");
         
         JFrame frame = new JFrame(title);
         

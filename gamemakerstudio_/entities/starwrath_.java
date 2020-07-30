@@ -42,10 +42,7 @@ public class starwrath_ extends gameobject_ {
         x += velX;
         y += velY;
 
-        if (x <= 0 || x >= game_.WIDTH - 50) {
-            handler.removeObject(this);
-        }
-        if (y <= 0 || y >= game_.HEIGHT - 50) {
+        if (y <= -1 || y >= game_.HEIGHT) {
             handler.removeObject(this);
         }
 

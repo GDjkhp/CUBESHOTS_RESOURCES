@@ -25,12 +25,13 @@ public class loading_ {
         loadValue = game_.clamp(loadValue, 0, 255);
     }
     public void render(Graphics g) {
-        g.setFont(new Font("arial", 0, 15));
         g.setColor(new Color(75, loadValue, 0));
         g.fillRect(game_.WIDTH / 3, 325, (int) (200 * (game_.loadstate / 100)), 50);
         g.setColor(Color.green);
-        g.drawString(game_.stringsforloading, game_.WIDTH / 3 + 50, game_.HEIGHT / 2 + 25);
         g.drawRect(game_.WIDTH / 3, 325, 200, 50);
+
+        g.setFont(new Font("arial", 0, 15));
+        g.drawString(game_.stringsforloading, game_.WIDTH / 3 + 50, game_.HEIGHT / 2 + 25);
 
     }
 }

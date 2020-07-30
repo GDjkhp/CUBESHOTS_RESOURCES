@@ -13,6 +13,7 @@ import gamemakerstudio_.misc.assets_;
 import gamemakerstudio_.misc.audioplayer_;
 import gamemakerstudio_.world.levels_;
 import gamemakerstudio_.world.world_;
+import org.w3c.dom.NameList;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -25,7 +26,11 @@ import java.util.Scanner;
  * @author ACER
  */
 public class game_ extends Canvas implements Runnable{
-    
+
+    // test custom codes
+    boolean customTicksBoolean = true;
+    int customTicks = 0;
+
     public static final int WIDTH = 1366 / 2, HEIGHT = 768;
     
     public static int throwframes;
@@ -40,7 +45,7 @@ public class game_ extends Canvas implements Runnable{
     public static boolean music = false; // this is fake
     public static boolean ldm = true;
     public static boolean multiplayer = false;
-    public static boolean isInvincible = false;
+    public static boolean isInvincible = true;
     
     private Random r;
     
@@ -99,6 +104,8 @@ public class game_ extends Canvas implements Runnable{
         handler.addObject(new ghost_(r.nextInt(game_.WIDTH - 50), r.nextInt(game_.HEIGHT - 50), ID.GHOST));
         handler.addObject(new starwrathenemy_(r.nextInt(WIDTH - 50), r.nextInt(HEIGHT - 50), ID.Star, handler));
 
+        handler.addObject(new crazyboss_(game_.WIDTH / 2 - 128, game_.HEIGHT / 2 - 128, ID.CrazyBoss, handler, 0, 0));
+
         stringsforloading = "loading textures...";
         System.out.println(stringsforloading);
         BufferedImageLoader loader = new BufferedImageLoader();
@@ -120,7 +127,9 @@ public class game_ extends Canvas implements Runnable{
         this.addKeyListener(new KeyInput(handler, this, hud, hud2));
 //        this.addKeyListener(new SPKeyInput());
         this.addMouseListener(menu);
+        this.addMouseMotionListener(menu);
         this.addMouseListener(shop);
+        this.addMouseMotionListener(levels);
         this.addMouseListener(levels);
         loadstate += 25;
 
@@ -191,26 +200,23 @@ public class game_ extends Canvas implements Runnable{
     private void tick() {
 //        if (loadstate == 100) world.tick();
         if (!paused) {
+            try {
+                handler.tick();
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+            }
             if (gameState == STATE.Game) {
                 // end codes
                 if (multiplayer) {
                     if (hud_.HEALTH == 0 && hud2_.HEALTH == 0) {
-                        hud_.HEALTH = 100;
-                        hud2_.HEALTH = 100;
-                        gameState = STATE.End;
-                        handler.clearEnemies();
-                        for (int i = 1; i <= 50; i++) handler.addObject(new spicymenu_(r.nextInt(WIDTH - 50), r.nextInt(HEIGHT - 50), ID.Spicy, handler));
+                        endCodes();
                     }
                 } else {
                     if (hud_.HEALTH == 0) {
-                        hud_.HEALTH = 100;
-                        hud2_.HEALTH = 100;
-                        gameState = STATE.End;
-                        handler.clearEnemies();
-                        for (int i = 1; i <= 50; i++) handler.addObject(new spicymenu_(r.nextInt(WIDTH - 50), r.nextInt(HEIGHT - 50), ID.Spicy, handler));
+                        endCodes();
                     }
                 }
-                handler.tick();
+//                handler.tick();
                 spawner.tick();
                 hud.tick();
                 if (multiplayer) hud2.tick();
@@ -219,33 +225,40 @@ public class game_ extends Canvas implements Runnable{
                 // end codes beta
                 if (multiplayer) {
                     if (hud_.HEALTH == 0 && hud2_.HEALTH == 0) {
-                        hud_.HEALTH = 100;
-                        hud2_.HEALTH = 100;
-                        gameState = STATE.End;
-                        handler.clearEnemies();
-                        for (int i = 1; i <= 50; i++) handler.addObject(new spicymenu_(r.nextInt(WIDTH - 50), r.nextInt(HEIGHT - 50), ID.Spicy, handler));
+                        endCodes();
                     }
                 } else {
                     if (hud_.HEALTH == 0) {
-                        hud_.HEALTH = 100;
-                        hud2_.HEALTH = 100;
-                        gameState = STATE.End;
-                        handler.clearEnemies();
-                        for (int i = 1; i <= 50; i++) handler.addObject(new spicymenu_(r.nextInt(WIDTH - 50), r.nextInt(HEIGHT - 50), ID.Spicy, handler));
+                        endCodes();
                     }
                 }
-                handler.tick();
+
+//                handler.tick();
+
                 levels.tick();
                 hud.tick();
                 if (multiplayer) hud2.tick();
             }
             if (gameState == STATE.Menu || gameState == STATE.Help || gameState == STATE.End || gameState == STATE.Select || gameState == STATE.Options) {
-                handler.tick();
+//                handler.tick();
                 menu.tick();
             }
             if (gameState == STATE.Load) {
-                handler.tick();
+//                handler.tick();
                 load.tick();
+            }
+            if (customTicksBoolean && gameState != STATE.GameBeta) {
+                customTicks++;
+                if (customTicks == 100) {
+                    customTicks = 0;
+                    // run this code once
+                    crazyboss_.minRotate = -45;
+                    crazyboss_.maxRotate = 45;
+                    crazyboss_.rotateThisTick = 20;
+                    // run this code once the tick was called
+                    if (crazyboss_.increment) crazyboss_.increment = false;
+                    else crazyboss_.increment = true;
+                }
             }
         }
     }
@@ -257,7 +270,7 @@ public class game_ extends Canvas implements Runnable{
             return;
         }
         Graphics g = bs.getDrawGraphics();
-        
+        // all test codes
         // X
         /*g.setColor(Color.green);
         g.drawString("X", x, y);
@@ -285,58 +298,65 @@ public class game_ extends Canvas implements Runnable{
         g.setColor(Color.green);
         int x = ((50 + (int)(Math.random() * 1250)) / 10) * 10, y = ((50 + (int)(Math.random() * 650)) / 10) * 10;
         g.fillRect(x, y, 10, 10);
-        
-        // bg
-        g.setColor(Color.DARK_GRAY);
-        g.fillRect(0, 0, WIDTH, HEIGHT);
 
 //        rendertest.render(g);
 
 //        if (loadstate == 100) tiles_.tilesarray[1].render(g, 0, 0);
 //        if (loadstate == 100) world.render(g);
 
-        if (gameState == STATE.Credits || gameState == STATE.Menu || gameState == STATE.Help || gameState == STATE.End || gameState == STATE.Select) {
-            handler.render(g);
-            menu.render(g);
-        }
+        // main render
 
-        if (gameState == STATE.LevelSelect) {
-            handler.render(g);
-            levels.render(g);
-        }
-
-        if (gameState == STATE.Game || gameState == STATE.GameBeta) {
-            Font fnt = new Font("mojangles", 1, 10);
-            g.setFont(fnt);
-
-            handler.render(g);
-            hud.render(g);
-            if (multiplayer) hud2.render(g);
-            levels.render(g);
-        }
-
-        if (gameState == STATE.Shop) {
-            handler.render(g);
-            shop.render(g);
-        }
-
-        if (gameState == STATE.Load) {
-            handler.render(g);
-            load.render(g);
-        }
-
-        // if still loading?
-        if (loadstate != 100 && gameState != STATE.Load) {
-            if (gameState == STATE.Game || gameState == STATE.GameBeta)
-                g.drawString(stringsforloading, WIDTH / 2 - 50, HEIGHT - 50);
-            else g.drawString(stringsforloading, 0, 20);
-        }
+        // bg
+        g.setColor(Color.DARK_GRAY);
+        g.fillRect(0, 0, WIDTH, HEIGHT);
 
         if (paused) {
             Font fnthead = new Font("mojangles", 1, 40);
             g.setFont(fnthead);
             g.setColor(Color.red);
             g.drawString("paused_", game_.WIDTH / 3 + 10, 50);
+        } else {
+            try {
+                handler.render(g);
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+            }
+            if (gameState == STATE.Credits || gameState == STATE.Menu || gameState == STATE.Help || gameState == STATE.End || gameState == STATE.Select) {
+//            handler.render(g);
+                menu.render(g);
+            }
+
+            if (gameState == STATE.LevelSelect) {
+//            handler.render(g);
+                levels.render(g);
+            }
+
+            if (gameState == STATE.Game || gameState == STATE.GameBeta) {
+                Font fnt = new Font("mojangles", 1, 10);
+                g.setFont(fnt);
+
+//            handler.render(g);
+                hud.render(g);
+                if (multiplayer) hud2.render(g);
+                levels.render(g);
+            }
+
+            if (gameState == STATE.Shop) {
+//            handler.render(g);
+                shop.render(g);
+            }
+
+            if (gameState == STATE.Load) {
+//            handler.render(g);
+                load.render(g);
+            }
+
+            // if still loading?
+            if (loadstate != 100 && gameState != STATE.Load) {
+                if (gameState == STATE.Game || gameState == STATE.GameBeta)
+                    g.drawString(stringsforloading, WIDTH / 2 - 50, HEIGHT - 50);
+                else g.drawString(stringsforloading, 0, 20);
+            }
         }
 
         g.dispose();
@@ -355,6 +375,15 @@ public class game_ extends Canvas implements Runnable{
     public gamecamera_ getGamecamera() {
         return gamecamera;
     }
+
+    void endCodes() {
+        hud_.HEALTH = 100;
+        hud2_.HEALTH = 100;
+        gameState = STATE.End;
+        handler.clearEnemies();
+        for (int i = 1; i <= 50; i++) handler.addObject(new spicymenu_(r.nextInt(WIDTH - 50), r.nextInt(HEIGHT - 50), ID.Spicy, handler));
+    }
+
     public static void main(String[] args) {
         System.out.println("game_ [Version 1.0] by KENNEDY");
         System.out.println("(c) 2020 The Karakters Kompany, game_ Engine. All rights reserved.");
