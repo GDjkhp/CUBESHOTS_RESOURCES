@@ -6,7 +6,7 @@
 package gamemakerstudio_.gui;
 
 import gamemakerstudio_.game_;
-import gamemakerstudio_.handler_;
+import gamemakerstudio_.misc.handler_;
 import gamemakerstudio_.misc.audioplayer_;
 
 import java.awt.Color;
@@ -17,6 +17,8 @@ import java.awt.Graphics;
  * @author ACER
  */
 public class hud_ {
+    handler_ handler;
+    public static int heartsTaken = 0;
     public static int bounds = 0;
     public static int HEALTH = 100;
     private int blueValue = 255;
@@ -32,8 +34,10 @@ public class hud_ {
         blueValue = HEALTH * 2;
         blueValue = game_.clamp(blueValue, 0, 255);
         if (HEALTH != 0) {
-            score++;
-            xp++;
+            if (!game_.isInvincible && game_.gameState != game_.STATE.Edit) {
+                score++;
+                xp++;
+            }
         }
         // crappy watch
         if (game_.gameState == game_.STATE.GameBeta || game_.gameState == game_.STATE.Game) {
@@ -62,14 +66,15 @@ public class hud_ {
         // level and score and health and xp
         g.drawString("Score: " + score, 15, 64);
         g.drawString("Experience: " + xp, 15, 80);
-        g.drawString("Health: " + (HEALTH) + "/" + (100 + (bounds / 2)), 15, 15);
+        g.drawString("Health: " + (HEALTH) + "/" + (100 + (bounds / 2)) + ", Hearts: " + heartsTaken + ", " +
+                "Gun: " + game_.playerOneGunLoadOut, 15, 15);
         g.setColor(Color.WHITE);
         if (game_.gameState == game_.STATE.Game) g.drawString("Level: " + level, 15, game_.HEIGHT - 50);
         else g.drawString("Level: " + audioplayer_.currentMusic, 15, game_.HEIGHT - 50);
         // fps
         g.setColor(Color.green);
         g.drawString("FPS: " + game_.throwframes, game_.WIDTH - 75, game_.HEIGHT - 75);
-        g.drawString("Objects: " + handler_.object.size(), game_.WIDTH - 100, game_.HEIGHT - 50);
+        g.drawString("Objects: " + handler.object.size(), game_.WIDTH - 100, game_.HEIGHT - 50);
         // render crappy watch
         g.drawString(tellTime(), game_.WIDTH / 2 - 50, game_.HEIGHT - 100);
     }
@@ -105,5 +110,8 @@ public class hud_ {
         if (minutes / 10 == 0) tempMin = "0" + minutes;
         else tempMin = String.valueOf(minutes);
         return rawTime = tempMin + ":" + tempSec + ":" + tempMilli;
+    }
+    public hud_ (handler_ handler) {
+        this.handler = handler;
     }
 }

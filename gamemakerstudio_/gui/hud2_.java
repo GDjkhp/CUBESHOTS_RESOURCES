@@ -15,7 +15,7 @@ import java.awt.Graphics;
  * @author ACER
  */
 public class hud2_ {
-    
+    public static int heartsTaken = 0;
     public static int bounds = 0;
     public static int HEALTH = 100;
     private int greenValue = 255;
@@ -28,8 +28,10 @@ public class hud2_ {
         greenValue = HEALTH * 2;
         greenValue = game_.clamp(greenValue, 0, 255);
         if (HEALTH != 0) {
-            score++;
-            xp++;
+            if (!game_.isInvincible && game_.gameState != game_.STATE.Edit) {
+                score++;
+                xp++;
+            }
         }
     }
     public void render(Graphics g) {
@@ -46,7 +48,8 @@ public class hud2_ {
 //        g.drawString("Level: " + level, 450, 64);
         g.drawString("Score: " + score, 15, 149);
         g.drawString("Experience: " + xp, 15, 165);
-        g.drawString("Health: " + (HEALTH) + "/" + (100 + (bounds / 2)), 15, 100);
+        g.drawString("Health: " + (HEALTH) + "/" + (100 + (bounds / 2)) + ", Hearts: " + heartsTaken  + ", " +
+                "Gun: " + game_.playerTwoGunLoadOut, 15, 100);
     }
     public void setScore(int score) {
         this.score = score;
@@ -60,7 +63,7 @@ public class hud2_ {
     public int getXp() {
         return xp;
     }
-    public int getlevel() {
+    public int getLevel() {
         return level;
     }
     public void setLevel(int level) {

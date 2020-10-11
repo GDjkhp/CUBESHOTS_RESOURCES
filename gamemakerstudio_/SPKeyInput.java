@@ -6,6 +6,7 @@ import gamemakerstudio_.entities.player_;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+// i dunno why is this still here, maybe for debug?
 public class SPKeyInput extends KeyAdapter {
     private boolean[] keyDownP1 = new boolean[2];
     private boolean[] keyDownP2 = new boolean[2];
@@ -28,7 +29,6 @@ public class SPKeyInput extends KeyAdapter {
         if (key == KeyEvent.VK_CONTROL) {
             player2_.isShooting = true; keyDownP2[0] = true;}
         if (key == KeyEvent.VK_SHIFT) {player2_.isDashing = true; keyDownP2[1] = true;}
-
     }
 
     @Override
@@ -48,8 +48,5 @@ public class SPKeyInput extends KeyAdapter {
         // p2 reset
         if (!keyDownP2[0]) {player2_.isShooting = false; player2_.cooldownp2 = 0;}
         if (!keyDownP2[1]) {player2_.dashcooldown = 15;}
-
-
-
     }
 }

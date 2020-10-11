@@ -1,9 +1,9 @@
 package gamemakerstudio_.entities;
 
-import gamemakerstudio_.ID;
+import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.game_;
-import gamemakerstudio_.gameobject_;
-import gamemakerstudio_.handler_;
+import gamemakerstudio_.misc.gameobject_;
+import gamemakerstudio_.misc.handler_;
 
 import java.awt.*;
 import java.util.Random;
@@ -14,10 +14,14 @@ public class starwrath_ extends gameobject_ {
     private Random r = new Random();
     private gameobject_ ghost;
     float pathX, pathY, diffX, diffY, distance;
-    private int spawntimer = 1;
-    public starwrath_(int x, int y, ID id, handler_ handler){
+    public starwrath_(int x, int y, ID id, handler_ handler, float velX, float velY, int spawnTimer){
         super(x, y, id);
         this.handler = handler;
+        this.width = 30;
+        this.height = 30;
+        this.spawnTimer = spawnTimer;
+        this.velX = velX;
+        this.velY = velY;
         col = new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255));
         // AI
         for (int i = 0; i < handler.object.size(); i++) {
@@ -27,36 +31,38 @@ public class starwrath_ extends gameobject_ {
             }
         }
         // perform AI
-        diffX = x - ghost.getX() - 10;
-        diffY = y - ghost.getY() - 10;
+        diffX = x - ghost.getX();
+        diffY = y - ghost.getY();
         distance = (float) Math.sqrt((x - ghost.getX()) * (x - ghost.getX()) + (y - ghost.getY()) * (y - ghost.getY()));
     }
     public void tick() {
+        // default is 30
+
         // execute AI
-        pathX = (float) ((-30.0 / distance) * diffX);
-        pathY = (float) ((-30.0 / distance) * diffY);
+        pathX = (float) ((-velX / distance) * diffX);
+        pathY = (float) ((-velY / distance) * diffY);
 
-        velX = pathX;
-        velY = pathY;
+        x += pathX;
+        y += pathY;
 
-        x += velX;
-        y += velY;
-
-        if (y <= -1 || y >= game_.HEIGHT) {
+        if (x <= 0 || x >= game_.WIDTH) {
+            handler.removeObject(this);
+        }
+        if (y <= 0 || y >= game_.HEIGHT) {
             handler.removeObject(this);
         }
 
-        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, col, 30, 30, 0.1f, handler));
+        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, col, width, height, 0.1f, handler));
 
     }
 
     public void render(Graphics g) {
         g.setColor(col);
-        g.fillRect((int) x, (int) y, 30, 30);
+        g.fillRect((int) x, (int) y, width, height);
     }
 
     public Rectangle getBounds() {
-        return null;
+        return new Rectangle((int) x, (int) y, width, height);
     }
 
     public void health() {

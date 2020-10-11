@@ -6,7 +6,7 @@
 package gamemakerstudio_.gui;
 
 import gamemakerstudio_.game_;
-import gamemakerstudio_.handler_;
+import gamemakerstudio_.misc.handler_;
 import gamemakerstudio_.misc.audioplayer_;
 
 import java.awt.Color;
@@ -103,7 +103,7 @@ public class shop_ extends MouseAdapter{
             g.drawString("Health: " + hud2.HEALTH, 410, 260);
         }
     }
-    public void mousePressed(MouseEvent e) {
+    public void mouseReleased(MouseEvent e) {
         if (game.gameState == game_.STATE.Shop) {
             int mx = e.getX();
             int my = e.getY();
@@ -113,7 +113,7 @@ public class shop_ extends MouseAdapter{
                     hud.setXp(hud.getXp() - B1);
                     B1 += B1;
                     hud_.bounds += 20;
-                    if (game_.music) audioplayer_.getSound("menu_sound").play();
+                    if (game_.music) audioplayer_.getSound("click_sound").play();
                 }
             }
             // box 2
@@ -122,7 +122,7 @@ public class shop_ extends MouseAdapter{
                     hud.setXp(hud.getXp() - B2);
                     B2 += B2;
                     handler_.spdp1 += 5;
-                    if (game_.music) audioplayer_.getSound("menu_sound").play();
+                    if (game_.music) audioplayer_.getSound("click_sound").play();
                 }
             }
             // box 3
@@ -131,7 +131,7 @@ public class shop_ extends MouseAdapter{
                     if (hud.HEALTH != (100 + (hud.bounds / 2))) {
                         hud.setXp(hud.getXp() - B3);
                         hud.HEALTH = (100 + (hud.bounds / 2));
-                        if (game_.music) audioplayer_.getSound("menu_sound").play();
+                        if (game_.music) audioplayer_.getSound("click_sound").play();
                     }
                 }
             }
@@ -142,7 +142,7 @@ public class shop_ extends MouseAdapter{
                         hud2.setXp(hud2.getXp() - B4);
                         B4 += B4;
                         hud2_.bounds += 20;
-                        if (game_.music) audioplayer_.getSound("menu_sound").play();
+                        if (game_.music) audioplayer_.getSound("click_sound").play();
                     }
                 }
                 // box 5
@@ -151,7 +151,7 @@ public class shop_ extends MouseAdapter{
                         hud2.setXp(hud2.getXp() - B5);
                         B5 += B5;
                         handler_.spdp2 += 5;
-                        if (game_.music) audioplayer_.getSound("menu_sound").play();
+                        if (game_.music) audioplayer_.getSound("click_sound").play();
                     }
                 }
                 // box 6
@@ -160,7 +160,7 @@ public class shop_ extends MouseAdapter{
                         if (hud2.HEALTH != (100 + (hud2.bounds / 2))) {
                             hud2.setXp(hud2.getXp() - B6);
                             hud2.HEALTH = (100 + (hud2.bounds / 2));
-                            if (game_.music) audioplayer_.getSound("menu_sound").play();
+                            if (game_.music) audioplayer_.getSound("click_sound").play();
                         }
                     }
                 }

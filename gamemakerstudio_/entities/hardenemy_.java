@@ -5,10 +5,10 @@
  */
 package gamemakerstudio_.entities;
 
-import gamemakerstudio_.ID;
+import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.game_;
-import gamemakerstudio_.gameobject_;
-import gamemakerstudio_.handler_;
+import gamemakerstudio_.misc.gameobject_;
+import gamemakerstudio_.misc.handler_;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -25,36 +25,41 @@ public class hardenemy_ extends gameobject_ {
     
     private Random r = new Random();
     
-    public hardenemy_ (int x, int y, ID id, handler_ handler) {
+    public hardenemy_ (int x, int y, ID id, handler_ handler, int spawnTimer) {
         super(x, y, id);
         
         this.handler = handler;
-        
-        velX = 5;
-        velY = 5;
+        this.width = 10;
+        this.height = 10;
+        this.velX = 5;
+        this.velY = 5;
+        this.spawnTimer = spawnTimer;
     }
     
     public Rectangle getBounds() {
-        return new Rectangle((int) x, (int) y, 10, 10);
+        return new Rectangle((int) x, (int) y, width, height);
     }
     
     public void tick() {
         x += velX;
         y += velY;
         // screen limit
-        if (x <= 0 || x >= game_.WIDTH - 50) {if (velX < 0) velX = -(r.nextInt(10) + 1) * -1; else velX = (r.nextInt(10) + 1) * -1;}
-        if (y <= 0 || y >= game_.HEIGHT - 50) {if (velY < 0) velY = -(r.nextInt(10) + 1) * -1; else velY = (r.nextInt(10) + 1) * -1;}
+        if (x <= 0 || x >= game_.WIDTH) {
+            if (x <= 0) velX = -(r.nextInt(10) + 1) * -1;
+            else velX = (r.nextInt(10) + 1) * -1;
+        }
+        else if (y <= 0 || y >= game_.HEIGHT) {
+            if (y <= 0) velY = -(r.nextInt(10) + 1) * -1;
+            else velY = (r.nextInt(10) + 1) * -1;
+        }
         // trail
-        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, Color.orange, 10, 10, 0.1f, handler));
+        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, Color.orange, width, height, 0.1f, handler));
     }
 
     public void render(Graphics g) {
         g.setColor(Color.orange);
-        g.fillRect((int) x, (int) y, 10, 10);
+        g.fillRect((int) x, (int) y, width, height);
     }
 
-    @Override
-    public void health() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 }

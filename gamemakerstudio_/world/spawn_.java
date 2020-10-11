@@ -1,0 +1,105 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package gamemakerstudio_.world;
+
+import gamemakerstudio_.misc.ID;
+import gamemakerstudio_.entities.*;
+import gamemakerstudio_.entities.boss.creeperboss_;
+import gamemakerstudio_.entities.boss.skullface_;
+import gamemakerstudio_.game_;
+import gamemakerstudio_.gui.hud_;
+import gamemakerstudio_.misc.gameobject_;
+import gamemakerstudio_.misc.handler_;
+
+import java.util.Random;
+
+/**
+ *
+ * @author ACER
+ */
+public class spawn_ {
+    
+    private handler_ handler;
+    private hud_ hud;
+    private game_ game;
+    private Random r = new Random();
+
+    // game vars
+    int timer, timer2;
+    gameobject_ boss;
+    
+    public static int scoreKeep = 0;
+    
+    public spawn_(handler_ handler, hud_ hud, game_ game) {
+        this.handler = handler;
+        this.hud = hud;
+        this.game = game;
+    }
+    public void tick() {
+        scoreKeep++;
+        if (scoreKeep == 100) {
+            scoreKeep = 0;
+            hud.setLevel(hud.getLevel() + 1);
+            difficulty(game.diff);
+        }
+        // boss tick, creeper
+        if (hud.getLevel() >= 10 && game.diff == 1){
+            if (timer == 0)
+                boss.setVelY(0);
+            else timer--;
+
+            if (timer2 == 0) {
+                if (boss.getVelX() == 0) boss.setVelX(20);
+                int spawn = r.nextInt(5);
+                if (spawn == 0) handler.addObject(new tnt_((int) boss.getX() + 200, (int) boss.getY() + 200, ID.TNT, handler, (r.nextInt(5 - -5) + -5), 5, 0));
+            } else timer2--;
+            System.out.println(timer2);
+        }
+    }
+    public void difficulty(int diff) {
+        // easy
+        if (diff == 0) {
+            handler.addObject(new basicenemy_(r.nextInt(game_.WIDTH - 10), r.nextInt(game_.HEIGHT - 10),
+                    ID.BasicEnemy, handler, 0));
+            handler.addObject(new heart_(r.nextInt(game_.WIDTH - 10), r.nextInt(game_.HEIGHT - 10),
+                    ID.HeartFriend, handler, 0, 0, 0));
+            handler.addObject(new basecircle_(r.nextInt(game_.WIDTH - 10), r.nextInt(game_.HEIGHT - 10),
+                    ID.BaseCircle, handler, 0, 0, 0));
+            handler.addObject(new laserpointer_(r.nextInt(game_.WIDTH - 10), r.nextInt(game_.HEIGHT - 10),
+                    ID.Laser, handler, 30, 30, 0));
+            if (hud.getLevel() == 10){
+                // remove objects except players
+                handler.removeObjectsExceptPlayers();
+                handler.addObject(new skullface_((game_.WIDTH / 2) - 128, (game_.HEIGHT) - 128, ID.Xgamer, handler));
+            }
+        }
+        // medium
+        if (diff == 1) {
+            handler.addObject(new hardenemy_(r.nextInt(game_.WIDTH - 10), r.nextInt(game_.HEIGHT - 10),
+                    ID.BasicEnemy, handler, 0));
+            handler.addObject(new basecircle_(r.nextInt(game_.WIDTH - 10), r.nextInt(game_.HEIGHT - 10),
+                    ID.BaseCircle, handler, 0, 0, 0));
+            handler.addObject(new laserpointer_(r.nextInt(game_.WIDTH - 10), r.nextInt(game_.HEIGHT - 10),
+                    ID.Laser, handler, 30, 30, 0));
+            if (hud.getLevel() % 3 == 0)
+                handler.addObject(new fastenemy_(r.nextInt(game_.WIDTH - 10), r.nextInt(game_.HEIGHT - 10),
+                        ID.FastEnemy, handler, 0));
+            if (hud.getLevel() % 5 == 0)
+                handler.addObject(new smartenemy_(r.nextInt(game_.WIDTH - 10), r.nextInt(game_.HEIGHT - 10),
+                        ID.SmartEnemy, handler, 3, 3, 0));
+
+            if (hud.getLevel() == 10) {
+                // remove objects except players
+                handler.removeObjectsExceptPlayers();
+                // boss code beta
+                boss = handler.addObject(new creeperboss_((game_.WIDTH / 2) - 200, -253, ID.CreeperBoss, handler, 0, 5, 0));
+                timer = 50;
+                timer2 = 200;
+            }
+        }
+        // hardmode
+    }
+}

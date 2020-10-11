@@ -6,18 +6,15 @@
 package gamemakerstudio_.gui;
 
 import gamemakerstudio_.*;
-import gamemakerstudio_.entities.basicenemy_;
-import gamemakerstudio_.entities.ghost_;
-import gamemakerstudio_.entities.hardenemy_;
-import gamemakerstudio_.entities.player2_;
+import gamemakerstudio_.entities.*;
 import gamemakerstudio_.game_.STATE;
-import gamemakerstudio_.misc.assets_;
-import gamemakerstudio_.misc.audioplayer_;
+import gamemakerstudio_.misc.*;
 import gamemakerstudio_.world.levels_;
+import gamemakerstudio_.world.spawn_;
 
+import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.awt.geom.AffineTransform;
 import java.util.Random;
 
@@ -25,7 +22,7 @@ import java.util.Random;
  *
  * @author ACER
  */
-public class menu_ extends MouseAdapter{
+public class menu_ implements KeyListener, MouseMotionListener, MouseListener {
     // classes
     private game_ game;
     private handler_ handler;
@@ -44,7 +41,7 @@ public class menu_ extends MouseAdapter{
     int rotateTick = -90;
 
     // easter egg
-    private  gameobject_ ghost;
+    private gameobject_ ghost;
     int tempGhostX;
     int tempGhostY;
     
@@ -59,8 +56,18 @@ public class menu_ extends MouseAdapter{
             if (tempObject.getId() == ID.GHOST) ghost = tempObject;
         }
     }
-    
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
     public void mousePressed(MouseEvent e) {
+
+    }
+
+    public void mouseReleased(MouseEvent e) {
         int mx = e.getX();
         int my = e.getY();
         
@@ -84,7 +91,10 @@ public class menu_ extends MouseAdapter{
             // quit
             if (mouseOver(mx, my, game_.WIDTH / 3, 250, 200, 50)) {
                 if (game_.music) audioplayer_.getSound("click_sound").play();
-                System.exit(0);
+                if (game.JOptionPaneOption) {
+                    int a = JOptionPane.showConfirmDialog(null, "Are you sure?", "Quit", JOptionPane.INFORMATION_MESSAGE);
+                    if (a == JOptionPane.YES_OPTION) System.exit(0);
+                } else System.exit(0);
             }
             // sounds and sfx
             if (mouseOver(mx, my, game_.WIDTH / 3, 325, 100, 50)) {
@@ -125,12 +135,14 @@ public class menu_ extends MouseAdapter{
                 hud_.HEALTH = 100;
                 handler_.spdp1 = 5;
                 hud_.bounds = 0;
+                hud.heartsTaken = 0;
                 // p2 reset
                 hud2.setScore(0);
                 hud2.setXp(0);
                 hud2_.HEALTH = 100;
                 handler_.spdp2 = 5;
                 hud2_.bounds = 0;
+                hud2.heartsTaken = 0;
                 // reset shop
                 shop_.B1 = 100;
                 shop_.B2 = 100;
@@ -139,7 +151,7 @@ public class menu_ extends MouseAdapter{
                 shop_.B5 = 100;
                 shop_.B6 = 100;
                 // spawn
-                handler.addObject(new basicenemy_(r.nextInt(game_.WIDTH - 50), r.nextInt(game_.HEIGHT - 50), ID.BasicEnemy, handler));
+                handler.addObject(new basicenemy_(r.nextInt(game_.WIDTH - 1), r.nextInt(game_.HEIGHT - 1), ID.BasicEnemy, handler, 0));
                 game.diff = 0;
                 if (game_.music) audioplayer_.getSound("click_sound").play();
             }
@@ -157,12 +169,14 @@ public class menu_ extends MouseAdapter{
                 hud_.HEALTH = 100;
                 handler_.spdp1 = 5;
                 hud_.bounds = 0;
+                hud.heartsTaken = 0;
                 // p2 reset
                 hud2.setScore(0);
                 hud2.setXp(0);
                 hud2_.HEALTH = 100;
                 handler_.spdp2 = 5;
                 hud2_.bounds = 0;
+                hud2.heartsTaken = 0;
                 // reset shop
                 shop_.B1 = 1000;
                 shop_.B2 = 1000;
@@ -171,19 +185,20 @@ public class menu_ extends MouseAdapter{
                 shop_.B5 = 1000;
                 shop_.B6 = 1000;
                 // spawn
-                handler.addObject(new hardenemy_(r.nextInt(game_.WIDTH - 50), r.nextInt(game_.HEIGHT - 50), ID.BasicEnemy, handler));
+                handler.addObject(new hardenemy_(r.nextInt(game_.WIDTH - 1), r.nextInt(game_.HEIGHT - 1), ID.BasicEnemy, handler, 0));
                 game.diff = 1;
                 if (game_.music) audioplayer_.getSound("click_sound").play();
             }
             // hard?
             if (mouseOver(mx, my, game_.WIDTH / 3, 250, 200, 50)) {
                 System.out.println("u are too gei to die_");
+                // ideas: circle of darkness mode, just like in caves in pokemon
             }
             // beta
             if (mouseOver(mx, my, game_.WIDTH / 3, 325, 200, 50)) {
                 game.gameState = STATE.LevelSelect;
                 if (game_.music) audioplayer_.getSound("tick").play();
-                levels_.lazyDelayFix = 50;
+                levels_.lazyDelayFix = 100;
             }
         }
         // help options
@@ -199,13 +214,14 @@ public class menu_ extends MouseAdapter{
                     game_.multiplayer = false;
                     for (int i = handler.object.size() - 1; i >= 0; i--) {
                         gameobject_ tempObject = handler.object.get(i);
-                        if (tempObject.getId() == ID.Player2)
+                        if (tempObject.getId() == ID.Player2 || tempObject.getId() == ID.P2Range)
                             handler.removeObject(tempObject);
                     }
                 }
                 else {
                     game_.multiplayer = true;
-                    handler.addObject(new player2_(game_.WIDTH - 128, 200, ID.Player2, handler));
+                    handler.addObject(new player2_(game_.WIDTH - 128, 200, ID.Player2, handler, hud2));
+                    handler.addObject(new RangeArea(0, 0, ID.P2Range, handler));
                 }
                 if (game_.music) audioplayer_.getSound("click_sound").play();
             }
@@ -228,12 +244,28 @@ public class menu_ extends MouseAdapter{
             }
         }
         // easter egg
-        if (mouseOver(mx, my, (int)ghost.getX(), (int)ghost.getY(), 30, 30)) {
-            ghost_.isControlled = true;
+        for (int i = handler.object.size() - 1; i >= 0; i--) {
+            gameobject_ tempObject = handler.object.get(i);
+            if (tempObject.getId() == ID.GHOST) {
+                if (mouseOver(mx, my, (int)ghost.getX(), (int)ghost.getY(), 30, 30)) {
+                    ghost_.isControlled = true;
+                }
+            }
         }
     }
-    
-    public void mouseReleased(MouseEvent e) {
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
 
     }
 
@@ -286,11 +318,11 @@ public class menu_ extends MouseAdapter{
             // help
             g.setColor(Color.yellow);
             g.drawRect(game_.WIDTH / 3, 175, 200, 50);
-            g.drawString("help my ass_", game_.WIDTH / 3 + 10, 200);
+            g.drawString("help_", game_.WIDTH / 3 + 10, 200);
             // quit
             g.setColor(Color.cyan);
             g.drawRect(game_.WIDTH / 3, 250, 200, 50);
-            g.drawString("go fuck urself_", game_.WIDTH / 3 + 10, 275);
+            g.drawString("quit_", game_.WIDTH / 3 + 10, 275);
             // sounds and sfx
             if (game_.music) {
                 g.drawImage(assets_.soundiconon, game_.WIDTH / 3 + 32, 333, null);
@@ -309,6 +341,7 @@ public class menu_ extends MouseAdapter{
             g.drawString("LDM", game_.WIDTH / 3 + 130, 355);
             g.drawRect(game_.WIDTH / 3 + 100, 325, 100, 50);
         }
+        // help
         if (game.gameState == STATE.Help) {
             Font fnthead = new Font("mojangles", 1, 50);
             Font fnt = new Font("mojangles", 0, 20);
@@ -324,12 +357,13 @@ public class menu_ extends MouseAdapter{
                 g.drawString(p2help, game_.WIDTH / 3 + 10, 200);
             } else g.setColor(Color.red);
             g.drawRect(game_.WIDTH / 3, 250, 200, 50);
-            g.drawString("nigga_", game_.WIDTH / 3 + 10, 275);
+            g.drawString("multiplayer_", game_.WIDTH / 3 + 10, 275);
 
 //            g.setColor(Color.red);
 //            g.drawString("nigga_", game_.WIDTH / 3 + 10, 350);
 //            g.drawRect(game_.WIDTH / 3, 325, 200, 50);
         }
+        // game over
         if (game.gameState == STATE.End) {
             Font fnthead = new Font("mojangles", 1, 50);
             Font fnt = new Font("mojangles", 0, 20);
@@ -339,18 +373,25 @@ public class menu_ extends MouseAdapter{
             g.setFont(fnt);
 
             g.setColor(Color.cyan);
-            g.drawString("p1_: " + hud.getScore() , game_.WIDTH / 3 + 10, 125);
+            if (!game.currentGameStateIsBeta) g.drawString("p1_: " + hud.getScore(), game_.WIDTH / 3 + 10, 125);
+            else g.drawString("p1_: " + hud.getScore() + " - " + (int)((((double) hud.getScore()) / (((60000 / levels_.bpm) / 10) * ((levels_.endBar * 4) - 4))) * 100) + "%", game_.WIDTH / 3 + 10, 125);
 
             g.setColor(Color.green);
-            if (game_.multiplayer) g.drawString("p2_: " + hud2.getScore(), game_.WIDTH / 3 + 10, 200);
+            if (game_.multiplayer) {
+                if (!game.currentGameStateIsBeta) g.drawString("p2_: " + hud2.getScore(), game_.WIDTH / 3 + 10, 200);
+                else g.drawString("p2_: " + hud2.getScore() + " - " + (int)((((double) hud2.getScore()) / (((60000 / levels_.bpm) / 10) * ((levels_.endBar * 4) - 4))) * 100) + "%", game_.WIDTH / 3 + 10, 200);
+            }
 
             g.setColor(Color.yellow);
-            g.drawString(hud.tellTime(), game_.WIDTH / 3 + 10, 275);
+            // i know this is not the efficient way
+            if (!game.currentGameStateIsBeta) g.drawString(hud.tellTime(), game_.WIDTH / 3 + 10, 275);
+            else g.drawString(hud.tellTime() + " - " + (int) levels_.durationBar + "%", game_.WIDTH / 3 + 10, 275);
 
             g.setColor(Color.RED);
             g.drawString("menu_", game_.WIDTH / 3 + 10, 350);
             g.drawRect(game_.WIDTH / 3, 325, 200, 50);
         }
+        // diff selection
         if (game.gameState == STATE.Select) {
             Font fnthead = new Font("mojangles", 1, 50);
             Font fnt = new Font("mojangles", 0, 20);
@@ -394,6 +435,7 @@ public class menu_ extends MouseAdapter{
         g.drawString("© The Karakters Kompany", 0, game_.HEIGHT - 50);
         g.drawRect(0, game_.HEIGHT - 65, 220, 20);
     }
+
     // still unimplemented
     void rotateAnimation() {
         if (rotateTick != 0) rotateTick++;
@@ -403,5 +445,20 @@ public class menu_ extends MouseAdapter{
         if (rotateTick == 90) {
             rotateTick = -90;
         }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }

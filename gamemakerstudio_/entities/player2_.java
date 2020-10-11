@@ -7,6 +7,9 @@ package gamemakerstudio_.entities;
 
 import gamemakerstudio_.*;
 import gamemakerstudio_.gui.hud2_;
+import gamemakerstudio_.misc.ID;
+import gamemakerstudio_.misc.gameobject_;
+import gamemakerstudio_.misc.handler_;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -22,6 +25,7 @@ public class player2_ extends gameobject_ {
     
     Random r = new Random();
     handler_ handler;
+    hud2_ hud2;
 
     // north
     private static int northVelY = -5;
@@ -40,13 +44,16 @@ public class player2_ extends gameobject_ {
     public static boolean isShooting = false;
     public static boolean isDashing = false;
 
-    public player2_(int x, int y, ID id, handler_ handler) {
+    public player2_(int x, int y, ID id, handler_ handler, hud2_ hud2) {
         super(x, y, id);
         this.handler = handler;
+        this.width = 30;
+        this.height = 30;
+        this.hud2 = hud2;
     }
     
     public Rectangle getBounds() {
-        return new Rectangle((int) x, (int) y, 30, 30);
+        return new Rectangle((int) x, (int) y, width, height);
     }
     
     public void tick() {
@@ -54,12 +61,26 @@ public class player2_ extends gameobject_ {
         if (isShooting) {
             if (cooldownp2 == 0) {
                 cooldownp2 = defaultcooldown;
-                handler.addObject(new bullet_(this.getX() + 10, this.getY() + 10, ID.BulletHell,
-                        handler, 0, northVelY));
-                handler.addObject(new bullet_(this.getX() + 10, this.getY() + 10, ID.BulletHell,
-                        handler, eastVelX, northVelY));
-                handler.addObject(new bullet_(this.getX() + 10, this.getY() + 10, ID.BulletHell,
-                        handler, westVelX, northVelY));
+
+                // default bullets
+                if (game_.playerTwoGunLoadOut == game_.GUN.Default) {
+                    handler.addObject(new bullet_(this.getX() + 10, this.getY() + 10, ID.BulletHell,
+                            handler, 0, northVelY));
+                    handler.addObject(new bullet_(this.getX() + 10, this.getY() + 10, ID.BulletHell,
+                            handler, eastVelX, northVelY));
+                    handler.addObject(new bullet_(this.getX() + 10, this.getY() + 10, ID.BulletHell,
+                            handler, westVelX, northVelY));
+                }
+                // chlorophyte bullets
+                if (game_.playerTwoGunLoadOut == game_.GUN.Chlorophyte) {
+                    handler.addObject(new chlorophyte_(this.getX() + 10, this.getY() + 10, ID.ChlorophyteP2, handler, 0, -15));
+                    handler.addObject(new chlorophyte_(this.getX() + 20, this.getY() + 20, ID.ChlorophyteP2, handler, 15, -15));
+                    handler.addObject(new chlorophyte_(this.getX(), this.getY() + 20, ID.ChlorophyteP2, handler, -15, -15));
+                }
+                // electrocute bullets
+                if (game_.playerTwoGunLoadOut == game_.GUN.Electrocute) {
+                    handler.addObject(new electrocutebullet_(this.getX() + 10, this.getY() + 10, ID.ElectrocuteP2, handler, 0, -15));
+                }
             } else cooldownp2--;
         }
 
@@ -69,10 +90,11 @@ public class player2_ extends gameobject_ {
             dashcooldown--;
         }
         else {
+            isDashing = false;
             x += velX;
             y += velY;
-            if (!game_.isInvincible) collision();
-            isDashing = false;
+            if (!game_.isInvincible &&
+                    (game_.gameState == game_.STATE.Game || game_.gameState == game_.STATE.GameBeta)) collision();
         }
         
         if (hud2_.HEALTH == 0) {
@@ -80,11 +102,18 @@ public class player2_ extends gameobject_ {
             y = 1000;
         }
         else {
-            x = game_.clamp((int) x, 0, game_.WIDTH - 50);
-            y = game_.clamp((int) y, 0, game_.HEIGHT - 80);
+            // clamp
+            x = game_.clamp((int) x, 0, game_.WIDTH - 30);
+            y = game_.clamp((int) y, 0, game_.HEIGHT - 30);
+
+            // snake portal
+            /*if (x <= 0) x = game_.WIDTH - 30;
+            else if (x >= game_.WIDTH - 30) x = 0;
+            else if (y <= 0) y = game_.HEIGHT - 30;
+            else if (y >= game_.HEIGHT - 30) y = 0;*/
         }
         
-        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, Color.GREEN, 30, 30, 0.1f, handler));
+        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, Color.GREEN, width, height, 0.1f, handler));
     }
     
     public void collision() {
@@ -92,15 +121,16 @@ public class player2_ extends gameobject_ {
             gameobject_ tempObject = handler.object.get(i);
             switch (tempObject.getId()) {
                 case BasicEnemy:
-                case Laser:
                 case FastEnemy:
                 case SmartEnemy:
-                case CreeperBoss:
-                case BaseCircle:
-                case Xgamer:
                 case HardEnemy:
+                case BaseCircle:
+                case Laser:
+                case Star:
+                case TNT:
+                case CircleWithPatterns:
                     if(getBounds().intersects(tempObject.getBounds())) {
-                        hud2_.HEALTH -= 2;
+                        hud2.HEALTH -= 2;
                     }
             }
             /*if(tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy || tempObject.getId() == ID.SmartEnemy || tempObject.getId() == ID.CreeperBoss) {
@@ -110,7 +140,8 @@ public class player2_ extends gameobject_ {
             }*/
             if(tempObject.getId() == ID.HeartFriend) {
                 if(getBounds().intersects(tempObject.getBounds())) {
-                    hud2_.HEALTH += 10;
+                    hud2.HEALTH += 10;
+                    hud2.heartsTaken++;
                     handler.removeObject(tempObject);
                 }
             }
@@ -123,11 +154,8 @@ public class player2_ extends gameobject_ {
 
         if (id == ID.Player2)
             g.setColor(Color.green);
-        g.fillRect((int) x, (int) y, 30, 30);
+        g.fillRect((int) x, (int) y, width, height);
     }
 
-    @Override
-    public void health() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 }
