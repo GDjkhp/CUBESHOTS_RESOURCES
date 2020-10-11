@@ -17,3 +17,8 @@ You need JarSplice to compile the code (sorry i'm so lazy), so follow the instru
 7. Copy resources_ folder to the same directory of the created fat jar.
 # Installation (for non-programmers)
 Download the latest release (and the resources_, too).
+# FAQs
+1. Mobile when?
+A: soon >:)
+2. Mobile when??
+A: libgdx was irritating as hell!!
