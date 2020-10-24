@@ -1,5 +1,8 @@
 # CUBESHOTS
 A rhythmic game written in Java using Slick2D library (based from the tutorial and game Wave© by RealTutsGML). Copyright goes to the owners of the music that was used in the game code (just for testing purposes)
+![image 1](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/1%20attempt%20storm.PNG)
+![image 2](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/game%20showcase%202.jpg)
+![image 3](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/game_%20showcase.jpg)
 # Libraries
 Slick2D
 # Notes
