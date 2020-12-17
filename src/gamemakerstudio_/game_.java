@@ -16,6 +16,7 @@ import gamemakerstudio_.world.world_;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.util.Random;
@@ -415,9 +416,12 @@ public class game_ extends Canvas implements Runnable{
             return var;
     }
 
-    public int getTextWidth(Graphics g, String message){
+    // the ultimate fix
+    public static int getTextWidth(Graphics g, String message){
         return g.getFontMetrics().stringWidth(message);
     }
+    public static int getTextHeight(Graphics g){return g.getFontMetrics().getHeight();}
+    public static Rectangle2D getTextBounds(Graphics g, String message){return g.getFontMetrics().getStringBounds(message, g);}
 
     public gamecamera_ getGameCamera() {
         return gamecamera;
@@ -556,13 +560,16 @@ public class game_ extends Canvas implements Runnable{
                         tick();
                     } catch (Exception e) {
                         e.printStackTrace();
-                        int a = JOptionPane.showConfirmDialog(null, "An error occurred: " + e + ", \ndo you still wish to continue?", "Error", JOptionPane.INFORMATION_MESSAGE);
+                        int a = JOptionPane.showConfirmDialog(null, "An error occurred: " + e + ", " +
+                                "\ndo you still wish to continue?", "Error", JOptionPane.INFORMATION_MESSAGE);
                         if (a == JOptionPane.NO_OPTION) System.exit(0);
 
                         // if error caught but continued, still work in progress
-                        levels.resetMethod();
-                        if (game_.music) audioplayer_.getMusic(audioplayer_.currentMusic).loop();
-                        if (game_.music) audioplayer_.getSound("click_sound").play();
+                        if (gameState == STATE.GameBeta) {
+                            levels.resetMethod();
+                            if (game_.music) audioplayer_.getMusic(audioplayer_.currentMusic).loop();
+                            if (game_.music) audioplayer_.getSound("click_sound").play();
+                        }
                     }
                     delta--;
                     // tick test
@@ -574,7 +581,8 @@ public class game_ extends Canvas implements Runnable{
                         render();
                     } catch (Exception e) {
                         e.printStackTrace();
-                        int a = JOptionPane.showConfirmDialog(null, "An error occurred: " + e + ", \ndo you still wish to continue?", "Error", JOptionPane.INFORMATION_MESSAGE);
+                        int a = JOptionPane.showConfirmDialog(null, "An error occurred: " + e + ", " +
+                                "\ndo you still wish to continue?", "Error", JOptionPane.INFORMATION_MESSAGE);
                         if (a == JOptionPane.NO_OPTION) System.exit(0);
                     }
                 }
@@ -615,8 +623,30 @@ public class game_ extends Canvas implements Runnable{
             while (running) {
                 now = System.nanoTime();
 
-                tick();
-                render();
+                try {
+                    tick();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    int a = JOptionPane.showConfirmDialog(null, "An error occurred: " + e + ", " +
+                            "\ndo you still wish to continue?", "Error", JOptionPane.INFORMATION_MESSAGE);
+                    if (a == JOptionPane.NO_OPTION) System.exit(0);
+
+                    // if error caught but continued, still work in progress
+                    if (gameState == STATE.GameBeta) {
+                        levels.resetMethod();
+                        if (game_.music) audioplayer_.getMusic(audioplayer_.currentMusic).loop();
+                        if (game_.music) audioplayer_.getSound("click_sound").play();
+                    }
+                }
+
+                try {
+                    render();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    int a = JOptionPane.showConfirmDialog(null, "An error occurred: " + e + ", " +
+                            "\ndo you still wish to continue?", "Error", JOptionPane.INFORMATION_MESSAGE);
+                    if (a == JOptionPane.NO_OPTION) System.exit(0);
+                }
 
                 updateTime = System.nanoTime() - now;
                 wait = (OPTIMAL_TIME - updateTime) / 1000000000;

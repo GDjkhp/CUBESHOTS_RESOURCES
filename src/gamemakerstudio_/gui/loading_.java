@@ -31,11 +31,8 @@ public class loading_ {
         g.drawRect(game_.WIDTH/2 - 100, 325, 200, 50);
 
         g.setFont(new Font("arial", 0, 15));
-        g.drawString(game_.stringsforloading, game_.WIDTH/2 - getTextWidth(g, game_.stringsforloading)/2,
+        g.drawString(game_.stringsforloading, game_.WIDTH/2 - game_.getTextWidth(g, game_.stringsforloading)/2,
                 game_.HEIGHT / 2 + 30);
 
-    }
-    public int getTextWidth(Graphics g, String message){
-        return g.getFontMetrics().stringWidth(message);
     }
 }

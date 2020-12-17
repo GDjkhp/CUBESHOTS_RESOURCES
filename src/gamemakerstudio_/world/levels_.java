@@ -147,27 +147,27 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 } else if (mouseOver(mx, my, 150, 550, 50, 50)) {
                     testString = "32. Overcloud";
                 } else if (mouseOver(mx, my, 250, 550, 50, 50)) {
-                    testString = "32. Ppaper Pplanes";
+                    testString = "33. Ppaper Pplanes";
                 } else if (mouseOver(mx, my, 350, 550, 50, 50)) {
-                    testString = "33. Prelude";
+                    testString = "34. Prelude";
                 } else if (mouseOver(mx, my, 450, 550, 50, 50)) {
-                    testString = "34. Spirit";
+                    testString = "35. Spirit";
                 } else if (mouseOver(mx, my, 550, 550, 50, 50)) {
-                    testString = "35. Catalyze";
+                    testString = "36. Catalyze";
                 }
                 // seventh row
                 else if (mouseOver(mx, my, 50, 650, 50, 50)) {
-                    testString = "36. Stray";
+                    testString = "37. Stray";
                 } else if (mouseOver(mx, my, 150, 650, 50, 50)) {
-                    testString = "37. Jazz Battle";
+                    testString = "38. Jazz Battle";
                 } else if (mouseOver(mx, my, 250, 650, 50, 50)) {
-                    testString = "38. Success";
+                    testString = "39. Success";
                 } else if (mouseOver(mx, my, 350, 650, 50, 50)) {
-                    testString = "39. Supernova";
+                    testString = "40. Supernova";
                 } else if (mouseOver(mx, my, 450, 650, 50, 50)) {
-                    testString = "40. The Beginning of Time";
+                    testString = "41. The Beginning of Time";
                 } else if (mouseOver(mx, my, 550, 650, 50, 50)) {
-                    testString = "41. Marbl";
+                    testString = "42. Marbl";
                 }
                 // else change to zero
                 else testString = "";
@@ -175,400 +175,400 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
             if (page == 2) {
                 // first row
                 if (mouseOver(mx, my, 50, 50, 50, 50)) {
-                    testString = "42. A Dreamer";
+                    testString = "43. A Dreamer";
                 } else if (mouseOver(mx, my, 150, 50, 50, 50)) {
-                    testString = "43. Ghost House";
+                    testString = "44. Ghost House";
                 } else if (mouseOver(mx, my, 250, 50, 50, 50)) {
-                    testString = "44. Jude";
+                    testString = "45. Jude";
                 } else if (mouseOver(mx, my, 350, 50, 50, 50)) {
-                    testString = "45. Don't Hold Back";
+                    testString = "46. Don't Hold Back";
                 } else if (mouseOver(mx, my, 450, 50, 50, 50)) {
-                    testString = "46. Ouais Ouais";
+                    testString = "47. Ouais Ouais";
                 } else if (mouseOver(mx, my, 550, 50, 50, 50)) {
-                    testString = "47. Things That You Do";
+                    testString = "48. Things That You Do";
                 }
                 // second row
                 else if (mouseOver(mx, my, 50, 150, 50, 50)) {
-                    testString = "48. Sad Summer";
+                    testString = "49. Sad Summer";
                 } else if (mouseOver(mx, my, 150, 150, 50, 50)) {
-                    testString = "49. Wishing";
+                    testString = "50. Wishing";
                 } else if (mouseOver(mx, my, 250, 150, 50, 50)) {
-                    testString = "50. Call the Popo";
+                    testString = "51. Call the Popo";
                 } else if (mouseOver(mx, my, 350, 150, 50, 50)) {
-                    testString = "51. Ocean Ambiance Remix";
+                    testString = "52. Ocean Ambiance Remix";
                 } else if (mouseOver(mx, my, 450, 150, 50, 50)) {
-                    testString = "52. Snowcone";
+                    testString = "53. Snowcone";
                 } else if (mouseOver(mx, my, 550, 150, 50, 50)) {
-                    testString = "53. Sawdust Angels";
+                    testString = "54. Sawdust Angels";
                 }
                 // third row
                 else if (mouseOver(mx, my, 50, 250, 50, 50)) {
-                    testString = "54. Sky High";
+                    testString = "55. Sky High";
                 } else if (mouseOver(mx, my, 150, 250, 50, 50)) {
-                    testString = "55. My Heart";
+                    testString = "56. My Heart";
                 } else if (mouseOver(mx, my, 250, 250, 50, 50)) {
-                    testString = "56. Nekozilla";
+                    testString = "57. Nekozilla";
                 } else if (mouseOver(mx, my, 350, 250, 50, 50)) {
-                    testString = "57. Cloud 9";
+                    testString = "58. Cloud 9";
                 } else if (mouseOver(mx, my, 450, 250, 50, 50)) {
-                    testString = "58. Sunburst";
+                    testString = "59. Sunburst";
                 } else if (mouseOver(mx, my, 550, 250, 50, 50)) {
-                    testString = "59. Hellcat";
+                    testString = "60. Hellcat";
                 }
                 // fourth row
                 else if (mouseOver(mx, my, 50, 350, 50, 50)) {
-                    testString = "60. Song for Denise";
+                    testString = "61. Song for Denise";
                 }
                 else if (mouseOver(mx, my, 150, 350, 50, 50)) {
-                    testString = "61. Dollar Needles 1";
+                    testString = "62. Dollar Needles 1";
                 }
                 else if (mouseOver(mx, my, 250, 350, 50, 50)) {
-                    testString = "62. Dollar Needles 3";
+                    testString = "63. Dollar Needles 3";
                 }
                 else if (mouseOver(mx, my, 350, 350, 50, 50)) {
-                    testString = "63. Behind These Closed Doors";
+                    testString = "64. Behind These Closed Doors";
                 }
                 else if (mouseOver(mx, my, 450, 350, 50, 50)) {
-                    testString = "64. Otis McMusic";
+                    testString = "65. Otis McMusic";
                 }
                 else if (mouseOver(mx, my, 550, 350, 50, 50)) {
-                    testString = "65. Not for Nothing";
+                    testString = "66. Not for Nothing";
                 }
                 // fifth row
                 else if (mouseOver(mx, my, 50, 450, 50, 50)) {
-                    testString = "66. Mind Control";
+                    testString = "67. Mind Control";
                 }
                 else if (mouseOver(mx, my, 150, 450, 50, 50)) {
-                    testString = "67. Memories";
+                    testString = "68. Memories";
                 }
                 else if (mouseOver(mx, my, 250, 450, 50, 50)) {
-                    testString = "68. 2011";
+                    testString = "69. 2011";
                 }
                 else if (mouseOver(mx, my, 350, 450, 50, 50)) {
-                    testString = "69. 10000";
+                    testString = "70. 10000";
                 }
                 else if (mouseOver(mx, my, 450, 450, 50, 50)) {
-                    testString = "70. Merry Christmas";
+                    testString = "71. Merry Christmas";
                 }
                 else if (mouseOver(mx, my, 550, 450, 50, 50)) {
-                    testString = "71. Crab Rave";
+                    testString = "72. Crab Rave";
                 }
                 // sixth row
                 else if (mouseOver(mx, my, 50, 550, 50, 50)) {
-                    testString = "72. Insurgent";
+                    testString = "73. Insurgent";
                 }
                 else if (mouseOver(mx, my, 150, 550, 50, 50)) {
-                    testString = "73. Late Night Lo-Fi";
+                    testString = "74. Late Night Lo-Fi";
                 }
                 else if (mouseOver(mx, my, 250, 550, 50, 50)) {
-                    testString = "74. Lith Harbor";
+                    testString = "75. Lith Harbor";
                 }
                 else if (mouseOver(mx, my, 350, 550, 50, 50)) {
-                    testString = "75. Lost in Thought";
+                    testString = "76. Lost in Thought";
                 }
                 else if (mouseOver(mx, my, 450, 550, 50, 50)) {
-                    testString = "76. Holystone";
+                    testString = "77. Holystone";
                 }
                 else if (mouseOver(mx, my, 550, 550, 50, 50)) {
-                    testString = "77. Pounce";
+                    testString = "78. Pounce";
                 }
                 // seventh row
                 else if (mouseOver(mx, my, 50, 650, 50, 50)) {
-                    testString = "78. Futa Dick";
+                    testString = "79. Futa Dick";
                 }
                 else if (mouseOver(mx, my, 150, 650, 50, 50)) {
-                    testString = "79. Golden Haze";
+                    testString = "80. Golden Haze";
                 }
                 else if (mouseOver(mx, my, 250, 650, 50, 50)) {
-                    testString = "80. Grim Reaper";
+                    testString = "81. Grim Reaper";
                 }
                 else if (mouseOver(mx, my, 350, 650, 50, 50)) {
-                    testString = "81. Highscore";
+                    testString = "82. Highscore";
                 }
                 else if (mouseOver(mx, my, 450, 650, 50, 50)) {
-                    testString = "82. Purity";
+                    testString = "83. Purity";
                 }
                 else if (mouseOver(mx, my, 550, 650, 50, 50)) {
-                    testString = "83. Yellow Orange Afternoon";
+                    testString = "84. Yellow Orange Afternoon";
                 }
                 // else change to zero
                 else testString = "";
-            }
+            }//43
             if (page == 3) {
                 // first row
                 if (mouseOver(mx, my, 50, 50, 50, 50)) {
-                    testString = "84. Surface";
+                    testString = "85. Surface";
                 }
                 else if (mouseOver(mx, my, 150, 50, 50, 50)) {
-                    testString = "85. Arabic Nokia Type Beat";
+                    testString = "86. Arabic Nokia Type Beat";
                 }
                 else if (mouseOver(mx, my, 250, 50, 50, 50)) {
-                    testString = "86. Energy Drink";
+                    testString = "87. Energy Drink";
                 }
                 else if (mouseOver(mx, my, 350, 50, 50, 50)) {
-                    testString = "87. Happy";
+                    testString = "88. Happy";
                 }
                 else if (mouseOver(mx, my, 450, 50, 50, 50)) {
-                    testString = "88. Moonsugar";
+                    testString = "89. Moonsugar";
                 }
                 else if (mouseOver(mx, my, 550, 50, 50, 50)) {
-                    testString = "89. Rubik";
+                    testString = "90. Rubik";
                 }
                 // second row
                 else if (mouseOver(mx, my, 50, 150, 50, 50)) {
-                    testString = "90. Ignition";
+                    testString = "91. Ignition";
                 }
                 else if (mouseOver(mx, my, 150, 150, 50, 50)) {
-                    testString = "91. The Force";
+                    testString = "92. The Force";
                 }
                 else if (mouseOver(mx, my, 250, 150, 50, 50)) {
-                    testString = "92. Candyland";
+                    testString = "93. Candyland";
                 }
                 else if (mouseOver(mx, my, 350, 150, 50, 50)) {
-                    testString = "93. Infectious";
+                    testString = "94. Infectious";
                 }
                 else if (mouseOver(mx, my, 450, 150, 50, 50)) {
-                    testString = "94. Crazy";
+                    testString = "95. Crazy";
                 }
                 else if (mouseOver(mx, my, 550, 150, 50, 50)) {
-                    testString = "95. Race Around the World";
+                    testString = "96. Race Around the World";
                 }
                 // third row
                 else if (mouseOver(mx, my, 50, 250, 50, 50)) {
-                    testString = "96. Ice Flow";
+                    testString = "97. Ice Flow";
                 }
                 else if (mouseOver(mx, my, 150, 250, 50, 50)) {
-                    testString = "97. Kalimba";
+                    testString = "98. Kalimba";
                 }
                 else if (mouseOver(mx, my, 250, 250, 50, 50)) {
-                    testString = "98. Who Likes to Party";
+                    testString = "99. Who Likes to Party";
                 }
                 else if (mouseOver(mx, my, 350, 250, 50, 50)) {
-                    testString = "99. Invasion of the Gabber Robots";
+                    testString = "100. Invasion of the Gabber Robots";
                 }
                 else if (mouseOver(mx, my, 450, 250, 50, 50)) {
-                    testString = "100. Hazmat";
+                    testString = "101. Hazmat";
                 }
                 else if (mouseOver(mx, my, 550, 250, 50, 50)) {
-                    testString = "101. Panda Dance";
+                    testString = "102. Panda Dance";
                 }
                 // forth row
                 else if (mouseOver(mx, my, 50, 350, 50, 50)) {
-                    testString = "102. Get Up";
+                    testString = "103. Get Up";
                 }
                 else if (mouseOver(mx, my, 150, 350, 50, 50)) {
-                    testString = "103. River";
+                    testString = "104. River";
                 }
                 else if (mouseOver(mx, my, 250, 350, 50, 50)) {
-                    testString = "104. Follow";
+                    testString = "105. Follow";
                 }
                 else if (mouseOver(mx, my, 350, 350, 50, 50)) {
-                    testString = "105. Slime";
+                    testString = "106. Slime";
                 }
                 else if (mouseOver(mx, my, 450, 350, 50, 50)) {
-                    testString = "106. Euphoria";
+                    testString = "107. Euphoria";
                 }
                 else if (mouseOver(mx, my, 550, 350, 50, 50)) {
-                    testString = "107. Nautilus";
+                    testString = "108. Nautilus";
                 }
                 // fifth row
                 else if (mouseOver(mx, my, 50, 450, 50, 50)) {
-                    testString = "108. Crystal Corruption";
+                    testString = "109. Crystal Corruption";
                 }
                 else if (mouseOver(mx, my, 150, 450, 50, 50)) {
-                    testString = "109. Crazy Frog";
+                    testString = "110. Crazy Frog";
                 }
                 else if (mouseOver(mx, my, 250, 450, 50, 50)) {
-                    testString = "110. Never Lose Hope";
+                    testString = "111. Never Lose Hope";
                 }
                 else if (mouseOver(mx, my, 350, 450, 50, 50)) {
-                    testString = "111. Skystrike";
+                    testString = "112. Skystrike";
                 }
                 else if (mouseOver(mx, my, 450, 450, 50, 50)) {
-                    testString = "112. Starchaser";
+                    testString = "113. Starchaser";
                 }
                 else if (mouseOver(mx, my, 550, 450, 50, 50)) {
-                    testString = "113. A Newer Dawn";
+                    testString = "114. A Newer Dawn";
                 }
                 // sixth row
                 else if (mouseOver(mx, my, 50, 550, 50, 50)) {
-                    testString = "114. Monody";
+                    testString = "115. Monody";
                 }
                 else if (mouseOver(mx, my, 150, 550, 50, 50)) {
-                    testString = "115. Unity";
+                    testString = "116. Unity";
                 }
                 else if (mouseOver(mx, my, 250, 550, 50, 50)) {
-                    testString = "116. Xenogenesis";
+                    testString = "117. Xenogenesis";
                 }
                 else if (mouseOver(mx, my, 350, 550, 50, 50)) {
-                    testString = "117. Time Stops";
+                    testString = "118. Time Stops";
                 }
                 else if (mouseOver(mx, my, 450, 550, 50, 50)) {
-                    testString = "118. Badland";
+                    testString = "119. Badland";
                 }
                 else if (mouseOver(mx, my, 550, 550, 50, 50)) {
-                    testString = "119. Challenger";
+                    testString = "120. Challenger";
                 }
                 // seventh row
                 else if (mouseOver(mx, my, 50, 650, 50, 50)) {
-                    testString = "120. Bluemoon";
+                    testString = "121. Bluemoon";
                 }
                 else if (mouseOver(mx, my, 150, 650, 50, 50)) {
-                    testString = "121. Cherry Blossoms";
+                    testString = "122. Cherry Blossoms";
                 }
                 else if (mouseOver(mx, my, 250, 650, 50, 50)) {
-                    testString = "122. Walkman";
+                    testString = "123. Walkman";
                 }
                 else if (mouseOver(mx, my, 350, 650, 50, 50)) {
-                    testString = "123. Beyond the Walls";
+                    testString = "124. Beyond the Walls";
                 }
                 else if (mouseOver(mx, my, 450, 650, 50, 50)) {
-                    testString = "124. April";
+                    testString = "125. April";
                 }
                 else if (mouseOver(mx, my, 550, 650, 50, 50)) {
-                    testString = "125. Sunlight";
+                    testString = "126. Sunlight";
                 }
                 // else change to zero
                 else testString = "";
-            }
+            }//85
             if (page == 4) {
                 // first row
                 if (mouseOver(mx, my, 50, 50, 50, 50)){
-                    testString = "126. Cyptik Dance";
+                    testString = "127. Cyptik Dance";
                 }
                 else if (mouseOver(mx, my, 150, 50, 50, 50)){
-                    testString = "127. Leaving Leafwood Forest";
+                    testString = "128. Leaving Leafwood Forest";
                 }
                 else if (mouseOver(mx, my, 250, 50, 50, 50)){
-                    testString = "128. Troglodyte";
+                    testString = "129. Troglodyte";
                 }
                 else if (mouseOver(mx, my, 350, 50, 50, 50)){
-                    testString = "129. The Maze of Mayonnaise";
+                    testString = "130. The Maze of Mayonnaise";
                 }
                 else if (mouseOver(mx, my, 450, 50, 50, 50)){
-                    testString = "130. Starship Showdown";
+                    testString = "131. Starship Showdown";
                 }
                 else if (mouseOver(mx, my, 550, 50, 50, 50)){
-                    testString = "131. Kumquat";
+                    testString = "132. Kumquat";
                 }
                 // second row
                 else if (mouseOver(mx, my, 50, 150, 50, 50)){
-                    testString = "132. O-Oh Hi-i T-There, J-J-Jaclyn";
+                    testString = "133. O-Oh Hi-i T-There, J-J-Jaclyn";
                 }
                 else if (mouseOver(mx, my, 150, 150, 50, 50)){
-                    testString = "133. This Chap Named Jacques";
+                    testString = "134. This Chap Named Jacques";
                 }
                 else if (mouseOver(mx, my, 250, 150, 50, 50)){
-                    testString = "134. Liftoff";
+                    testString = "135. Liftoff";
                 }
                 else if (mouseOver(mx, my, 350, 150, 50, 50)){
-                    testString = "135. Never Be Alone";
+                    testString = "136. Never Be Alone";
                 }
                 else if (mouseOver(mx, my, 450, 150, 50, 50)){
-                    testString = "136. Solitude";
+                    testString = "137. Solitude";
                 }
                 else if (mouseOver(mx, my, 550, 150, 50, 50)){
-                    testString = "137. Close to the Sun";
+                    testString = "138. Close to the Sun";
                 }
                 // third row
                 else if (mouseOver(mx, my, 50, 250, 50, 50)){
-                    testString = "138. Nanamori";
+                    testString = "139. Nanamori";
                 }
                 else if (mouseOver(mx, my, 150, 250, 50, 50)){
-                    testString = "139. Fury";
+                    testString = "140. Fury";
                 }
                 else if (mouseOver(mx, my, 250, 250, 50, 50)){
-                    testString = "140. Desu Ka";
+                    testString = "141. Desu Ka";
                 }
                 else if (mouseOver(mx, my, 350, 250, 50, 50)){
-                    testString = "141. Voices";
+                    testString = "142. Voices";
                 }
                 else if (mouseOver(mx, my, 450, 250, 50, 50)){
-                    testString = "142. Dancing";
+                    testString = "143. Dancing";
                 }
                 else if (mouseOver(mx, my, 550, 250, 50, 50)){
-                    testString = "143. Shining Space";
+                    testString = "144. Shining Space";
                 }
                 // fourth row
                 else if (mouseOver(mx, my, 50, 350, 50, 50)){
-                    testString = "144. Space Invaders";
+                    testString = "145. Space Invaders";
                 }
                 else if (mouseOver(mx, my, 150, 350, 50, 50)){
-                    testString = "145. Drippy Dub";
+                    testString = "146. Drippy Dub";
                 }
                 else if (mouseOver(mx, my, 250, 350, 50, 50)){
-                    testString = "146. Fake Princess";
+                    testString = "147. Fake Princess";
                 }
                 else if (mouseOver(mx, my, 350, 350, 50, 50)){
-                    testString = "147. The Beauty and The Lazergun";
+                    testString = "148. The Beauty and The Lazergun";
                 }
                 else if (mouseOver(mx, my, 450, 350, 50, 50)){
-                    testString = "148. Afterimage";
+                    testString = "149. Afterimage";
                 }
                 else if (mouseOver(mx, my, 550, 350, 50, 50)){
-                    testString = "149. Star Wars Remix";
+                    testString = "150. Star Wars Remix";
                 }
                 // fifth row
                 else if (mouseOver(mx, my, 50, 450, 50, 50)){
-                    testString = "150. Kiss Me Kiss You";
+                    testString = "151. Kiss Me Kiss You";
                 }
                 else if (mouseOver(mx, my, 150, 450, 50, 50)){
-                    testString = "151. Enigma";
+                    testString = "152. Enigma";
                 }
                 else if (mouseOver(mx, my, 250, 450, 50, 50)){
-                    testString = "152. Never Make It";
+                    testString = "153. Never Make It";
                 }
                 else if (mouseOver(mx, my, 350, 450, 50, 50)){
-                    testString = "153. Flight";
+                    testString = "154. Flight";
                 }
                 else if (mouseOver(mx, my, 450, 450, 50, 50)){
-                    testString = "154. Journey";
+                    testString = "155. Journey";
                 }
                 else if (mouseOver(mx, my, 550, 450, 50, 50)){
-                    testString = "155. Lonely Forest";
+                    testString = "156. Lonely Forest";
                 }
                 // sixth row
                 else if (mouseOver(mx, my, 50, 550, 50, 50)){
-                    testString = "156. He's a Pirate";
+                    testString = "157. He's a Pirate";
                 }
                 else if (mouseOver(mx, my, 150, 550, 50, 50)){
-                    testString = "157. Aquamarine";
+                    testString = "158. Aquamarine";
                 }
                 else if (mouseOver(mx, my, 250, 550, 50, 50)){
-                    testString = "158. Boombox 2012";
+                    testString = "159. Boombox 2012";
                 }
                 else if (mouseOver(mx, my, 350, 550, 50, 50)){
-                    testString = "159. Dreams";
+                    testString = "160. Dreams";
                 }
                 else if (mouseOver(mx, my, 450, 550, 50, 50)){
-                    testString = "160. Requiem for a Dream";
+                    testString = "161. Requiem for a Dream";
                 }
                 else if (mouseOver(mx, my, 550, 550, 50, 50)){
-                    testString = "161. Eurodancer";
+                    testString = "162. Eurodancer";
                 }
                 // seventh row
                 else if (mouseOver(mx, my, 50, 650, 50, 50)){
-                    testString = "162. Hello";
+                    testString = "163. Hello";
                 }
                 else if (mouseOver(mx, my, 150, 650, 50, 50)){
-                    testString = "163. Mayday";
+                    testString = "164. Mayday";
                 }
                 else if (mouseOver(mx, my, 250, 650, 50, 50)){
-                    testString = "164. Firefiles (Zyzyx Remix)";
+                    testString = "165. Firefiles (Zyzyx Remix)";
                 }
                 else if (mouseOver(mx, my, 350, 650, 50, 50)){
-                    testString = "165. Echolands";
+                    testString = "166. Echolands";
                 }
                 else if (mouseOver(mx, my, 450, 650, 50, 50)){
-                    testString = "166. Voiceless";
+                    testString = "167. Voiceless";
                 }
                 else if (mouseOver(mx, my, 550, 650, 50, 50)){
-                    testString = "167. Vaporwave Aesthetics";
+                    testString = "168. Vaporwave Aesthetics";
                 }
 
                 // else change to zero
                 else testString = "";
-            }
+            }//127
             /*if (mouseOver(mx, my, 50, 50, 50, 50)){
                 testString = "";
             }
@@ -992,8 +992,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 66;
                 }
                 if (mouseOver(mx, my, 150, 550, 50, 50)) {
-                    levelid = 31;
-                    System.out.println("world 31");
+                    levelid = 32;
+                    System.out.println("world 32");
 
                     if (game_.music) audioplayer_.getMusic("overcloud").loop();
                     // reset method
@@ -1005,8 +1005,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 138;
                 }
                 if (mouseOver(mx, my, 250, 550, 50, 50)) {
-                    levelid = 32;
-                    System.out.println("world 32");
+                    levelid = 33;
+                    System.out.println("world 33");
 
                     if (game_.music) audioplayer_.getMusic("ppaper_pplanes").loop();
                     // reset method
@@ -1018,8 +1018,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 57;
                 }
                 if (mouseOver(mx, my, 350, 550, 50, 50)) {
-                    levelid = 33;
-                    System.out.println("world 33");
+                    levelid = 34;
+                    System.out.println("world 34");
 
                     if (game_.music) audioplayer_.getMusic("prelude").loop();
                     // reset method
@@ -1031,8 +1031,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 100;
                 }
                 if (mouseOver(mx, my, 450, 550, 50, 50)) {
-                    levelid = 34;
-                    System.out.println("world 34");
+                    levelid = 35;
+                    System.out.println("world 35");
 
                     if (game_.music) audioplayer_.getMusic("spirit").loop();
                     // reset method
@@ -1044,8 +1044,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 91;
                 }
                 if (mouseOver(mx, my, 550, 550, 50, 50)) {
-                    levelid = 35;
-                    System.out.println("world 35");
+                    levelid = 36;
+                    System.out.println("world 36");
 
                     if (game_.music) audioplayer_.getMusic("catalyze").loop();
                     // reset method
@@ -1058,8 +1058,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // seventh row
                 if (mouseOver(mx, my, 50, 650, 50, 50)) {
-                    levelid = 36;
-                    System.out.println("world 36");
+                    levelid = 37;
+                    System.out.println("world 37");
 
                     if (game_.music) audioplayer_.getMusic("stray").loop();
                     // reset method
@@ -1071,8 +1071,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 99;
                 }
                 if (mouseOver(mx, my, 150, 650, 50, 50)) {
-                    levelid = 37;
-                    System.out.println("world 37");
+                    levelid = 38;
+                    System.out.println("world 38");
 
                     if (game_.music) audioplayer_.getMusic("jazz").loop();
                     // reset method
@@ -1084,8 +1084,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 91;
                 }
                 if (mouseOver(mx, my, 250, 650, 50, 50)) {
-                    levelid = 38;
-                    System.out.println("world 38");
+                    levelid = 39;
+                    System.out.println("world 39");
 
                     if (game_.music) audioplayer_.getMusic("success").loop();
                     // reset method
@@ -1097,8 +1097,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 140;
                 }
                 if (mouseOver(mx, my, 350, 650, 50, 50)) {
-                    levelid = 39;
-                    System.out.println("world 39");
+                    levelid = 40;
+                    System.out.println("world 40");
 
                     if (game_.music) audioplayer_.getMusic("supernova").loop();
                     // reset method
@@ -1110,8 +1110,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 110;
                 }
                 if (mouseOver(mx, my, 450, 650, 50, 50)) {
-                    levelid = 40;
-                    System.out.println("world 40");
+                    levelid = 41;
+                    System.out.println("world 41");
 
                     if (game_.music) audioplayer_.getMusic("time").loop();
                     // reset method
@@ -1123,8 +1123,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 116;
                 }
                 if (mouseOver(mx, my, 550, 650, 50, 50)) {
-                    levelid = 41;
-                    System.out.println("world 41");
+                    levelid = 42;
+                    System.out.println("world 42");
 
                     if (game_.music) audioplayer_.getMusic("marbl").loop();
                     // reset method
@@ -1139,8 +1139,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
             if (page == 2) {
                 // first row
                 if (mouseOver(mx, my, 50, 50, 50, 50)) {
-                    levelid = 42;
-                    System.out.println("world 42");
+                    levelid = 43;
+                    System.out.println("world 43");
 
                     if (game_.music) audioplayer_.getMusic("dreamer").loop();
                     // reset method
@@ -1152,8 +1152,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 139;
                 }
                 if (mouseOver(mx, my, 150, 50, 50, 50)) {
-                    levelid = 43;
-                    System.out.println("world 43");
+                    levelid = 44;
+                    System.out.println("world 44");
 
                     if (game_.music) audioplayer_.getMusic("ghost_house").loop();
                     // reset method
@@ -1165,8 +1165,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 117;
                 }
                 if (mouseOver(mx, my, 250, 50, 50, 50)) {
-                    levelid = 44;
-                    System.out.println("world 44");
+                    levelid = 45;
+                    System.out.println("world 45");
 
                     if (game_.music) audioplayer_.getMusic("jude").loop();
                     // reset method
@@ -1178,8 +1178,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 113;
                 }
                 if (mouseOver(mx, my, 350, 50, 50, 50)) {
-                    levelid = 45;
-                    System.out.println("world 45");
+                    levelid = 46;
+                    System.out.println("world 46");
 
                     if (game_.music) audioplayer_.getMusic("don't_hold_back").loop();
                     // reset method
@@ -1191,8 +1191,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 111;
                 }
                 if (mouseOver(mx, my, 450, 50, 50, 50)) {
-                    levelid = 46;
-                    System.out.println("world 46");
+                    levelid = 47;
+                    System.out.println("world 47");
 
                     if (game_.music) audioplayer_.getMusic("ouais_ouais").loop();
                     // reset method
@@ -1204,8 +1204,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 116;
                 }
                 if (mouseOver(mx, my, 550, 50, 50, 50)) {
-                    levelid = 47;
-                    System.out.println("world 47");
+                    levelid = 48;
+                    System.out.println("world 48");
 
                     if (game_.music) audioplayer_.getMusic("things_that_you_do").loop();
                     // reset method
@@ -1218,8 +1218,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // second row
                 if (mouseOver(mx, my, 50, 150, 50, 50)) {
-                    levelid = 48;
-                    System.out.println("world 48");
+                    levelid = 49;
+                    System.out.println("world 49");
 
                     if (game_.music) audioplayer_.getMusic("sad_summer").loop();
                     // reset method
@@ -1231,8 +1231,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 49;
                 }
                 if (mouseOver(mx, my, 150, 150, 50, 50)) {
-                    levelid = 49;
-                    System.out.println("world 49");
+                    levelid = 50;
+                    System.out.println("world 50");
 
                     if (game_.music) audioplayer_.getMusic("wishing").loop();
                     // reset method
@@ -1244,8 +1244,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 48;
                 }
                 if (mouseOver(mx, my, 250, 150, 50, 50)) {
-                    levelid = 50;
-                    System.out.println("world 50");
+                    levelid = 51;
+                    System.out.println("world 51");
 
                     if (game_.music) audioplayer_.getMusic("popo").loop();
                     // reset method
@@ -1257,8 +1257,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 61;
                 }
                 if (mouseOver(mx, my, 350, 150, 50, 50)) {
-                    levelid = 51;
-                    System.out.println("world 51");
+                    levelid = 52;
+                    System.out.println("world 52");
 
                     if (game_.music) audioplayer_.getMusic("ocean_biome").loop();
                     // reset method
@@ -1270,8 +1270,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 120;
                 }
                 if (mouseOver(mx, my, 450, 150, 50, 50)) {
-                    levelid = 52;
-                    System.out.println("world 52");
+                    levelid = 53;
+                    System.out.println("world 53");
 
                     if (game_.music) audioplayer_.getMusic("snowcone").loop();
                     // reset method
@@ -1283,8 +1283,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 90;
                 }
                 if (mouseOver(mx, my, 550, 150, 50, 50)) {
-                    levelid = 53;
-                    System.out.println("world 53");
+                    levelid = 54;
+                    System.out.println("world 54");
 
                     if (game_.music) audioplayer_.getMusic("sawdust_angels").loop();
                     // reset method
@@ -1297,8 +1297,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // third row
                 if (mouseOver(mx, my, 50, 250, 50, 50)) {
-                    levelid = 54;
-                    System.out.println("world 54");
+                    levelid = 55;
+                    System.out.println("world 55");
 
                     if (game_.music) audioplayer_.getMusic("sky_high").loop();
                     // reset method
@@ -1310,8 +1310,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 120;
                 }
                 if (mouseOver(mx, my, 150, 250, 50, 50)) {
-                    levelid = 55;
-                    System.out.println("world 55");
+                    levelid = 56;
+                    System.out.println("world 56");
 
                     if (game_.music) audioplayer_.getMusic("my_heart").loop();
                     // reset method
@@ -1323,8 +1323,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 98;
                 }
                 if (mouseOver(mx, my, 250, 250, 50, 50)) {
-                    levelid = 56;
-                    System.out.println("world 56");
+                    levelid = 57;
+                    System.out.println("world 57");
 
                     if (game_.music) audioplayer_.getMusic("nekozilla").loop();
                     // reset method
@@ -1336,8 +1336,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 88;
                 }
                 if (mouseOver(mx, my, 350, 250, 50, 50)) {
-                    levelid = 57;
-                    System.out.println("world 57");
+                    levelid = 58;
+                    System.out.println("world 58");
 
                     if (game_.music) audioplayer_.getMusic("cloud_9").loop();
                     // reset method
@@ -1349,8 +1349,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 146;
                 }
                 if (mouseOver(mx, my, 450, 250, 50, 50)) {
-                    levelid = 58;
-                    System.out.println("world 58");
+                    levelid = 59;
+                    System.out.println("world 59");
 
                     if (game_.music) audioplayer_.getMusic("sunburst").loop();
                     // reset method
@@ -1362,8 +1362,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 100;
                 }
                 if (mouseOver(mx, my, 550, 250, 50, 50)) {
-                    levelid = 59;
-                    System.out.println("world 59");
+                    levelid = 60;
+                    System.out.println("world 60");
 
                     if (game_.music) audioplayer_.getMusic("hellcat").loop();
                     // reset method
@@ -1376,8 +1376,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // fourth row
                 if (mouseOver(mx, my, 50, 350, 50, 50)) {
-                    levelid = 60;
-                    System.out.println("world 60");
+                    levelid = 61;
+                    System.out.println("world 61");
 
                     if (game_.music) audioplayer_.getMusic("denise").loop();
                     // reset method
@@ -1389,8 +1389,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 82;
                 }
                 if (mouseOver(mx, my, 150, 350, 50, 50)) {
-                    levelid = 61;
-                    System.out.println("world 61");
+                    levelid = 62;
+                    System.out.println("world 62");
 
                     if (game_.music) audioplayer_.getMusic("dollar_needles_1").loop();
                     // reset method
@@ -1402,8 +1402,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 53;
                 }
                 if (mouseOver(mx, my, 250, 350, 50, 50)) {
-                    levelid = 62;
-                    System.out.println("world 62");
+                    levelid = 63;
+                    System.out.println("world 63");
 
                     if (game_.music) audioplayer_.getMusic("dollar_needles_3").loop();
                     // reset method
@@ -1415,8 +1415,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 50;
                 }
                 if (mouseOver(mx, my, 350, 350, 50, 50)) {
-                    levelid = 63;
-                    System.out.println("world 63");
+                    levelid = 64;
+                    System.out.println("world 64");
 
                     if (game_.music) audioplayer_.getMusic("behind_these_closed_doors").loop();
                     // reset method
@@ -1428,8 +1428,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 48;
                 }
                 if (mouseOver(mx, my, 450, 350, 50, 50)) {
-                    levelid = 64;
-                    System.out.println("world 64");
+                    levelid = 65;
+                    System.out.println("world 65");
 
                     if (game_.music) audioplayer_.getMusic("otis_mcmusic").loop();
                     // reset method
@@ -1441,8 +1441,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 50;
                 }
                 if (mouseOver(mx, my, 550, 350, 50, 50)) {
-                    levelid = 65;
-                    System.out.println("world 65");
+                    levelid = 66;
+                    System.out.println("world 66");
 
                     if (game_.music) audioplayer_.getMusic("not_for_nothing").loop();
                     // reset method
@@ -1455,8 +1455,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // fifth row
                 if (mouseOver(mx, my, 50, 450, 50, 50)) {
-                    levelid = 66;
-                    System.out.println("world 66");
+                    levelid = 67;
+                    System.out.println("world 67");
 
                     if (game_.music) audioplayer_.getMusic("mind_control").loop();
                     // reset method
@@ -1468,8 +1468,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 140;
                 }
                 if (mouseOver(mx, my, 150, 450, 50, 50)) {
-                    levelid = 67;
-                    System.out.println("world 67");
+                    levelid = 68;
+                    System.out.println("world 68");
 
                     if (game_.music) audioplayer_.getMusic("memories").loop();
                     // reset method
@@ -1481,8 +1481,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 130;
                 }
                 if (mouseOver(mx, my, 250, 450, 50, 50)) {
-                    levelid = 68;
-                    System.out.println("world 68");
+                    levelid = 69;
+                    System.out.println("world 69");
 
                     if (game_.music) audioplayer_.getMusic("2011").loop();
                     // reset method
@@ -1494,8 +1494,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 82;
                 }
                 if (mouseOver(mx, my, 350, 450, 50, 50)) {
-                    levelid = 69;
-                    System.out.println("world 69");
+                    levelid = 70;
+                    System.out.println("world 70");
 
                     if (game_.music) audioplayer_.getMusic("10000").loop();
                     // reset method
@@ -1507,8 +1507,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 102;
                 }
                 if (mouseOver(mx, my, 450, 450, 50, 50)) {
-                    levelid = 70;
-                    System.out.println("world 70");
+                    levelid = 71;
+                    System.out.println("world 71");
 
                     if (game_.music) audioplayer_.getMusic("merry_christmas").loop();
                     // reset method
@@ -1520,8 +1520,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 50;
                 }
                 if (mouseOver(mx, my, 550, 450, 50, 50)) {
-                    levelid = 71;
-                    System.out.println("world 71");
+                    levelid = 72;
+                    System.out.println("world 72");
 
                     if (game_.music) audioplayer_.getMusic("crab_rave").loop();
                     // reset method
@@ -1534,8 +1534,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // sixth row
                 if (mouseOver(mx, my, 50, 550, 50, 50)) {
-                    levelid = 72;
-                    System.out.println("world 72");
+                    levelid = 73;
+                    System.out.println("world 73");
 
                     if (game_.music) audioplayer_.getMusic("insurgent").loop();
                     // reset method
@@ -1547,8 +1547,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 127;
                 }
                 if (mouseOver(mx, my, 150, 550, 50, 50)) {
-                    levelid = 73;
-                    System.out.println("world 73");
+                    levelid = 74;
+                    System.out.println("world 74");
 
                     if (game_.music) audioplayer_.getMusic("late_night_lo-fi").loop();
                     // reset method
@@ -1560,8 +1560,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 98;
                 }
                 if (mouseOver(mx, my, 250, 550, 50, 50)) {
-                    levelid = 74;
-                    System.out.println("world 74");
+                    levelid = 75;
+                    System.out.println("world 75");
 
                     if (game_.music) audioplayer_.getMusic("lith_harbor").loop();
                     // reset method
@@ -1573,8 +1573,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 79;
                 }
                 if (mouseOver(mx, my, 350, 550, 50, 50)) {
-                    levelid = 75;
-                    System.out.println("world 75");
+                    levelid = 76;
+                    System.out.println("world 76");
 
                     if (game_.music) audioplayer_.getMusic("lost_in_thought").loop();
                     // reset method
@@ -1586,8 +1586,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 31;
                 }
                 if (mouseOver(mx, my, 450, 550, 50, 50)) {
-                    levelid = 76;
-                    System.out.println("world 76");
+                    levelid = 77;
+                    System.out.println("world 77");
 
                     if (game_.music) audioplayer_.getMusic("holystone").loop();
                     // reset method
@@ -1599,8 +1599,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 186;
                 }
                 if (mouseOver(mx, my, 550, 550, 50, 50)) {
-                    levelid = 77;
-                    System.out.println("world 77");
+                    levelid = 78;
+                    System.out.println("world 78");
 
                     if (game_.music) audioplayer_.getMusic("pounce").loop();
                     // reset method
@@ -1613,8 +1613,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // seventh row
                 if (mouseOver(mx, my, 50, 650, 50, 50)) {
-                    levelid = 78;
-                    System.out.println("world 78");
+                    levelid = 79;
+                    System.out.println("world 79");
 
                     if (game_.music) audioplayer_.getMusic("dick").loop();
                     // reset method
@@ -1626,8 +1626,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 59;
                 }
                 if (mouseOver(mx, my, 150, 650, 50, 50)) {
-                    levelid = 79;
-                    System.out.println("world 79");
+                    levelid = 80;
+                    System.out.println("world 80");
 
                     if (game_.music) audioplayer_.getMusic("golden_haze").loop();
                     // reset method
@@ -1639,8 +1639,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 90;
                 }
                 if (mouseOver(mx, my, 250, 650, 50, 50)) {
-                    levelid = 80;
-                    System.out.println("world 80");
+                    levelid = 81;
+                    System.out.println("world 81");
 
                     if (game_.music) audioplayer_.getMusic("grim_reaper").loop();
                     // reset method
@@ -1652,8 +1652,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 46;
                 }
                 if (mouseOver(mx, my, 350, 650, 50, 50)) {
-                    levelid = 81;
-                    System.out.println("world 81");
+                    levelid = 82;
+                    System.out.println("world 82");
 
                     if (game_.music) audioplayer_.getMusic("highscore").loop();
                     // reset method
@@ -1665,8 +1665,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 118;
                 }
                 if (mouseOver(mx, my, 450, 650, 50, 50)) {
-                    levelid = 82;
-                    System.out.println("world 82");
+                    levelid = 83;
+                    System.out.println("world 83");
 
                     if (game_.music) audioplayer_.getMusic("purity").loop();
                     // reset method
@@ -1678,8 +1678,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 91;
                 }
                 if (mouseOver(mx, my, 550, 650, 50, 50)) {
-                    levelid = 83;
-                    System.out.println("world 83");
+                    levelid = 84;
+                    System.out.println("world 84");
 
                     if (game_.music) audioplayer_.getMusic("yellow_orange").loop();
                     // reset method
@@ -1694,8 +1694,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
             if (page == 3) {
                 // first row
                 if (mouseOver(mx, my, 50, 50, 50, 50)) {
-                    levelid = 84;
-                    System.out.println("world 84");
+                    levelid = 85;
+                    System.out.println("world 85");
 
                     if (game_.music) audioplayer_.getMusic("surface").loop();
                     // reset method
@@ -1707,8 +1707,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 91;
                 }
                 if (mouseOver(mx, my, 150, 50, 50, 50)) {
-                    levelid = 85;
-                    System.out.println("world 85");
+                    levelid = 86;
+                    System.out.println("world 86");
 
                     if (game_.music) audioplayer_.getMusic("nokia_arabic").loop();
                     // reset method
@@ -1720,8 +1720,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 38;
                 }
                 if (mouseOver(mx, my, 250, 50, 50, 50)) {
-                    levelid = 86;
-                    System.out.println("world 86");
+                    levelid = 87;
+                    System.out.println("world 87");
 
                     if (game_.music) audioplayer_.getMusic("nrg_drink").loop();
                     // reset method
@@ -1733,8 +1733,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 162;
                 }
                 if (mouseOver(mx, my, 350, 50, 50, 50)) {
-                    levelid = 87;
-                    System.out.println("world 87");
+                    levelid = 88;
+                    System.out.println("world 88");
 
                     if (game_.music) audioplayer_.getMusic("happy").loop();
                     // reset method
@@ -1746,8 +1746,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 125;
                 }
                 if (mouseOver(mx, my, 450, 50, 50, 50)) {
-                    levelid = 88;
-                    System.out.println("world 88");
+                    levelid = 89;
+                    System.out.println("world 89");
 
                     if (game_.music) audioplayer_.getMusic("moonsugar").loop();
                     // reset method
@@ -1759,8 +1759,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 140;
                 }
                 if (mouseOver(mx, my, 550, 50, 50, 50)) {
-                    levelid = 89;
-                    System.out.println("world 89");
+                    levelid = 90;
+                    System.out.println("world 90");
 
                     if (game_.music) audioplayer_.getMusic("rubik").loop();
                     // reset method
@@ -1773,8 +1773,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // second row
                 if (mouseOver(mx, my, 50, 150, 50, 50)) {
-                    levelid = 90;
-                    System.out.println("world 90");
+                    levelid = 91;
+                    System.out.println("world 91");
 
                     if (game_.music) audioplayer_.getMusic("ignition").loop();
                     // reset method
@@ -1786,8 +1786,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 66;
                 }
                 if (mouseOver(mx, my, 150, 150, 50, 50)) {
-                    levelid = 91;
-                    System.out.println("world 91");
+                    levelid = 92;
+                    System.out.println("world 92");
 
                     if (game_.music) audioplayer_.getMusic("the_force").loop();
                     // reset method
@@ -1799,8 +1799,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 139;
                 }
                 if (mouseOver(mx, my, 250, 150, 50, 50)) {
-                    levelid = 92;
-                    System.out.println("world 92");
+                    levelid = 93;
+                    System.out.println("world 93");
 
                     if (game_.music) audioplayer_.getMusic("candyland").loop();
                     // reset method
@@ -1812,8 +1812,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 107;
                 }
                 if (mouseOver(mx, my, 350, 150, 50, 50)) {
-                    levelid = 93;
-                    System.out.println("world 93");
+                    levelid = 94;
+                    System.out.println("world 94");
 
                     if (game_.music) audioplayer_.getMusic("infectious").loop();
                     // reset method
@@ -1825,8 +1825,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 138;
                 }
                 if (mouseOver(mx, my, 450, 150, 50, 50)) {
-                    levelid = 94;
-                    System.out.println("world 94");
+                    levelid = 95;
+                    System.out.println("world 95");
 
                     if (game_.music) audioplayer_.getMusic("crazy").loop();
                     // reset method
@@ -1838,8 +1838,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 110;
                 }
                 if (mouseOver(mx, my, 550, 150, 50, 50)) {
-                    levelid = 95;
-                    System.out.println("world 95");
+                    levelid = 96;
+                    System.out.println("world 96");
 
                     if (game_.music) audioplayer_.getMusic("race").loop();
                     // reset method
@@ -1852,8 +1852,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // third row
                 if (mouseOver(mx, my, 50, 250, 50, 50)) {
-                    levelid = 96;
-                    System.out.println("world 96");
+                    levelid = 97;
+                    System.out.println("world 97");
 
                     if (game_.music) audioplayer_.getMusic("ice_flow").loop();
                     // reset method
@@ -1865,8 +1865,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 82;
                 }
                 if (mouseOver(mx, my, 150, 250, 50, 50)) {
-                    levelid = 97;
-                    System.out.println("world 97");
+                    levelid = 98;
+                    System.out.println("world 98");
 
                     if (game_.music) audioplayer_.getMusic("kalimba").loop();
                     // reset method
@@ -1878,8 +1878,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 174;
                 }
                 if (mouseOver(mx, my, 250, 250, 50, 50)) {
-                    levelid = 98;
-                    System.out.println("world 98");
+                    levelid = 99;
+                    System.out.println("world 99");
 
                     if (game_.music) audioplayer_.getMusic("party").loop();
                     // reset method
@@ -1891,8 +1891,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 127;
                 }
                 if (mouseOver(mx, my, 350, 250, 50, 50)) {
-                    levelid = 99;
-                    System.out.println("world 99");
+                    levelid = 100;
+                    System.out.println("world 100");
 
                     if (game_.music) audioplayer_.getMusic("bass").loop();
                     // reset method
@@ -1904,8 +1904,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 160;
                 }
                 if (mouseOver(mx, my, 450, 250, 50, 50)) {
-                    levelid = 100;
-                    System.out.println("world 100");
+                    levelid = 101;
+                    System.out.println("world 101");
 
                     if (game_.music) audioplayer_.getMusic("hazmat").loop();
                     // reset method
@@ -1917,8 +1917,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 56;
                 }
                 if (mouseOver(mx, my, 550, 250, 50, 50)) {
-                    levelid = 101;
-                    System.out.println("world 101");
+                    levelid = 102;
+                    System.out.println("world 102");
 
                     if (game_.music) audioplayer_.getMusic("panda_dance").loop();
                     // reset method
@@ -1931,8 +1931,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // fourth row
                 if (mouseOver(mx, my, 50, 350, 50, 50)) {
-                    levelid = 102;
-                    System.out.println("world 102");
+                    levelid = 103;
+                    System.out.println("world 103");
 
                     if (game_.music) audioplayer_.getMusic("get_up").loop();
                     // reset method
@@ -1944,8 +1944,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 58;
                 }
                 if (mouseOver(mx, my, 150, 350, 50, 50)) {
-                    levelid = 103;
-                    System.out.println("world 103");
+                    levelid = 104;
+                    System.out.println("world 104");
 
                     if (game_.music) audioplayer_.getMusic("river").loop();
                     // reset method
@@ -1957,8 +1957,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 30;
                 }
                 if (mouseOver(mx, my, 250, 350, 50, 50)) {
-                    levelid = 104;
-                    System.out.println("world 104");
+                    levelid = 105;
+                    System.out.println("world 105");
 
                     if (game_.music) audioplayer_.getMusic("follow").loop();
                     // reset method
@@ -1970,8 +1970,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 141;
                 }
                 if (mouseOver(mx, my, 350, 350, 50, 50)) {
-                    levelid = 105;
-                    System.out.println("world 105");
+                    levelid = 106;
+                    System.out.println("world 106");
 
                     if (game_.music) audioplayer_.getMusic("slime").loop();
                     // reset method
@@ -1983,8 +1983,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 107;
                 }
                 if (mouseOver(mx, my, 450, 350, 50, 50)) {
-                    levelid = 106;
-                    System.out.println("world 106");
+                    levelid = 107;
+                    System.out.println("world 107");
 
                     if (game_.music) audioplayer_.getMusic("euphoria").loop();
                     // reset method
@@ -1996,8 +1996,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 84;
                 }
                 if (mouseOver(mx, my, 550, 350, 50, 50)) {
-                    levelid = 107;
-                    System.out.println("world 107");
+                    levelid = 108;
+                    System.out.println("world 108");
 
                     if (game_.music) audioplayer_.getMusic("nautilus").loop();
                     // reset method
@@ -2010,8 +2010,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // fifth row
                 if (mouseOver(mx, my, 50, 450, 50, 50)) {
-                    levelid = 108;
-                    System.out.println("world 108");
+                    levelid = 109;
+                    System.out.println("world 109");
 
                     if (game_.music) audioplayer_.getMusic("liaquo").loop();
                     // reset method
@@ -2023,8 +2023,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 183;
                 }
                 if (mouseOver(mx, my, 150, 450, 50, 50)) {
-                    levelid = 109;
-                    System.out.println("world 109");
+                    levelid = 110;
+                    System.out.println("world 110");
 
                     if (game_.music) audioplayer_.getMusic("crazy_frog").loop();
                     // reset method
@@ -2036,8 +2036,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 98;
                 }
                 if (mouseOver(mx, my, 250, 450, 50, 50)) {
-                    levelid = 110;
-                    System.out.println("world 110");
+                    levelid = 111;
+                    System.out.println("world 111");
 
                     if (game_.music) audioplayer_.getMusic("never_lose_hope").loop();
                     // reset method
@@ -2049,8 +2049,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 125;
                 }
                 if (mouseOver(mx, my, 350, 450, 50, 50)) {
-                    levelid = 111;
-                    System.out.println("world 111");
+                    levelid = 112;
+                    System.out.println("world 112");
 
                     if (game_.music) audioplayer_.getMusic("skystrike").loop();
                     // reset method
@@ -2062,8 +2062,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 114;
                 }
                 if (mouseOver(mx, my, 450, 450, 50, 50)) {
-                    levelid = 112;
-                    System.out.println("world 112");
+                    levelid = 113;
+                    System.out.println("world 113");
 
                     if (game_.music) audioplayer_.getMusic("starchaser").loop();
                     // reset method
@@ -2075,8 +2075,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 168;
                 }
                 if (mouseOver(mx, my, 550, 450, 50, 50)) {
-                    levelid = 113;
-                    System.out.println("world 113");
+                    levelid = 114;
+                    System.out.println("world 114");
 
                     if (game_.music) audioplayer_.getMusic("a_newer_dawn").loop();
                     // reset method
@@ -2089,8 +2089,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // sixth row
                 if (mouseOver(mx, my, 50, 550, 50, 50)) {
-                    levelid = 114;
-                    System.out.println("world 114");
+                    levelid = 115;
+                    System.out.println("world 115");
 
                     if (game_.music) audioplayer_.getMusic("monody").loop();
                     // reset method
@@ -2102,8 +2102,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 128;
                 }
                 if (mouseOver(mx, my, 150, 550, 50, 50)) {
-                    levelid = 115;
-                    System.out.println("world 115");
+                    levelid = 116;
+                    System.out.println("world 116");
 
                     if (game_.music) audioplayer_.getMusic("unity").loop();
                     // reset method
@@ -2115,8 +2115,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 105;
                 }
                 if (mouseOver(mx, my, 250, 550, 50, 50)) {
-                    levelid = 116;
-                    System.out.println("world 116");
+                    levelid = 117;
+                    System.out.println("world 117");
 
                     if (game_.music) audioplayer_.getMusic("xenogenesis").loop();
                     // reset method
@@ -2128,8 +2128,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 140;
                 }
                 if (mouseOver(mx, my, 350, 550, 50, 50)) {
-                    levelid = 117;
-                    System.out.println("world 117");
+                    levelid = 118;
+                    System.out.println("world 118");
 
                     if (game_.music) audioplayer_.getMusic("time_stops").loop();
                     // reset method
@@ -2141,8 +2141,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 177;
                 }
                 if (mouseOver(mx, my, 450, 550, 50, 50)) {
-                    levelid = 118;
-                    System.out.println("world 118");
+                    levelid = 119;
+                    System.out.println("world 119");
 
                     if (game_.music) audioplayer_.getMusic("badland").loop();
                     // reset method
@@ -2154,8 +2154,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 154;
                 }
                 if (mouseOver(mx, my, 550, 550, 50, 50)) {
-                    levelid = 119;
-                    System.out.println("world 119");
+                    levelid = 120;
+                    System.out.println("world 120");
 
                     if (game_.music) audioplayer_.getMusic("challenger").loop();
                     // reset method
@@ -2168,8 +2168,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // seventh row
                 if (mouseOver(mx, my, 50, 650, 50, 50)) {
-                    levelid = 120;
-                    System.out.println("world 120");
+                    levelid = 121;
+                    System.out.println("world 121");
 
                     if (game_.music) audioplayer_.getMusic("bluemoon").loop();
                     // reset method
@@ -2181,8 +2181,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 120;
                 }
                 if (mouseOver(mx, my, 150, 650, 50, 50)) {
-                    levelid = 121;
-                    System.out.println("world 121");
+                    levelid = 122;
+                    System.out.println("world 122");
 
                     if (game_.music) audioplayer_.getMusic("cherry_blossoms").loop();
                     // reset method
@@ -2194,8 +2194,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 141;
                 }
                 if (mouseOver(mx, my, 250, 650, 50, 50)) {
-                    levelid = 122;
-                    System.out.println("world 122");
+                    levelid = 123;
+                    System.out.println("world 123");
 
                     if (game_.music) audioplayer_.getMusic("walkman").loop();
                     // reset method
@@ -2207,8 +2207,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 102;
                 }
                 if (mouseOver(mx, my, 350, 650, 50, 50)) {
-                    levelid = 123;
-                    System.out.println("world 123");
+                    levelid = 124;
+                    System.out.println("world 124");
 
                     if (game_.music) audioplayer_.getMusic("beyond_the_walls").loop();
                     // reset method
@@ -2220,8 +2220,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 148;
                 }
                 if (mouseOver(mx, my, 450, 650, 50, 50)) {
-                    levelid = 124;
-                    System.out.println("world 124");
+                    levelid = 125;
+                    System.out.println("world 125");
 
                     if (game_.music) audioplayer_.getMusic("april").loop();
                     // reset method
@@ -2233,8 +2233,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 149;
                 }
                 if (mouseOver(mx, my, 550, 650, 50, 50)) {
-                    levelid = 125;
-                    System.out.println("world 125");
+                    levelid = 126;
+                    System.out.println("world 126");
 
                     if (game_.music) audioplayer_.getMusic("sunlight").loop();
                     // reset method
@@ -2249,8 +2249,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
             if (page == 4) {
                 // first row
                 if (mouseOver(mx, my, 50, 50, 50, 50)) {
-                    levelid = 126;
-                    System.out.println("world 126");
+                    levelid = 127;
+                    System.out.println("world 127");
 
                     if (game_.music) audioplayer_.getMusic("cyptik_dance").loop();
                     // reset method
@@ -2262,8 +2262,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 50;
                 }
                 if (mouseOver(mx, my, 150, 50, 50, 50)) {
-                    levelid = 127;
-                    System.out.println("world 127");
+                    levelid = 128;
+                    System.out.println("world 128");
 
                     if (game_.music) audioplayer_.getMusic("leaving_leafwood_forest").loop();
                     // reset method
@@ -2275,8 +2275,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 107;
                 }
                 if (mouseOver(mx, my, 250, 50, 50, 50)) {
-                    levelid = 128;
-                    System.out.println("world 128");
+                    levelid = 129;
+                    System.out.println("world 129");
 
                     if (game_.music) audioplayer_.getMusic("troglodyte").loop();
                     // reset method
@@ -2288,8 +2288,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 150;
                 }
                 if (mouseOver(mx, my, 350, 50, 50, 50)) {
-                    levelid = 129;
-                    System.out.println("world 129");
+                    levelid = 130;
+                    System.out.println("world 130");
 
                     if (game_.music) audioplayer_.getMusic("mayo").loop();
                     // reset method
@@ -2301,8 +2301,8 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 106;
                 }
                 if (mouseOver(mx, my, 450, 50, 50, 50)) {
-                    levelid = 130;
-                    System.out.println("world 130");
+                    levelid = 131;
+                    System.out.println("world 131");
 
                     if (game_.music) audioplayer_.getMusic("starship_showdown").loop();
                     // reset method
@@ -2314,7 +2314,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 152;
                 }
                 if (mouseOver(mx, my, 550, 50, 50, 50)) {
-                    levelid = 131;
+                    levelid = 132;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("kumquat").loop();
@@ -2328,7 +2328,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // second row
                 if (mouseOver(mx, my, 50, 150, 50, 50)) {
-                    levelid = 132;
+                    levelid = 133;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("jaclyn").loop();
@@ -2341,7 +2341,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 133;
                 }
                 if (mouseOver(mx, my, 150, 150, 50, 50)) {
-                    levelid = 133;
+                    levelid = 134;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("jacques").loop();
@@ -2354,7 +2354,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 69;
                 }
                 if (mouseOver(mx, my, 250, 150, 50, 50)) {
-                    levelid = 134;
+                    levelid = 135;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("liftoff").loop();
@@ -2367,7 +2367,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 148;
                 }
                 if (mouseOver(mx, my, 350, 150, 50, 50)) {
-                    levelid = 135;
+                    levelid = 136;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("never_be_alone").loop();
@@ -2380,7 +2380,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 143;
                 }
                 if (mouseOver(mx, my, 450, 150, 50, 50)) {
-                    levelid = 136;
+                    levelid = 137;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("solitude").loop();
@@ -2393,7 +2393,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 120;
                 }
                 if (mouseOver(mx, my, 550, 150, 50, 50)) {
-                    levelid = 137;
+                    levelid = 138;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("close_to_the_sun").loop();
@@ -2407,7 +2407,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // third row
                 if (mouseOver(mx, my, 50, 250, 50, 50)) {
-                    levelid = 138;
+                    levelid = 139;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("nanamori").loop();
@@ -2420,7 +2420,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 122;
                 }
                 if (mouseOver(mx, my, 150, 250, 50, 50)) {
-                    levelid = 139;
+                    levelid = 140;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("fury").loop();
@@ -2433,7 +2433,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 115;
                 }
                 if (mouseOver(mx, my, 250, 250, 50, 50)) {
-                    levelid = 140;
+                    levelid = 141;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("desu_ka").loop();
@@ -2446,7 +2446,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 132;
                 }
                 if (mouseOver(mx, my, 350, 250, 50, 50)) {
-                    levelid = 141;
+                    levelid = 142;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("voices").loop();
@@ -2459,7 +2459,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 85;
                 }
                 if (mouseOver(mx, my, 450, 250, 50, 50)) {
-                    levelid = 142;
+                    levelid = 143;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("dancing").loop();
@@ -2472,7 +2472,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 59;
                 }
                 if (mouseOver(mx, my, 550, 250, 50, 50)) {
-                    levelid = 143;
+                    levelid = 144;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("shining_space").loop();
@@ -2486,7 +2486,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // fourth row
                 if (mouseOver(mx, my, 50, 350, 50, 50)) {
-                    levelid = 144;
+                    levelid = 145;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("space_invaders").loop();
@@ -2499,7 +2499,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 188;
                 }
                 if (mouseOver(mx, my, 150, 350, 50, 50)) {
-                    levelid = 145;
+                    levelid = 146;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("drippy_dub").loop();
@@ -2512,7 +2512,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 160;
                 }
                 if (mouseOver(mx, my, 250, 350, 50, 50)) {
-                    levelid = 146;
+                    levelid = 147;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("fake_princess").loop();
@@ -2525,7 +2525,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 128;
                 }
                 if (mouseOver(mx, my, 350, 350, 50, 50)) {
-                    levelid = 147;
+                    levelid = 148;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("lazergun").loop();
@@ -2538,7 +2538,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 116;
                 }
                 if (mouseOver(mx, my, 450, 350, 50, 50)) {
-                    levelid = 148;
+                    levelid = 149;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("afterimage").loop();
@@ -2551,7 +2551,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 42;
                 }
                 if (mouseOver(mx, my, 550, 350, 50, 50)) {
-                    levelid = 149;
+                    levelid = 150;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("star_wars_remix").loop();
@@ -2565,7 +2565,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // fifth row
                 if (mouseOver(mx, my, 50, 450, 50, 50)) {
-                    levelid = 150;
+                    levelid = 151;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("kiss_me_kiss_you").loop();
@@ -2578,7 +2578,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 98;
                 }
                 if (mouseOver(mx, my, 150, 450, 50, 50)) {
-                    levelid = 151;
+                    levelid = 152;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("enigma").loop();
@@ -2591,7 +2591,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 123;
                 }
                 if (mouseOver(mx, my, 250, 450, 50, 50)) {
-                    levelid = 152;
+                    levelid = 153;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("never_make_it").loop();
@@ -2604,7 +2604,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 111;
                 }
                 if (mouseOver(mx, my, 350, 450, 50, 50)) {
-                    levelid = 153;
+                    levelid = 154;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("flight").loop();
@@ -2617,7 +2617,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 204;
                 }
                 if (mouseOver(mx, my, 450, 450, 50, 50)) {
-                    levelid = 154;
+                    levelid = 155;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("journey").loop();
@@ -2630,7 +2630,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 114;
                 }
                 if (mouseOver(mx, my, 550, 450, 50, 50)) {
-                    levelid = 155;
+                    levelid = 156;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("lonley_forest").loop();
@@ -2644,7 +2644,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // sixth row
                 if (mouseOver(mx, my, 50, 550, 50, 50)) {
-                    levelid = 156;
+                    levelid = 157;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("pirate").loop();
@@ -2657,7 +2657,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 130;
                 }
                 if (mouseOver(mx, my, 150, 550, 50, 50)) {
-                    levelid = 157;
+                    levelid = 158;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("aquamarine").loop();
@@ -2670,7 +2670,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 128;
                 }
                 if (mouseOver(mx, my, 250, 550, 50, 50)) {
-                    levelid = 158;
+                    levelid = 159;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("boombox").loop();
@@ -2683,7 +2683,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 153;
                 }
                 if (mouseOver(mx, my, 350, 550, 50, 50)) {
-                    levelid = 159;
+                    levelid = 160;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("niconico_dreams").loop();
@@ -2696,7 +2696,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 48;
                 }
                 if (mouseOver(mx, my, 450, 550, 50, 50)) {
-                    levelid = 160;
+                    levelid = 161;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("requiem_dream").loop();
@@ -2709,7 +2709,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 88;
                 }
                 if (mouseOver(mx, my, 550, 550, 50, 50)) {
-                    levelid = 161;
+                    levelid = 162;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("eurodancer").loop();
@@ -2723,7 +2723,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 }
                 // seventh row
                 if (mouseOver(mx, my, 50, 650, 50, 50)) {
-                    levelid = 162;
+                    levelid = 163;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("hello").loop();
@@ -2736,7 +2736,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 100;
                 }
                 if (mouseOver(mx, my, 150, 650, 50, 50)) {
-                    levelid = 163;
+                    levelid = 164;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("mayday").loop();
@@ -2749,7 +2749,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 154;
                 }
                 if (mouseOver(mx, my, 250, 650, 50, 50)) {
-                    levelid = 164;
+                    levelid = 165;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("fireflies_remix").loop();
@@ -2762,7 +2762,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 124;
                 }
                 if (mouseOver(mx, my, 350, 650, 50, 50)) {
-                    levelid = 165;
+                    levelid = 166;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("echolands").loop();
@@ -2775,7 +2775,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 112;
                 }
                 if (mouseOver(mx, my, 450, 650, 50, 50)) {
-                    levelid = 166;
+                    levelid = 167;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("voiceless").loop();
@@ -2788,7 +2788,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     endBar = 139;
                 }
                 if (mouseOver(mx, my, 550, 650, 50, 50)) {
-                    levelid = 167;
+                    levelid = 168;
                     System.out.println("world " + levelid);
 
                     if (game_.music) audioplayer_.getMusic("vaporwave_aesthetics").loop();
@@ -3586,10 +3586,26 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
             g.drawString(testString, 0, 40);
             g.drawString("Page: " + page, game.WIDTH - 70, 38);
             // prev and next
-            if (page > 1) g.drawRect(16, 366, 20, 20);
-            if (page < maxPage) g.drawRect(616, 366, 20, 20);
+            Polygon trianglePrev = new Polygon(), triangleNext = new Polygon();
 
-            g.drawRect(50, 50, 50, 50);
+            trianglePrev.xpoints = new int[]{616, 616 + 20, 616};
+            trianglePrev.ypoints = new int[]{366, 366 + 10, 366 + 20};
+            trianglePrev.npoints = 3;
+
+            triangleNext.xpoints = new int[]{16 + 20, 16, 16 + 20};
+            triangleNext.ypoints = new int[]{366, 366 + 10, 366 + 20};
+            triangleNext.npoints = 3;
+
+            if (page > 1) {
+//                g.drawRect(16, 366, 20, 20);
+                g.drawPolygon(triangleNext);
+            }
+            if (page < maxPage) {
+//                g.drawRect(616, 366, 20, 20);
+                g.drawPolygon(trianglePrev);
+            }
+
+            /*g.drawRect(50, 50, 50, 50);
             g.drawRect(150, 50, 50, 50);
             g.drawRect(250, 50, 50, 50);
             g.drawRect(350, 50, 50, 50);
@@ -3636,7 +3652,47 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
             g.drawRect(250, 650, 50, 50);
             g.drawRect(350, 650, 50, 50);
             g.drawRect(450, 650, 50, 50);
-            g.drawRect(550, 650, 50, 50);
+            g.drawRect(550, 650, 50, 50);*/
+
+            // numbers
+            int number = 1;
+            if (page == 2) number = 43;
+            if (page == 3) number = 85;
+            if (page == 4) number = 127;
+            for (int yCoord = 50; yCoord <= 650; yCoord += 100){
+                for (int xCoord = 50; xCoord <= 550; xCoord += 100){
+                    // bound box
+                    Rectangle boxBounds = new Rectangle(xCoord, yCoord, 50, 50);
+                    g.drawRect(boxBounds.x, boxBounds.y, boxBounds.width, boxBounds.height);
+
+                    // number bounds
+                    /*Rectangle numBounds = new Rectangle(xCoord, yCoord, game.getTextWidth(g, String.valueOf(number)),
+                            game.getTextHeight(g));
+                    Rectangle numBounds = new Rectangle(
+                            (int)game.getTextBounds(g, String.valueOf(number)).getX(),
+                            (int)game.getTextBounds(g, String.valueOf(number)).getY(),
+                            (int)game.getTextBounds(g, String.valueOf(number)).getWidth(),
+                            (int)game.getTextBounds(g, String.valueOf(number)).getHeight());
+                    Rectangle boxBounds = new Rectangle(xCoord, yCoord, 50, 50);
+                    g.drawString(String.valueOf(number), boxBounds.width/2 - numBounds.width/2,
+                            boxBounds.height/2 - numBounds.height/2);*/
+
+                    // this fix suck
+                    /*double widthFix = 0;
+                    if (number < 10)
+                        widthFix = game.getTextWidth(g, String.valueOf(number))*1.5;
+                    if (number >= 10 && number < 100)
+                        widthFix = game.getTextWidth(g, String.valueOf(number))/2;
+                    if (number >= 100 && number < 1000)
+                        widthFix = game.getTextWidth(g, String.valueOf(number))/4;*/
+
+                    double widthFix = 0;
+                    widthFix = (boxBounds.width/2) - (game.getTextWidth(g, String.valueOf(number))/2);
+
+                    g.drawString(String.valueOf(number), xCoord + (int)widthFix, yCoord + 30);
+                    number++;
+                }
+            }
         }
         // my monstrosity
         if (game.gameState == game_.STATE.GameBeta && !game.hideHud) {
