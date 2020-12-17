@@ -107,8 +107,8 @@ public class tictactoe_ extends gameobject_ implements MouseListener {
             isAvailable[i][j] = false;
             conclusion(currentPlayer);
 //            switchPlayer();
-//            decideAI();
-            dumbAI();
+            decideAI();
+//            dumbAI();
         }
     }
 
