@@ -1,9 +1,22 @@
 # CUBESHOTS
 A rhythmic game written in Java using Slick2D library (based from the tutorial and game Wave© by RealTutsGML). Copyright goes to the owners of the music that was used in the game code (just for testing purposes)\
+\
 Note: This game requires Java, no ifs and buts...\
+\
 ![image 1](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/1%20attempt%20storm.PNG)\
+\
 ![image 2](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/game%20showcase%202.jpg)\
+\
 ![image 3](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/game_%20showcase.jpg)\
+\
+![image 4](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/conway.PNG)\
+\
+![image 5](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/path.PNG)\
+\
+![image 6](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/tictactoe.PNG)\
+\
+![image 7](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/water.PNG)\
+\
 # Libraries
 Slick2D
 # Notes
@@ -21,7 +34,8 @@ You need JarSplice to compile the code (sorry i'm so lazy), so follow the instru
 7. Copy resources_ folder to the same directory of the created fat jar.
 # Installation (for non-programmers)
 Download the source (download as zip, or the source code from the release page) for the resources, and the latest release (the fat jar).\
-Edit: Must be in this directory structure:
+\
+Edit: Must be in this directory structure:\
 ![add_dir](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/dir.png)
 # FAQs
 1. Mobile when?\
