@@ -16,7 +16,7 @@ You need JarSplice to compile the code (sorry i'm so lazy), so follow the instru
 2. Build > Build Artifacts > CUBESHOTS (release alpha).jar > Build
 3. Open JarSplice then Add Jars > Import CUBESHOTS (release alpha).jar, all Slick2D jars
 4. Leave natives blank.
-5. Input main class "gamemakerstudio.game_"
+5. Input main class "gamemakerstudio_.game_"
 6. Create Fat Jar.
 7. Copy resources_ folder to the same directory of the created fat jar.
 # Installation (for non-programmers)
@@ -29,7 +29,7 @@ A: soon >:)
 2. Mobile when??
 A: libgdx was irritating as hell!!
 3. Another game?
-A: yes, i am confirming Beginning Words! a word puzzle game hahaha
+A: yes, i am confirming Beginning Words! a word puzzle game hahaha!
 4. Another game??
 A: yes, i am confirming an unnamed 2.5D rpg sandbox game.
 5. Another game???
