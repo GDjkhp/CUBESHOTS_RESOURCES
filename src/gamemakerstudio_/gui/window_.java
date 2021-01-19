@@ -4,16 +4,17 @@
  * and open the template in the editor.
  */
 package gamemakerstudio_.gui;
+
 import gamemakerstudio_.game_;
 import gamemakerstudio_.misc.handler_;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.Random;
-import javax.swing.*;
 /**
  *
  * @author ACER
@@ -28,6 +29,7 @@ public class window_ extends WindowAdapter implements KeyListener {
     int randInt = 112 /*randIntFormula*/;
     boolean obfuscated = false;
     int obfuscatedChance = r.nextInt(100) + 1;
+
     public JFrame frame = new JFrame();
 
     public window_ (int width, int height, String title, game_ game, handler_ handler) {
@@ -198,7 +200,7 @@ public class window_ extends WindowAdapter implements KeyListener {
             case 63:
                 return "V A P O R W A V E";
             case 64:
-                return "this game is running at " + game_.throwframes + " fps!";
+                return "this game is running at " + game_.throwFrames + " fps!";
             case 65:
                 return "click the ghost and see the magic";
             case 66:
@@ -724,17 +726,17 @@ public class window_ extends WindowAdapter implements KeyListener {
             case 327:
                 return "B R E A T H T A K I N G";
             case 328:
-                return "";
+                return "evidence of absence is not absence of evidence"; // might fix this
             case 329:
-                return "";
+                return "ugh fine i guess you are my little pogchamp"; // delete this
             case 330:
-                return "";
+                return "machine learning and neural networks";
             case 331:
-                return "";
+                return "sourceDataLine";
             case 332:
-                return "";
+                return "mark's a masochist";
             case 333:
-                return "";
+                return "baloney and donut code";
             case 334:
                 return "";
             case 335:

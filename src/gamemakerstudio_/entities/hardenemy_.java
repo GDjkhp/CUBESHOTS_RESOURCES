@@ -5,14 +5,12 @@
  */
 package gamemakerstudio_.entities;
 
-import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.game_;
+import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.gameobject_;
 import gamemakerstudio_.misc.handler_;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.util.Random;
 
 /**
@@ -33,6 +31,7 @@ public class hardenemy_ extends gameobject_ {
         this.height = 10;
         this.velX = 5;
         this.velY = 5;
+        color = Color.orange;
     }
     
     public Rectangle getBounds() {
@@ -52,11 +51,11 @@ public class hardenemy_ extends gameobject_ {
             else velY = (r.nextInt(10) + 1) * -1;
         }
         // trail
-        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, Color.orange, width, height, 0.1f, handler));
+        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, color, width, height, 0.1f, handler));
     }
 
     public void render(Graphics g) {
-        g.setColor(Color.orange);
+        g.setColor(color);
         g.fillRect((int) x, (int) y, width, height);
     }
 

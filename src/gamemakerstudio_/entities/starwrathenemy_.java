@@ -1,7 +1,7 @@
 package gamemakerstudio_.entities;
 
-import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.game_;
+import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.gameobject_;
 import gamemakerstudio_.misc.handler_;
 
@@ -32,9 +32,5 @@ public class starwrathenemy_ extends gameobject_ {
 
     public Rectangle getBounds() {
         return null;
-    }
-
-    public void health() {
-
-    }
+    } // todo: bounds is null
 }

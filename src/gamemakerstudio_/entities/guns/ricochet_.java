@@ -18,6 +18,7 @@ public class ricochet_ extends gameobject_ {
         this.velY = velY;
         this.width = 10;
         this.height = 10;
+        color = Color.ORANGE;
     }
 
     @Override
@@ -32,13 +33,13 @@ public class ricochet_ extends gameobject_ {
             y += velY;
             bulletRange--;
         } else handler.removeObject(this);
-        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, Color.ORANGE, width, height, 0.1f,
+        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, color, width, height, 0.1f,
                 handler));
     }
 
     @Override
     public void render(Graphics g) {
-        g.setColor(Color.ORANGE);
+        g.setColor(color);
         g.fillOval((int) x, (int) y, width, height);
     }
 

@@ -5,8 +5,7 @@
  */
 package gamemakerstudio_.misc;
 
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
 
 /**
  *
@@ -19,6 +18,8 @@ public abstract class gameobject_ {
     protected float velX = 0, velY = 0;
     protected int width, height;
     protected double spawnTimer = 0;
+    protected boolean isTeleporting = false;
+    protected Color color;
     
     public gameobject_(float x, float y, ID id) {
         this.x = x;
@@ -76,4 +77,12 @@ public abstract class gameobject_ {
     }
 
     public void setSpawnTimer(double spawnTimer) { this.spawnTimer = spawnTimer; }
+
+    public boolean isTeleporting() {
+        return isTeleporting;
+    }
+
+    public void setTeleporting(boolean teleporting) {
+        isTeleporting = teleporting;
+    }
 }

@@ -1,9 +1,9 @@
 package gamemakerstudio_.entities;
 
-import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.game_;
-import gamemakerstudio_.misc.gameobject_;
+import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.assets_;
+import gamemakerstudio_.misc.gameobject_;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -56,7 +56,7 @@ public class CURSOR_POINTER extends gameobject_ implements MouseMotionListener {
     @Override
     public Rectangle getBounds() {
         return null;
-    }
+    } // todo: bounds is null
 
     @Override
     public void mouseDragged(MouseEvent e) {

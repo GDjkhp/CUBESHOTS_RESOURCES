@@ -8,8 +8,7 @@ package gamemakerstudio_.gui;
 import gamemakerstudio_.game_;
 import gamemakerstudio_.misc.GunManager;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 
 /**
  *
@@ -26,10 +25,10 @@ public class hud2_ {
     public static int xp = 0;
 
     // vars for gameloop fix
-    public long lastTime = System.nanoTime();
+    public static long lastTime = System.nanoTime();
     double amountOfTicks = 100.0;
     double ns = 1000000000 / amountOfTicks;
-    public double delta = 0;
+    public static double delta = 0;
     
     public void tick() {
         // gameloop

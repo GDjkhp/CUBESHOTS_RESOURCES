@@ -5,7 +5,7 @@
  */
 package gamemakerstudio_.entities;
 
-import gamemakerstudio_.*;
+import gamemakerstudio_.game_;
 import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.assets_;
 import gamemakerstudio_.misc.gameobject_;

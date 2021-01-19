@@ -1,7 +1,7 @@
 package gamemakerstudio_.entities;
 
-import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.game_;
+import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.gameobject_;
 import gamemakerstudio_.misc.handler_;
 
@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class starwrath_ extends gameobject_ {
     private handler_ handler;
-    private Color col;
+//    private Color col;
     private Random r = new Random();
     private gameobject_ ghost;
     float pathX, pathY, diffX, diffY, distance;
@@ -21,7 +21,7 @@ public class starwrath_ extends gameobject_ {
         this.height = 30;
         this.velX = velX;
         this.velY = velY;
-        col = new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255));
+        color = new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255));
         // AI
         for (int i = 0; i < handler.object.size(); i++) {
             gameobject_ tempObject = handler.object.get(i);
@@ -51,12 +51,12 @@ public class starwrath_ extends gameobject_ {
             handler.removeObject(this);
         }
 
-        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, col, width, height, 0.1f, handler));
+        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, color, width, height, 0.1f, handler));
 
     }
 
     public void render(Graphics g) {
-        g.setColor(col);
+        g.setColor(color);
         g.fillRect((int) x, (int) y, width, height);
     }
 

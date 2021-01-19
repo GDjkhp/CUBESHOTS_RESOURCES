@@ -21,6 +21,7 @@ public class triangleshooter_ extends gameobject_ {
         this.velY = velY;
         defaultSpawnTimer = spawnTimer;
         this.spawnTimer = spawnTimer;
+        color = Color.red;
         // detect face, crappy codes
         defaultFace = face;
         // face 1
@@ -82,7 +83,7 @@ public class triangleshooter_ extends gameobject_ {
 
     @Override
     public void render(Graphics g) {
-        g.setColor(Color.RED);
+        g.setColor(color);
         g.fillPolygon(triangle);
     }
 

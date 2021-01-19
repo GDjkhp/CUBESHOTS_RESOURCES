@@ -1,10 +1,6 @@
 package gamemakerstudio_.gui;
 
-import gamemakerstudio_.entities.conwaysgameoflife_;
-import gamemakerstudio_.entities.tictactoe_;
-import gamemakerstudio_.entities.water_;
 import gamemakerstudio_.game_;
-import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.handler_;
 
 import java.awt.*;

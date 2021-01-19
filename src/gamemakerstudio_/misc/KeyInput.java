@@ -5,7 +5,9 @@
  */
 package gamemakerstudio_.misc;
 
-import gamemakerstudio_.entities.*;
+import gamemakerstudio_.entities.RangeArea;
+import gamemakerstudio_.entities.player2_;
+import gamemakerstudio_.entities.player_;
 import gamemakerstudio_.game_;
 import gamemakerstudio_.game_.STATE;
 import gamemakerstudio_.gui.devconsole_;
@@ -13,7 +15,6 @@ import gamemakerstudio_.gui.hud2_;
 import gamemakerstudio_.gui.hud_;
 import gamemakerstudio_.gui.shop_;
 import gamemakerstudio_.world.levels_;
-import gamemakerstudio_.world.spawn_;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -169,7 +170,7 @@ public class KeyInput extends KeyAdapter {
             // editor
             if (key == KeyEvent.VK_F) {
                 levels.resetMethod();
-                game.customTicksMethod(); // remove this at future release
+                if (game.customTicksBoolean) game.customTicksMethod(); // remove this at future release
                 game.gameState = STATE.Edit;
                 levels.bpm = 0;
                 levels.tpm = 0;
@@ -178,17 +179,26 @@ public class KeyInput extends KeyAdapter {
                 levels.stepDifference = 0;
                 audioplayer_.currentMusic = "null";
                 if (game_.music) audioplayer_.getSound("click_sound").play();
-                audioplayer_.getMusic("null").play();
+                audioplayer_.getMusic("null").play(); // library change error
             }
             // shop
             if (key == KeyEvent.VK_SPACE) {
                 if (game.gameState == STATE.Game) {
-                    if (game_.music) audioplayer_.getMusic("shop_music").loop();
+                    if (game_.music) audioplayer_.getMusic("shop_music").loop(); // library change error
                     game.gameState = STATE.Shop;
                 }
                 else if (game.gameState == STATE.Shop) {
-                    if (game_.music) audioplayer_.getMusic("music").loop();
+                    if (game_.music) audioplayer_.getMusic("music").loop(); // library change error
                     game.gameState = STATE.Game;
+                    // gameloop fix
+                    game.spawner.lastTime = System.nanoTime();
+//                game.spawner.delta = 0;
+                    hud.lastTime = System.nanoTime();
+//                hud.delta = 0;
+                    hud2.lastTime = System.nanoTime();
+//                hud2.delta = 0;
+                    if (game_.music) audioplayer_.getSound("click_sound").play();
+
                 }
                 if (game.gameState == STATE.Game)
                     if (game_.music) audioplayer_.getSound("click_sound").play();
@@ -252,79 +262,15 @@ public class KeyInput extends KeyAdapter {
 
         // restart
         if (key == KeyEvent.VK_Z) {
-            if (game.paused) game.paused = false;
-            // restart
-            if ((game.gameState == STATE.GameBeta || game.gameState == STATE.End) && game.currentGameStateIsBeta) {
-                levels.resetMethod();
-                if (game_.music) audioplayer_.getMusic(audioplayer_.currentMusic).loop();
-                if (game_.music) audioplayer_.getSound("click_sound").play();
-            }
+            game.restartBeta();
             if ((game.gameState == STATE.Game || game.gameState == STATE.End) && game.diff == 0 && !game.currentGameStateIsBeta) {
                 // reset
-                if (game.gameState == STATE.End) game.gameState = STATE.Game;
-                hud.resetTimer();
-                handler.clearEnemies();
-                hud.setLevel(1);
-                spawn_.scoreKeep = 0;
-                levels_.scoreKeep = 0;
-                // p1 reset
-                hud.setScore(0);
-                hud.setXp(0);
-                hud_.HEALTH = 100;
-                handler_.spdp1 = 5;
-                hud_.bounds = 0;
-                hud.heartsTaken = 0;
-                // p2 reset
-                hud2.setScore(0);
-                hud2.setXp(0);
-                hud2_.HEALTH = 100;
-                handler_.spdp2 = 5;
-                hud2_.bounds = 0;
-                hud2.heartsTaken = 0;
-                // reset shop
-                shop_.B1 = 100;
-                shop_.B2 = 100;
-                shop_.B3 = 100;
-                shop_.B4 = 100;
-                shop_.B5 = 100;
-                shop_.B6 = 100;
-                // spawn
-                handler.addObject(new basicenemy_(r.nextInt(game_.WIDTH - 1), r.nextInt(game_.HEIGHT - 1), ID.BasicEnemy, handler));
-                game.diff = 0;
+                game.easy();
                 if (game_.music) audioplayer_.getSound("click_sound").play();
             }
             if ((game.gameState == STATE.Game || game.gameState == STATE.End) && game.diff == 1 && !game.currentGameStateIsBeta) {
                 // reset
-                if (game.gameState == STATE.End) game.gameState = STATE.Game;
-                hud.resetTimer();
-                handler.clearEnemies();
-                hud.setLevel(1);
-                spawn_.scoreKeep = 0;
-                levels_.scoreKeep = 0;
-                // p1 reset
-                hud.setScore(0);
-                hud.setXp(0);
-                hud_.HEALTH = 100;
-                handler_.spdp1 = 5;
-                hud_.bounds = 0;
-                hud.heartsTaken = 0;
-                // p2 reset
-                hud2.setScore(0);
-                hud2.setXp(0);
-                hud2_.HEALTH = 100;
-                handler_.spdp2 = 5;
-                hud2_.bounds = 0;
-                hud2.heartsTaken = 0;
-                // reset shop
-                shop_.B1 = 1000;
-                shop_.B2 = 1000;
-                shop_.B3 = 1000;
-                shop_.B4 = 1000;
-                shop_.B5 = 1000;
-                shop_.B6 = 1000;
-                // spawn
-                handler.addObject(new hardenemy_(r.nextInt(game_.WIDTH - 1), r.nextInt(game_.HEIGHT - 1), ID.BasicEnemy, handler));
-                game.diff = 1;
+                game.medium();
                 if (game_.music) audioplayer_.getSound("click_sound").play();
             }
         }
@@ -336,6 +282,9 @@ public class KeyInput extends KeyAdapter {
             // pre lazy fix
             lazyFixForRandomLevels = false;
             delayCount = 100;
+            // xbox feature escape
+            handler.removeAllSelectedObjects(ID.CURSORSELECT);
+            game.isSelecting = false;
             // insert level randomizer
             game.gameState = STATE.LevelSelect;
             int x = ((r.nextInt(6) * 100) + 50) + 25;
@@ -374,71 +323,19 @@ public class KeyInput extends KeyAdapter {
             if (game.gameState == STATE.Game || game.gameState == STATE.GameBeta) {
                 game.endCodes();
             }
+            // xbox feature escape
+            handler.removeAllSelectedObjects(ID.CURSORSELECT);
+            game.isSelecting = false;
+            // escape, pls fix this
             game.gameState = STATE.Menu;
         }
         // quick game, speedrun
         if (key == KeyEvent.VK_F3) {
             // easy
-                /*game.gameState = STATE.Game;
-                hud.resetTimer();
-                handler.clearEnemies();
-                hud.setLevel(1);
-                spawn_.scoreKeep = 0;
-                levels_.scoreKeep = 0;
-                // p1 reset
-                hud.setScore(0);
-                hud.setXp(0);
-                hud_.HEALTH = 100;
-                handler_.spdp1 = 5;
-                hud_.bounds = 0;
-                // p2 reset
-                hud2.setScore(0);
-                hud2.setXp(0);
-                hud2_.HEALTH = 100;
-                handler_.spdp2 = 5;
-                hud2_.bounds = 0;
-                // reset shop
-                shop_.B1 = 100;
-                shop_.B2 = 100;
-                shop_.B3 = 100;
-                shop_.B4 = 100;
-                shop_.B5 = 100;
-                shop_.B6 = 100;
-                // spawn
-                handler.addObject(new basicenemy_(r.nextInt(game_.WIDTH - 50), r.nextInt(game_.HEIGHT - 50), ID.BasicEnemy, handler, 0));
-                game.diff = 0;*/
-
+//            game.easy();
             // medium
-            game.gameState = STATE.Game;
-            hud.resetTimer();
-            handler.clearEnemies();
-            hud.setLevel(1);
-            spawn_.scoreKeep = 0;
-            levels_.scoreKeep = 0;
-            // p1 reset
-            hud.setScore(0);
-            hud.setXp(0);
-            hud_.HEALTH = 100;
-            handler_.spdp1 = 5;
-            hud_.bounds = 0;
-            hud.heartsTaken = 0;
-            // p2 reset
-            hud2.setScore(0);
-            hud2.setXp(0);
-            hud2_.HEALTH = 100;
-            handler_.spdp2 = 5;
-            hud2_.bounds = 0;
-            hud2.heartsTaken = 0;
-            // reset shop
-            shop_.B1 = 1000;
-            shop_.B2 = 1000;
-            shop_.B3 = 1000;
-            shop_.B4 = 1000;
-            shop_.B5 = 1000;
-            shop_.B6 = 1000;
-            // spawn
-            handler.addObject(new hardenemy_(r.nextInt(game_.WIDTH - 1), r.nextInt(game_.HEIGHT - 1), ID.BasicEnemy, handler));
-            game.diff = 1;
+            game.medium();
+            // sfx
             if (game_.music) audioplayer_.getSound("click_sound").play();
         }
         // multiplayer
@@ -469,6 +366,13 @@ public class KeyInput extends KeyAdapter {
             if (game.gameState == STATE.Game || game.gameState == STATE.Edit) {
                 if (game_.paused) game_.paused = false;
                 else game_.paused = true;
+                // gameloop fix
+                game.spawner.lastTime = System.nanoTime();
+//                game.spawner.delta = 0;
+                hud.lastTime = System.nanoTime();
+//                hud.delta = 0;
+                hud2.lastTime = System.nanoTime();
+//                hud2.delta = 0;
                 if (game_.music) audioplayer_.getSound("click_sound").play();
             }
             if (game.gameState == STATE.GameBeta) {
@@ -482,12 +386,14 @@ public class KeyInput extends KeyAdapter {
                 if (game_.music) audioplayer_.getSound("click_sound").play();
 
                 // gameloop fix
+                // edit: when pausing the tick, DO NOT WRITE DELTA TO 0!, it will unsync!
+                // only write access when resetting
                 levels.lastTime = System.nanoTime();
-                levels.delta = 0;
+//                levels.delta = 0;
                 hud.lastTime = System.nanoTime();
-                hud.delta = 0;
+//                hud.delta = 0;
                 hud2.lastTime = System.nanoTime();
-                hud2.delta = 0;
+//                hud2.delta = 0;
             }
         }
     }

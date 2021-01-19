@@ -5,12 +5,12 @@
  */
 package gamemakerstudio_.world;
 
-import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.entities.*;
 import gamemakerstudio_.entities.boss.creeperboss_;
 import gamemakerstudio_.entities.boss.skullface_;
 import gamemakerstudio_.game_;
 import gamemakerstudio_.gui.hud_;
+import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.gameobject_;
 import gamemakerstudio_.misc.handler_;
 
@@ -38,6 +38,7 @@ public class spawn_ {
         this.hud = hud;
         this.game = game;
     }
+
     // run dis code once
     public void difficulty(int diff) {
         // easy
@@ -61,7 +62,7 @@ public class spawn_ {
         // medium
         if (diff == 1) {
             handler.addObject(new hardenemy_(r.nextInt(game_.WIDTH - 10), r.nextInt(game_.HEIGHT - 10),
-                    ID.BasicEnemy, handler));
+                    ID.HardEnemy, handler));
             handler.addObject(new basecircle_(r.nextInt(game_.WIDTH - 10), r.nextInt(game_.HEIGHT - 10),
                     ID.BaseCircle, handler, 0, 0, 0));
             handler.addObject(new laserpointer_(r.nextInt(game_.WIDTH - 10), r.nextInt(game_.HEIGHT - 10),
@@ -84,35 +85,50 @@ public class spawn_ {
         }
         // hardmode
     }
-    public void tick() {
-        scoreKeep++;
-        if (scoreKeep == 100) {
-            scoreKeep = 0;
-            hud.setLevel(hud.getLevel() + 1);
-            difficulty(game.diff);
-        }
-        // boss tick, skull
-        if (game.diff == 0 && hud.getLevel() >= 10){
-            if (timer == 0) {
-                boss.setVelY(0);
-            } else timer--;
-            if (timer2 == 0) {
-                timer2 = 100;
-                handler.addObject(new laserpointer_((int) boss.getX() + 169, (int) boss.getY() + 93, ID.Laser, handler, 30, 30, 0));
-                handler.addObject(new laserpointer_((int) boss.getX() + 57, (int) boss.getY() + 101, ID.Laser, handler, 30, 30, 0));
-            } else timer2--;
-        }
-        // boss tick, creeper
-        if (hud.getLevel() >= 10 && game.diff == 1){
-            if (timer == 0)
-                boss.setVelY(0);
-            else timer--;
 
-            if (timer2 == 0) {
-                if (boss.getVelX() == 0) boss.setVelX(20);
-                int spawn = r.nextInt(5);
-                if (spawn == 0) handler.addObject(new tnt_((int) boss.getX() + 200, (int) boss.getY() + 200, ID.TNT, handler, (r.nextInt(5 - -5) + -5), 5));
-            } else timer2--;
+    // vars for gameloop fix
+    public long lastTime = System.nanoTime();
+    double amountOfTicks = 100.0;
+    double ns = 1000000000 / amountOfTicks;
+    public double delta = 0;
+
+    public void tick() {
+        long now = System.nanoTime();
+        delta += (now - lastTime) / ns;
+        lastTime = now;
+
+        while (delta >= 1) {
+            delta--;
+            scoreKeep++;
+            if (scoreKeep == 100) {
+                scoreKeep = 0;
+                hud.setLevel(hud.getLevel() + 1);
+                difficulty(game.diff);
+            }
+            // boss tick, skull
+            if (game.diff == 0 && hud.getLevel() >= 10){
+                if (timer == 0) {
+                    boss.setVelY(0);
+                } else timer--;
+                if (timer2 == 0) {
+                    timer2 = 100;
+                    handler.addObject(new laserpointer_((int) boss.getX() + 169, (int) boss.getY() + 93, ID.Laser, handler, 30, 30, 0));
+                    handler.addObject(new laserpointer_((int) boss.getX() + 57, (int) boss.getY() + 101, ID.Laser, handler, 30, 30, 0));
+                } else timer2--;
+            }
+            // boss tick, creeper
+            if (hud.getLevel() >= 10 && game.diff == 1){
+                if (timer == 0)
+                    boss.setVelY(0);
+                else timer--;
+
+                if (timer2 == 0) {
+                    if (boss.getVelX() == 0) boss.setVelX(20);
+                    int spawn = r.nextInt(5);
+                    if (spawn == 0) handler.addObject(new tnt_((int) boss.getX() + 200, (int) boss.getY() + 200, ID.TNT, handler, (r.nextInt(5 - -5) + -5), 5));
+                } else timer2--;
+            }
         }
+
     }
 }

@@ -7,11 +7,10 @@ package gamemakerstudio_.gui;
 
 import gamemakerstudio_.game_;
 import gamemakerstudio_.misc.GunManager;
-import gamemakerstudio_.misc.handler_;
 import gamemakerstudio_.misc.audioplayer_;
+import gamemakerstudio_.misc.handler_;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 
 /**
  *
@@ -33,10 +32,13 @@ public class hud_ {
     public int minutes = 0;
 
     // vars for gameloop fix
-    public long lastTime = System.nanoTime();
+    public static long lastTime = System.nanoTime();
     double amountOfTicks = 100.0;
     double ns = 1000000000 / amountOfTicks;
-    public double delta = 0;
+    public static double delta = 0;
+
+    // testing purposes
+    public int hudTick = 0;
 
     public void tick() {
         // gameloop
@@ -44,6 +46,7 @@ public class hud_ {
         delta += (now - lastTime) / ns;
         lastTime = now;
         while (delta >= 1) {
+            delta--;
             HEALTH = game_.clamp(HEALTH, 0, 100 + (bounds / 2));
             blueValue = HEALTH * 2;
             blueValue = game_.clamp(blueValue, 0, 255);
@@ -54,7 +57,9 @@ public class hud_ {
                 }
             }
             // crappy watch
-            if (game_.gameState == game_.STATE.GameBeta || game_.gameState == game_.STATE.Game) {
+            if ((game_.gameState == game_.STATE.GameBeta || game_.gameState == game_.STATE.Game)) {
+                hudTick++;
+//                System.out.println(hudTick);
                 milliseconds++;
                 if (milliseconds == 100) {
                     milliseconds = 0;
@@ -66,7 +71,6 @@ public class hud_ {
                     minutes++;
                 }
             }
-            delta--;
         }
     }
     public void render(Graphics g) {
@@ -89,11 +93,21 @@ public class hud_ {
         else g.drawString("Level: " + audioplayer_.currentMusic, 15, game_.HEIGHT - 50);
         // fps
         g.setColor(Color.green);
-//        g.drawString("string", game_.WIDTH - 75, game_.HEIGHT - 100);
-        g.drawString("FPS/TPS: " + game_.throwframes + "/" + game_.throwTick, game_.WIDTH - 125, game_.HEIGHT - 75);
-        g.drawString("Objects: " + handler.object.size(), game_.WIDTH - 100, game_.HEIGHT - 50);
+
+        String waitInfo = "Wait Time: " + game_.throwWait + ", Loss: " + game_.throwErrorWait;
+        String FPS = "FPS/TPS: " + game_.throwFrames + "/" + game_.throwTick;
+        String objectInfo = "Objects: " + handler.object.size();
+
+        g.drawString(waitInfo,
+                game_.WIDTH - game_.getTextWidth(g, waitInfo) - 10, game_.HEIGHT - 100);
+        g.drawString(FPS,
+                game_.WIDTH - game_.getTextWidth(g, FPS) - 10, game_.HEIGHT - 75);
+        g.drawString(objectInfo,
+                game_.WIDTH - game_.getTextWidth(g, objectInfo) - 10, game_.HEIGHT - 50);
+
         // render crappy watch
-        g.drawString(tellTime(), game_.WIDTH / 2 - 50, game_.HEIGHT - 100);
+        g.drawString(tellTime(), /*game_.WIDTH / 2 - 50*/
+                game_.WIDTH/2 - game_.getTextWidth(g, tellTime())/2, game_.HEIGHT - 100);
     }
     public void setScore(int score) {
         this.score = score;

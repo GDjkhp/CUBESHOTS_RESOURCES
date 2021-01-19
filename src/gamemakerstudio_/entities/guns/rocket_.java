@@ -1,6 +1,7 @@
 package gamemakerstudio_.entities.guns;
 
 import gamemakerstudio_.entities.RangeArea;
+import gamemakerstudio_.game_;
 import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.assets_;
 import gamemakerstudio_.misc.gameobject_;
@@ -10,7 +11,7 @@ import java.awt.*;
 
 public class rocket_ extends gameobject_ {
     handler_ handler;
-    public int bulletRange = 300;
+//    public int bulletRange = 300;
     gameobject_ blastRange;
     boolean renderAnimation = false;
     int animationTick;
@@ -23,6 +24,7 @@ public class rocket_ extends gameobject_ {
         this.velX = velX;
         this.velY = velY;
         animationTick = 50;
+        color = Color.RED;
     }
 
     @Override
@@ -45,10 +47,9 @@ public class rocket_ extends gameobject_ {
             }
         }
         // life
-        else if (bulletRange != 0) {
+        else if (new Rectangle(0, 0, game_.WIDTH, game_.HEIGHT).contains(getBounds())) {
             x += velX;
             y += velY;
-            bulletRange--;
         } else {
             handler.removeObject(this);
         }
@@ -56,7 +57,7 @@ public class rocket_ extends gameobject_ {
 
     @Override
     public void render(Graphics g) {
-        g.setColor(Color.RED);
+        g.setColor(color);
         if (!renderAnimation)
             g.fillOval((int) x, (int) y, width, height);
         else {

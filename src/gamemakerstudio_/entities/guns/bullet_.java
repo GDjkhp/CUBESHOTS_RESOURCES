@@ -18,6 +18,7 @@ public class bullet_ extends gameobject_ {
         this.handler = handler;
         this.velX = velX;
         this.velY = velY;
+        color = Color.blue;
     }
 
     public void tick() {
@@ -30,7 +31,7 @@ public class bullet_ extends gameobject_ {
     }
 
     public void render(Graphics g) {
-        g.setColor(Color.BLUE);
+        g.setColor(color);
         g.fillOval((int) x, (int) y, width, height);
     }
 

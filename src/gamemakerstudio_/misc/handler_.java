@@ -12,12 +12,10 @@ import gamemakerstudio_.game_;
 import gamemakerstudio_.gui.hud2_;
 import gamemakerstudio_.gui.hud_;
 
-import java.awt.Graphics;
-import java.util.ArrayList;
-import java.util.Collections;
+import javax.swing.*;
+import java.awt.*;
+import java.util.Comparator;
 import java.util.LinkedList;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  *
@@ -65,6 +63,18 @@ public class handler_ {
         }
     }
     public void render(Graphics g) {
+        // sort this, bogo sort
+        object.sort((o1, o2) -> {
+            switch (o1.getId()){
+                case Trail:
+                    return -1;
+                case PortalBlue:
+                case PortalRed:
+                    return -2;
+                default:
+                    return 0;
+            }
+        });
         for (int i = 0; i < object.size(); i++/*int i = object.size() - 1; i >= 0; i--*/) {
             gameobject_ tempObject = object.get(i);
             tempObject.render(g);
@@ -72,13 +82,23 @@ public class handler_ {
     }
     public void clearEnemies() {
         for (int i = object.size() - 1; i >= 0; i--) {
-            gameobject_ tempObject = object.get(i);
-            if (tempObject.getId() != ID.Trail) {
-                if (tempObject.getId() != ID.CURSOR) {
-                    if (tempObject != null) {
-                        removeObject(tempObject);
+            try {
+                gameobject_ tempObject = object.get(i);
+                // todo: convert this to switch statement
+                if (tempObject.getId() != ID.Trail) {
+                    if (tempObject.getId() != ID.CURSOR) {
+                        if (tempObject.getId() != ID.NULL){
+                            if (tempObject != null) {
+                                removeObject(tempObject);
+                            }
+                        }
                     }
                 }
+            } catch (Exception e) {
+                int a = JOptionPane.showConfirmDialog(null, "An error occurred: " + e + ", " +
+                        "\ndo you still wish to continue?", "Error", JOptionPane.INFORMATION_MESSAGE);
+                if (a == JOptionPane.NO_OPTION) System.exit(0);
+                e.printStackTrace();
             }
         }
         addObject(new player_(50, 200, ID.Player, this, hud));
@@ -92,6 +112,7 @@ public class handler_ {
         // remove objects except players
         for (int i = object.size() - 1; i >= 0; i--) {
             gameobject_ tempObject = object.get(i);
+            // todo: convert this to switch statement
             if (tempObject.getId() != ID.Player) {
                 if (tempObject.getId() != ID.Player2) {
                     if (tempObject.getId() != ID.HeartFriend) {

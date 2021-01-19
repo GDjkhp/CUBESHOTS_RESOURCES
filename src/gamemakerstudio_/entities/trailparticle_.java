@@ -10,7 +10,7 @@ import java.util.Random;
 public class trailparticle_ extends gameobject_ {
     private float alpha = 1;
     private handler_ handler;
-    private Color color;
+//    private Color color;
     private float life;
     Random r = new Random();
     int limitWidth, limitHeight;
@@ -49,5 +49,5 @@ public class trailparticle_ extends gameobject_ {
     @Override
     public Rectangle getBounds() {
         return null;
-    }
+    } // todo: bounds is null
 }

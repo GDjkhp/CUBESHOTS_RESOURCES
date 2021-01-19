@@ -5,15 +5,13 @@
  */
 package gamemakerstudio_.misc;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import gamemakerstudio_.game_;
-import org.newdawn.slick.Sound;
 import org.newdawn.slick.Music;
-import org.newdawn.slick.SlickException;
+import org.newdawn.slick.Sound;
 
 import javax.swing.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -23,8 +21,9 @@ public class audioplayer_ {
     public static String currentMusic = "";
     public static Map<String, Sound> soundMap = new HashMap<String, Sound>();
     public static Map<String, Music> musicMap = new HashMap<String, Music>();
-    
+
     public static void load(String key) {
+
         try {
             // default music
             musicMap.put("null", new Music("resources_/sounds_/null.ogg"));
@@ -84,7 +83,7 @@ public class audioplayer_ {
                 case "dance_violins":
                     musicMap.put(key, new Music("resources_/music_/dance violins.ogg"));
                     break;
-                    // new
+                // new
                 case "aether":
                     musicMap.put(key, new Music("resources_/music_/aether.ogg"));
                     break;
@@ -157,7 +156,7 @@ public class audioplayer_ {
                 case "jazz":
                     musicMap.put(key, new Music("resources_/music_/jazz.ogg"));
                     break;
-                    // the time i started to think about my existence
+                // the time i started to think about my existence
                 case "success":
                     musicMap.put(key, new Music("resources_/music_/success.ogg"));
                     break;
@@ -549,7 +548,92 @@ public class audioplayer_ {
                 case "vaporwave_aesthetics":
                     musicMap.put(key, new Music("resources_/music_/vaporwave aesthetics.ogg"));
                     break;
-                    // template
+                case "happy_troll":
+                    musicMap.put(key, new Music("resources_/music_/happy troll.ogg"));
+                    break;
+                case "dimension":
+                    musicMap.put(key, new Music("resources_/music_/dimension.ogg"));
+                    break;
+                case "crystal_caves":
+                    musicMap.put(key, new Music("resources_/music_/crystal caves.ogg"));
+                    break;
+                case "elevate":
+                    musicMap.put(key, new Music("resources_/music_/elevate.ogg"));
+                    break;
+                case "okiba":
+                    musicMap.put(key, new Music("resources_/music_/okiba.ogg"));
+                    break;
+                case "falling mysts":
+                    musicMap.put(key, new Music("resources_/music_/falling mysts.ogg"));
+                    break;
+                case "newgrounds_return":
+                    musicMap.put(key, new Music("resources_/music_/newgrounds return.ogg"));
+                    break;
+                case "body_jammer":
+                    musicMap.put(key, new Music("resources_/music_/body jammer.ogg"));
+                    break;
+                case "flirt":
+                    musicMap.put(key, new Music("resources_/music_/flirt.ogg"));
+                    break;
+                case "retry":
+                    musicMap.put(key, new Music("resources_/music_/retry.ogg"));
+                    break;
+                case "jet_set":
+                    musicMap.put(key, new Music("resources_/music_/jet set.ogg"));
+                    break;
+                case "the_calling":
+                    musicMap.put(key, new Music("resources_/music_/the calling.ogg"));
+                    break;
+                case "tria":
+                    musicMap.put(key, new Music("resources_/music_/tria.ogg"));
+                    break;
+                case "endgame":
+                    musicMap.put(key, new Music("resources_/music_/endgame.ogg"));
+                    break;
+                case "night_out":
+                    musicMap.put(key, new Music("resources_/music_/night out.ogg"));
+                    break;
+                case "april_showers":
+                    musicMap.put(key, new Music("resources_/music_/april showers.ogg"));
+                    break;
+                case "bathtub":
+                    musicMap.put(key, new Music("resources_/music_/bathtub.ogg"));
+                    break;
+                case "laszlo":
+                    musicMap.put(key, new Music("resources_/music_/laszlo.ogg"));
+                    break;
+                case "force":
+                    musicMap.put(key, new Music("resources_/music_/force.ogg"));
+                    break;
+                case "spectre":
+                    musicMap.put(key, new Music("resources_/music_/spectre.ogg"));
+                    break;
+                case "fade":
+                    musicMap.put(key, new Music("resources_/music_/fade.ogg"));
+                    break;
+                case "bangarang":
+                    musicMap.put(key, new Music("resources_/music_/bangarang.ogg"));
+                    break;
+                case "bun_dem":
+                    musicMap.put(key, new Music("resources_/music_/bun dem.ogg"));
+                    break;
+                case "sleepyhead":
+                    musicMap.put(key, new Music("resources_/music_/sleepyhead.ogg"));
+                    break;
+                case "dance_till_you're_dead":
+                    musicMap.put(key, new Music("resources_/music_/dance till you're dead.ogg"));
+                    break;
+                case "animals":
+                    musicMap.put(key, new Music("resources_/music_/animals.ogg"));
+                    break;
+                case "yeah":
+                    musicMap.put(key, new Music("resources_/music_/yeah.ogg"));
+                    break;
+                case "november":
+                    musicMap.put(key, new Music("resources_/music_/november.ogg"));
+                    break;
+
+                // template
                 /*case "null":
                     musicMap.put(key, new Music("resources_/music_/null.ogg"));
                     break;*/
@@ -560,7 +644,7 @@ public class audioplayer_ {
             if (a == JOptionPane.NO_OPTION) System.exit(0);
         }
     }
-    
+
     public static Music getMusic (String key) {
         // load codes
         if (key != "music" && key != "null" && key != "shop_music" && key != "game_over"
@@ -574,7 +658,7 @@ public class audioplayer_ {
         }
         return musicMap.get(key);
     }
-    
+
     public static Sound getSound (String key) {
         return soundMap.get(key);
     }

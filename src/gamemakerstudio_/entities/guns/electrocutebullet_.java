@@ -2,11 +2,11 @@ package gamemakerstudio_.entities.guns;
 
 import gamemakerstudio_.entities.RangeArea;
 import gamemakerstudio_.entities.trail_;
-import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.game_;
+import gamemakerstudio_.misc.ID;
+import gamemakerstudio_.misc.assets_;
 import gamemakerstudio_.misc.gameobject_;
 import gamemakerstudio_.misc.handler_;
-import gamemakerstudio_.misc.assets_;
 
 import java.awt.*;
 import java.util.Random;
@@ -26,7 +26,7 @@ public class electrocutebullet_ extends gameobject_ {
         this.velY = velY;
         this.width = 10;
         this.height = 10;
-
+        color = Color.CYAN;
         // Init Player Range
         if (id == ID.ElectrocuteP1) {
             for (int i = 0; i < handler.object.size(); i++) {
@@ -134,12 +134,12 @@ public class electrocutebullet_ extends gameobject_ {
                 handler.removeObject(playerRange);
             handler.removeObject(this);
         }
-        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, Color.CYAN, width, height, 0.1f, handler));
+        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, color, width, height, 0.1f, handler));
     }
 
     @Override
     public void render(Graphics g) {
-        g.setColor(Color.CYAN);
+        g.setColor(color);
         g.fillRect((int) x, (int) y, width, height);
         if (target != null) g.drawImage(assets_.locktargetimage, (int)target.getX(),
                 (int)target.getY(), null);

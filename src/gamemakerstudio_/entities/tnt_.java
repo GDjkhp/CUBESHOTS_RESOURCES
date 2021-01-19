@@ -5,14 +5,12 @@
  */
 package gamemakerstudio_.entities;
 
-import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.game_;
+import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.gameobject_;
 import gamemakerstudio_.misc.handler_;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.util.Random;
 
 /**
@@ -32,6 +30,7 @@ public class tnt_ extends gameobject_ {
         this.height = 10;
         this.velX = velX;
         this.velY = velY;
+        color = Color.red;
 
         // rewrite this!
         /*velX = (r.nextInt(5 - -5) + -5);
@@ -53,11 +52,11 @@ public class tnt_ extends gameobject_ {
         if (x <= 0 || x >= game_.WIDTH) handler.removeObject(this);
         if (y <= 0 || y >= game_.HEIGHT) handler.removeObject(this);
         // trail
-        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, Color.red, width, height, 0.1f, handler));
+        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, color, width, height, 0.1f, handler));
     }
 
     public void render(Graphics g) {
-        g.setColor(Color.red);
+        g.setColor(color);
         g.fillRect((int) x, (int) y, width, height);
     }
 

@@ -1,6 +1,6 @@
 package gamemakerstudio_.entities;
 
-import gamemakerstudio_.*;
+import gamemakerstudio_.game_;
 import gamemakerstudio_.gui.hud2_;
 import gamemakerstudio_.gui.hud_;
 import gamemakerstudio_.misc.ID;
@@ -22,6 +22,7 @@ public class laserpointer_ extends gameobject_ {
         this.spawnTimer = spawnTimer;
         this.velX = velX;
         this.velY = velY;
+        color = Color.red;
         // AI
         for (int i = 0; i < handler.object.size(); i++) {
             if (game_.multiplayer) {
@@ -58,7 +59,7 @@ public class laserpointer_ extends gameobject_ {
             x += pathX;
             y += pathY;
 
-            if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, Color.red, width, height, 0.1f, handler));
+            if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, color, width, height, 0.1f, handler));
 
         } else {
             // perform AI
@@ -70,7 +71,7 @@ public class laserpointer_ extends gameobject_ {
     }
 
     public void render(Graphics g) {
-        g.setColor(Color.RED);
+        g.setColor(color);
         g.fillRect((int) x, (int) y, width, height);
     }
 

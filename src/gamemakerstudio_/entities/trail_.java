@@ -9,11 +9,7 @@ import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.gameobject_;
 import gamemakerstudio_.misc.handler_;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Rectangle;
+import java.awt.*;
 
 /**
  *
@@ -23,7 +19,7 @@ public class trail_ extends gameobject_ {
     
     private float alpha = 1;
     private handler_ handler;
-    private Color color;
+//    private Color color;
     private float life;
     
     public trail_(int x, int y, ID id, Color color, int width, int height, float life, handler_ handler) {

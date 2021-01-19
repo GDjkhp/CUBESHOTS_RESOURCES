@@ -5,18 +5,11 @@
  */
 package gamemakerstudio_.entities;
 
-import gamemakerstudio_.*;
-import gamemakerstudio_.entities.guns.bullet_;
-import gamemakerstudio_.entities.guns.chlorophyte_;
-import gamemakerstudio_.entities.guns.electrocutebullet_;
-import gamemakerstudio_.entities.guns.ricochet_;
+import gamemakerstudio_.game_;
 import gamemakerstudio_.gui.hud_;
 import gamemakerstudio_.misc.*;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.util.Random;
 
 /**
@@ -47,6 +40,7 @@ public class player_ extends gameobject_ {
     private int delay = 5;
 
     // dumb ai
+    // TODO: create an ai that targets the nearest hearts by using range area and pythagoras theory
     boolean searchHearts = true;
     gameobject_ heart;
 
@@ -56,6 +50,10 @@ public class player_ extends gameobject_ {
         this.width = 30;
         this.height = 30;
         this.hud = hud;
+        color = Color.CYAN;
+        // gameloop fix
+        hud.lastTime = System.nanoTime();
+        hud.delta = 0;
     }
     
     public Rectangle getBounds() {
@@ -83,9 +81,9 @@ public class player_ extends gameobject_ {
                 float pathY = (float) ((-handler.spdp1 / distance) * diffY);
                 x += pathX;
                 y += pathY;
-                if (!game_.isInvincible &&
-                        (game_.gameState == game_.STATE.Game || game_.gameState == game_.STATE.GameBeta)) collision();
             }
+            if (!game_.isInvincible &&
+                    (game_.gameState == game_.STATE.Game || game_.gameState == game_.STATE.GameBeta)) collision();
         }
         if (isShooting) {
             if (cooldownp1 == 0) {
@@ -124,8 +122,8 @@ public class player_ extends gameobject_ {
             else if (y >= game_.HEIGHT - 30) y = 0;*/
         }
         
-        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, Color.CYAN, width, height, 0.1f, handler));
-//        handler.addObject(new trailparticle_((int) x, (int) y, ID.Trail, handler, Color.CYAN, 0.05f, width, height));
+        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, color, width, height, 0.1f, handler));
+//        handler.addObject(new trailparticle_((int) x, (int) y, ID.Trail, handler, color, 0.05f, width, height));
     }
     
     public void collision() {
@@ -141,8 +139,10 @@ public class player_ extends gameobject_ {
                 case Star:
                 case TNT:
                 case CircleWithPatterns:
+                case MoreSmarter:
                     if(getBounds().intersects(tempObject.getBounds())) {
                         hud.HEALTH -= 2;
+//                        handler.removeObject(tempObject);
                         if (hud.HEALTH == 0)
                             if (game_.music) audioplayer_.getSound("death").play();
                     }
@@ -165,11 +165,7 @@ public class player_ extends gameobject_ {
     }
     
     public void render(Graphics g) {
-        
-        Graphics2D g2d = (Graphics2D) g;
-
-        if (id == ID.Player)
-            g.setColor(Color.cyan);
+        g.setColor(color);
         g.fillRect((int) x, (int) y, width, height);
     }
 }

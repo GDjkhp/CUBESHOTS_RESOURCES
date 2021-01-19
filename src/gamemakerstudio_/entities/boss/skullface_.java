@@ -1,6 +1,5 @@
 package gamemakerstudio_.entities.boss;
 
-import gamemakerstudio_.entities.laserpointer_;
 import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.assets_;
 import gamemakerstudio_.misc.gameobject_;

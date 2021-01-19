@@ -5,15 +5,13 @@
  */
 package gamemakerstudio_.entities.boss;
 
-import gamemakerstudio_.misc.ID;
-import gamemakerstudio_.entities.tnt_;
+import gamemakerstudio_.entities.trail_;
 import gamemakerstudio_.game_;
+import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.gameobject_;
 import gamemakerstudio_.misc.handler_;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.util.Random;
 
 /**
@@ -61,7 +59,7 @@ public class creeperboss_ extends gameobject_ {
         if (x <= 0 || x >= game_.WIDTH - 400) velX *= -1;
 //        if (y <= 0 || y >= game_.HEIGHT - 50) velY *= -1;
         // trail
-//        handler.addObject(new trail_((int) x, (int) y, ID.Trail, Color.green, 400, 400, 0.1f, handler));
+//        handler.addObject(new trail_((int) x, (int) y, ID.Trail, Color.green, width, height, 0.1f, handler));
     }
 
     public void render(Graphics g) {

@@ -5,16 +5,14 @@
  */
 package gamemakerstudio_.entities;
 
-import gamemakerstudio_.*;
+import gamemakerstudio_.game_;
 import gamemakerstudio_.gui.hud2_;
 import gamemakerstudio_.gui.hud_;
 import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.gameobject_;
 import gamemakerstudio_.misc.handler_;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
 
 /**
  *
@@ -33,7 +31,8 @@ public class smartenemy_ extends gameobject_ {
         this.height = 30;
         this.velX = velX;
         this.velY = velY;
-        
+        color = Color.YELLOW;
+        // init player
         for (int i = 0; i < handler.object.size(); i++) {
             if (game_.multiplayer) {
                 if (hud_.HEALTH < hud2_.HEALTH) {
@@ -59,7 +58,7 @@ public class smartenemy_ extends gameobject_ {
     }
     
     public void tick() {
-
+        // path find player
         float diffX = x - player.getX();
         float diffY = y - player.getY();
         float distance = (float) Math.sqrt((x - player.getX()) * (x - player.getX()) + (y - player.getY()) * (y - player.getY()));
@@ -73,11 +72,11 @@ public class smartenemy_ extends gameobject_ {
         x += pathX;
         y += pathY;
         // trail
-        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, Color.yellow, width, height, 0.1f, handler));
+        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, color, width, height, 0.1f, handler));
     }
 
     public void render(Graphics g) {
-        g.setColor(Color.yellow);
+        g.setColor(color);
         g.fillRect((int) x, (int) y, width, height);
     }
 

@@ -14,21 +14,27 @@ public enum ID {
     Player(),
     Player2(),
     // misc
+    PortalBlue(), PortalRed(),
+
     RocketRange(), RocketRangeP1(), RocketRangeP2(),
+    P1Range(), P2Range(),
+    ElecRangeP1(), ElecRangeP2(),
+
     Rocket(), RocketP1(), RocketP2,
     Whip(),
     Arkhalis(),
     Ricochet(),
+    BulletHell(),
+    ChlorophyteP1(), ChlorophyteP2(),
+    ElectrocuteP1(), ElectrocuteP2(), ElectrocuteFriend(),
+    Pulse(),
+
     NULL(),
     Water(),
     CURSORSELECT(), CURSOR(),
     Trail(),
     Spicy(),
-    BulletHell(),
-    ChlorophyteP1(), ChlorophyteP2(),
-    ElectrocuteP1(), ElectrocuteP2(), ElectrocuteFriend(),
-    P1Range(), P2Range(),
-    ElecRangeP1(), ElecRangeP2(),
+
     HeartFriend(),
     GHOST(),
     STARGHOST(),
@@ -45,6 +51,8 @@ public enum ID {
     TNT(),
     CircleWithPatterns(),
     TriangleShooter(),
+    MoreSmarter(),
+    Spikes(),
     // bosses
     CrazyBoss(),
     Xgamer(),

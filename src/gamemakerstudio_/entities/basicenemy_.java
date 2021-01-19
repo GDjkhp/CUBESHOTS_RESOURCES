@@ -5,14 +5,12 @@
  */
 package gamemakerstudio_.entities;
 
-import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.game_;
+import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.gameobject_;
 import gamemakerstudio_.misc.handler_;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
 
 /**
  *
@@ -31,6 +29,7 @@ public class basicenemy_ extends gameobject_ {
         this.height = 10;
         this.velX = 5;
         this.velY = 5;
+        color = Color.RED;
     }
     
 
@@ -45,12 +44,12 @@ public class basicenemy_ extends gameobject_ {
         if (x <= 0 || x >= game_.WIDTH) velX *= -1;
         if (y <= 0 || y >= game_.HEIGHT) velY *= -1;
         // trail
-        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, Color.red, width, height, 0.1f,
+        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, color, width, height, 0.1f,
                 handler));
     }
 
     public void render(Graphics g) {
-        g.setColor(Color.red);
+        g.setColor(color);
         g.fillRect((int) x, (int) y, width, height);
     }
 }

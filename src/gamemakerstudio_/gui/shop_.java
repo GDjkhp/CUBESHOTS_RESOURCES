@@ -6,12 +6,10 @@
 package gamemakerstudio_.gui;
 
 import gamemakerstudio_.game_;
-import gamemakerstudio_.misc.handler_;
 import gamemakerstudio_.misc.audioplayer_;
+import gamemakerstudio_.misc.handler_;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -19,7 +17,7 @@ import java.awt.event.MouseEvent;
  *
  * @author ACER
  */
-public class shop_ extends MouseAdapter{
+public class shop_ extends MouseAdapter {
     
     handler_ handler;
     hud_ hud;
@@ -38,6 +36,7 @@ public class shop_ extends MouseAdapter{
         this.hud = hud;
         this.hud2 = hud2;
         this.game = game;
+        game.addMouseListener(this);
     }
     public void render (Graphics g) {
         //use the font

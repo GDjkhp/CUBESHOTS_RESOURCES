@@ -5,14 +5,12 @@
  */
 package gamemakerstudio_.entities;
 
-import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.game_;
+import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.gameobject_;
 import gamemakerstudio_.misc.handler_;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.util.Random;
 
 /**
@@ -20,11 +18,11 @@ import java.util.Random;
  * @author ACER
  */
 public class spicymenu_ extends gameobject_ {
-    
+
     private handler_ handler;
     Random r = new Random();
-    
-    private Color col;
+
+//    private Color col;
     
     public spicymenu_ (int x, int y, ID id, handler_ handler) {
         super(x, y, id);
@@ -41,7 +39,7 @@ public class spicymenu_ extends gameobject_ {
             velY = 5;
         }
         
-        col = new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255));
+        color = new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255));
 
     }
     
@@ -56,12 +54,12 @@ public class spicymenu_ extends gameobject_ {
         if (x <= 0 || x >= game_.WIDTH) velX *= -1;
         if (y <= 0 || y >= game_.HEIGHT) velY *= -1;
         // trail
-        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, col, width, height, 0.1f, handler));
+        if (!game_.ldm) handler.addObject(new trail_((int) x, (int) y, ID.Trail, color, width, height, 0.1f, handler));
     }
 
     public void render(Graphics g) {
 //        col = new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255));
-        g.setColor(col);
+        g.setColor(color);
         g.fillRect((int) x, (int) y, width, height);
     }
 

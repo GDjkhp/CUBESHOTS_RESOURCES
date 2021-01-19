@@ -1,7 +1,7 @@
 package gamemakerstudio_.entities;
 
-import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.game_;
+import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.gameobject_;
 
 import java.awt.*;
@@ -42,7 +42,7 @@ public class ghost_ extends gameobject_ {
 
     public Rectangle getBounds() {
         return null;
-    }
+    } // todo: bounds is null
 
 
 

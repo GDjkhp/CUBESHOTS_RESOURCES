@@ -1,7 +1,8 @@
 package gamemakerstudio_.gui;
 
-import gamemakerstudio_.*;
 import gamemakerstudio_.entities.*;
+import gamemakerstudio_.entities.experimental.*;
+import gamemakerstudio_.game_;
 import gamemakerstudio_.misc.FACE;
 import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.audioplayer_;
@@ -9,11 +10,16 @@ import gamemakerstudio_.misc.handler_;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.util.Calendar;
-import java.util.Date;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.List;
+import java.util.*;
 
 public class devconsole_ extends JFrame implements ActionListener, KeyListener {
+    // random
+    Random r = new Random();
     // classes
     game_ game;
     handler_ handler;
@@ -65,24 +71,35 @@ public class devconsole_ extends JFrame implements ActionListener, KeyListener {
         cal.setTime(now);
         // try to parse
         String keyBuffer = console_text.getText();
-        String[] tokens = keyBuffer.split("\\s+");
+        String[] list = keyBuffer.split("\\s+");
+        ArrayList<String> tokens = new ArrayList<String>();
+        for (int i = 0; i < list.length; i++){
+            tokens.add(list[i]);
+        }
         try {
             // your custom codes here
             // token 0 == command
             // token 1, 2, 3, ... == arg (start at 1)
-            switch (tokens[0]) {
+            switch (tokens.get(0)) {
                 case "spawn":
-                    if(summonEntity(tokens[1], Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3]),
-                            Float.parseFloat(tokens[4]), Float.parseFloat(tokens[5]), Integer.parseInt(tokens[6])))
-                        updateConsole(now + ": Spawned " + tokens[1] + " at " + tokens[2] + ", " + tokens[3]);
+                    if (tokens.size() == 2){
+                        tokens.add(String.valueOf(r.nextInt(game.WIDTH)));
+                        tokens.add(String.valueOf(r.nextInt(game.HEIGHT)));
+                        tokens.add(String.valueOf(r.nextInt(50)));
+                        tokens.add(String.valueOf(r.nextInt(50)));
+                        tokens.add(String.valueOf(r.nextInt(10)));
+                    }
+                    if(summonEntity(tokens.get(1), Float.parseFloat(tokens.get(2)), Float.parseFloat(tokens.get(3)),
+                            Float.parseFloat(tokens.get(4)), Float.parseFloat(tokens.get(5)), Float.parseFloat(tokens.get(6))))
+                        updateConsole(now + ": Spawned " + tokens.get(1) + " at " + tokens.get(2) + ", " + tokens.get(3));
                     else
-                        updateConsole("Syntax error: " + tokens[1] + " is not a valid entity!");
+                        updateConsole("Syntax error: " + tokens.get(1) + " is not a valid entity!");
                     break;
                 case "kill":
-                    if(removeEntities(tokens[1]))
-                        updateConsole(now + ": Killed " + tokens[1]);
+                    if(removeEntities(tokens.get(1)))
+                        updateConsole(now + ": Killed " + tokens.get(1));
                     else
-                        updateConsole("Syntax error: " + tokens[1] + " is not a valid entity!");
+                        updateConsole("Syntax error: " + tokens.get(1) + " is not a valid entity!");
                     break;
                 case "exit":
                     System.exit(0);
@@ -101,16 +118,30 @@ public class devconsole_ extends JFrame implements ActionListener, KeyListener {
                     if (game_.music) {
                         game_.music = false;
                         audioplayer_.getSound("null").play();
-                        audioplayer_.getMusic("null").play();
+                        audioplayer_.getMusic("null").play(); // library change error
                     }
                     else {
                         game_.music = true;
-                        audioplayer_.getMusic("music").loop();
+                        audioplayer_.getMusic("music").loop(); // library change error
                     }
                     updateConsole(now + ": Sound " + game.music);
                     break;
+                case "ai":
+                    if (tokens.get(1).equals("p1")) {
+                        if (game.computerP1) game.computerP1 = false;
+                        else game.computerP1 = true;
+                        updateConsole(now + ": P1 AI " + game.computerP1);
+                    } else if (tokens.get(1).equals("p2")) {
+                        if (game.computerP2) game.computerP2 = false;
+                        else game.computerP2 = true;
+                        updateConsole(now + ": P2 AI " + game.computerP2);
+                    } else {
+                        updateConsole("Syntax error: " + tokens.get(1) + " is not a valid player!");
+                        updateConsole("Usage: ai [p1 | p2]");
+                    }
+                    break;
                 default:
-                    updateConsole("Syntax error: " + tokens[0] + " is not a valid command!");
+                    updateConsole("Syntax error: " + tokens.get(0) + " is not a valid command!");
                     break;
             }
         } catch (Exception exception) {
@@ -118,38 +149,38 @@ public class devconsole_ extends JFrame implements ActionListener, KeyListener {
             exception.printStackTrace();
         }
     }
-    public boolean summonEntity (String tempObject, int x, int y, float velX, float velY, int spawnTimer) {
+    public boolean summonEntity (String tempObject, float x, float y, float velX, float velY, float spawnTimer) {
         switch (tempObject) {
             // entity classes
             case "basicenemy_":
-                handler.addObject(new basicenemy_(x, y, ID.BasicEnemy, handler));
+                handler.addObject(new basicenemy_((int)x, (int)y, ID.BasicEnemy, handler));
                 return true;
             case "fastenemy_":
-                handler.addObject(new fastenemy_(x, y, ID.FastEnemy, handler));
+                handler.addObject(new fastenemy_((int)x, (int)y, ID.FastEnemy, handler));
                 return true;
             case "hardenemy_":
-                handler.addObject(new hardenemy_(x, y, ID.HardEnemy, handler));
+                handler.addObject(new hardenemy_((int)x, (int)y, ID.HardEnemy, handler));
                 return true;
             case "smartenemy_":
-                handler.addObject(new smartenemy_(x, y, ID.SmartEnemy, handler, 3, 3));
+                handler.addObject(new smartenemy_((int)x, (int)y, ID.SmartEnemy, handler, 3, 3));
                 return true;
             case "basecircle_":
-                handler.addObject(new basecircle_(x, y, ID.BaseCircle, handler, velX, velY, spawnTimer));
+                handler.addObject(new basecircle_((int)x, (int)y, ID.BaseCircle, handler, velX, velY, (int)spawnTimer));
                 return true;
             case "bullethellgenerator_":
                 // spawn bullethellgenerator_ 300 300 0 0 0
-                handler.addObject(new bullethellgenerator_(x, y, ID.BULLETHELLGHOST, handler, game, spawnTimer,
+                handler.addObject(new bullethellgenerator_(x, y, ID.BULLETHELLGHOST, handler, game, (int)spawnTimer,
                         1, 1, 0, 0, 0, false,
                         false));
                 return true;
             case "triangleshooter_":
                 // spawn triangleshooter_ 300 300 0 0 50
-                handler.addObject(new triangleshooter_(x, y, ID.TriangleShooter, handler, velX, velY, spawnTimer, FACE.EAST));
+                handler.addObject(new triangleshooter_(x, y, ID.TriangleShooter, handler, velX, velY, (int)spawnTimer, FACE.EAST));
                 return true;
                 // misc
             // spawn water_ 0 0 0 0 0
             case "water_":
-                handler.addObject(new water_(x, y, ID.Water));
+                handler.addObject(new water_(x, y, ID.NULL));
                 return true;
             case "tictactoe_":
                 handler.addObject(new tictactoe_(x, y, ID.NULL, game));
@@ -161,6 +192,13 @@ public class devconsole_ extends JFrame implements ActionListener, KeyListener {
                 // spawn conwaysgameoflife_ 0 0 0 0 0
             case "conwaysgameoflife_":
                 handler.addObject(new conwaysgameoflife_(x, y, ID.NULL, game));
+                return true;
+            // spawn moresmarterenemy_ 0 0 0 0 0
+            case "moresmarterenemy_":
+                handler.addObject(new moresmarterenemy_(x, y, ID.MoreSmarter, handler, 20, 20));
+                return true;
+            case "osc_":
+                handler.addObject(new osc_(x, y, ID.NULL));
                 return true;
             default:
                 return false;

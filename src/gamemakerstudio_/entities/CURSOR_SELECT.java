@@ -4,7 +4,6 @@ import gamemakerstudio_.game_;
 import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.assets_;
 import gamemakerstudio_.misc.gameobject_;
-import gamemakerstudio_.misc.handler_;
 
 import java.awt.*;
 
