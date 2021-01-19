@@ -1,5 +1,5 @@
 # CUBESHOTS
-A rhythmic game written in Java using Slick2D library (based from the tutorial and game Wave© by RealTutsGML). Copyright goes to the owners of the music that was used in the game code (just for testing purposes)\
+A rhythmic bullet hell game written in Java (based from the tutorial and game Wave© by RealTutsGML). Copyright goes to the owners of the music that was used in the game code (just for testing purposes)\
 \
 Note: This game requires Java, no ifs and buts...\
 \
@@ -17,7 +17,7 @@ Note: This game requires Java, no ifs and buts...\
 \
 ![image 7](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/water.PNG)
 # Libraries
-Slick2D https://slick.ninjacave.com/
+Slick2D: https://slick.ninjacave.com/
 # Notes
 The code will not work properly if you didn't follow these:
 1. Edit the main code's (game_.java) run configuration's VM options to -Djava.library.path="path to Slick2D library"
