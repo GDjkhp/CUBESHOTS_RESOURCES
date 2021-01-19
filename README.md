@@ -15,9 +15,9 @@ Note: This game requires Java, no ifs and buts...\
 \
 ![image 6](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/tictactoe.PNG)\
 \
-![image 7](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/water.PNG)\
+![image 7](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/water.PNG)
 # Libraries
-Slick2D
+Slick2D https://slick.ninjacave.com/
 # Notes
 The code will not work properly if you didn't follow these:
 1. Edit the main code's (game_.java) run configuration's VM options to -Djava.library.path="path to Slick2D library"
@@ -32,7 +32,7 @@ You need JarSplice to compile the code (sorry i'm so lazy), so follow the instru
 6. Create Fat Jar.
 7. Copy resources_ folder to the same directory of the created fat jar.
 # Installation (for non-programmers)
-Download the source (download as zip, or the source code from the release page) for the resources, and the latest release (the fat jar).\
+Download the source (download as zip, or the source code from the release page) for the resources, and the latest release (the fat jar, located at bin).\
 \
 Edit: Must be in this directory structure:\
 ![add_dir](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/dir.png)
