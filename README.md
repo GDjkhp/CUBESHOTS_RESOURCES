@@ -16,7 +16,6 @@ Note: This game requires Java, no ifs and buts...\
 ![image 6](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/tictactoe.PNG)\
 \
 ![image 7](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/water.PNG)\
-\
 # Libraries
 Slick2D
 # Notes
@@ -48,3 +47,5 @@ A: yes, i am confirming Beginning Words! a word puzzle game hahaha!
 A: yes, i am confirming an unnamed 2.5D rpg sandbox game.
 5. Another game???\
 A: yes, i am confirming an unnamed platformer game.
+6. Another game????\
+A: yes, i am confirming ports from my old games, rng and color game.
