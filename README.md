@@ -1,5 +1,5 @@
 # CUBESHOTS
-A rhythmic bullet hell game written in Java (based from the tutorial and game Wave© by RealTutsGML). Copyright goes to the owners of the music that was used in the game code (just for testing purposes)\
+A rhythmic bullet hell game written in Java (based from the tutorial and game Wave© by RealTutsGML).\
 \
 Note: This game requires Java, no ifs and buts...\
 \
