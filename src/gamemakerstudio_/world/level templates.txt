@@ -147,15 +147,15 @@ if (page == 0) {
             else testString = "";
 list
 // template TODO: you should re-arrange these and make an automated code generator
-            if (mouseOver(mx, my, 50, 50, 50, 50)) {
+if (mouseOver(mx, my, 50, 50, 50, 50)) {
                 levelid = 0;
                 System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("null").loop();
-                // reset method
-                resetMethod();
+                if (game_.music) audioplayer_.getMusic("null").loop();
                 // world misc
                 bpm = 0;
                 endBar = 0;
+                // reset method
+                resetMethod();
             }
 old grid
 // first row

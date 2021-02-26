@@ -10,10 +10,7 @@ import gamemakerstudio_.entities.boss.crazyboss_;
 import gamemakerstudio_.game_;
 import gamemakerstudio_.gui.hud2_;
 import gamemakerstudio_.gui.hud_;
-import gamemakerstudio_.misc.ID;
-import gamemakerstudio_.misc.audioplayer_;
-import gamemakerstudio_.misc.gameobject_;
-import gamemakerstudio_.misc.handler_;
+import gamemakerstudio_.misc.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -47,6 +44,10 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
 
     public double difference;
     public double stepDifference;
+
+    // multiple bpm
+    /*int time, newBpm;
+    Map <time, newBpm> multiBpm = new HashMap<>();*/
 
     // level
     public static int page = 1;
@@ -729,16 +730,16 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
             }
             // second row
             else if (mouseOver(mx, my, 50, 150, 50, 50)){
-                testString = "217. Phantom (284843)"; // inconsistent
+                testString = "217. Florescentia (843207)";
             }
             else if (mouseOver(mx, my, 150, 150, 50, 50)){
                 testString = "218. Bioluminescent (583598)";
             }
             else if (mouseOver(mx, my, 250, 150, 50, 50)){
-                testString = "219. Let's Bounce (569208)"; // inconsistent
+                testString = "219. Let's Bounce (569208)";
             }
             else if (mouseOver(mx, my, 350, 150, 50, 50)){
-                testString = "220. Orbit (750199)"; // inconsistent
+                testString = "220. Orbit (750199)";
             }
             else if (mouseOver(mx, my, 450, 150, 50, 50)){
                 testString = "221. Luminous (721172)";
@@ -748,7 +749,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
             }
             // third row
             else if (mouseOver(mx, my, 50, 250, 50, 50)){
-                testString = "223. Cosmic Harmony (566422)"; // inconsistent
+                testString = "223. Love Talk (896264)";
             }
             else if (mouseOver(mx, my, 150, 250, 50, 50)){
                 testString = "224. Trouble (939885)";
@@ -760,10 +761,10 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 testString = "226. Rose (779227)";
             }
             else if (mouseOver(mx, my, 450, 250, 50, 50)){
-                testString = "227. Fateful Mist (673470)"; // nah
+                testString = "227. Fateful Mist (673470)";
             }
             else if (mouseOver(mx, my, 550, 250, 50, 50)){
-                testString = "228. Lili (919650)"; // inconsistent TODO: reserve this for tutorial
+                testString = "228. FlashYizz - Crazy (746583)";
             }
             // fourth row
             else if (mouseOver(mx, my, 50, 350, 50, 50)){
@@ -801,17 +802,17 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 testString = "239. Saunter (831097)";
             }
             else if (mouseOver(mx, my, 550, 450, 50, 50)){
-                testString = "240. R (853076)"; // weirdly inconsistent
+                testString = "240. Help Me Up (163061)";
             }
             // sixth row
             else if (mouseOver(mx, my, 50, 550, 50, 50)){
                 testString = "241. Ocean of Stars";
             }
             else if (mouseOver(mx, my, 150, 550, 50, 50)){
-                testString = "242. Within The Sadness (669275)"; // weirdly inconsistent
+                testString = "242. Bash (579626)";
             }
             else if (mouseOver(mx, my, 250, 550, 50, 50)){
-                testString = "243. Calm Craggy Area (734702)"; // weirdly inconsistent
+                testString = "243. Whirlwind (589599)";
             }
             else if (mouseOver(mx, my, 350, 550, 50, 50)){
                 testString = "244. Screamroom (586809)";
@@ -820,7 +821,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 testString = "245. Ichor (644761)";
             }
             else if (mouseOver(mx, my, 550, 550, 50, 50)){
-                testString = "246. Sunrays (726714)"; // inconsistent
+                testString = "246. Time Lapse (621139)";
             }
             // seventh row
             else if (mouseOver(mx, my, 50, 650, 50, 50)){
@@ -830,16 +831,16 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 testString = "248. Gloomy (794193)";
             }
             else if (mouseOver(mx, my, 250, 650, 50, 50)){
-                testString = "249. Love's Song (412494)"; // slightly inconsistent
+                testString = "249. Love's Song (412494)";
             }
             else if (mouseOver(mx, my, 350, 650, 50, 50)){
-                testString = "250. Neo Tokyo (559305)"; // inconsistent TODO: reserve this for tekken like cutscene
+                testString = "250. Blast Em (988166)";
             }
             else if (mouseOver(mx, my, 450, 650, 50, 50)){
                 testString = "251. Lost In The Rhythm (761410)";
             }
             else if (mouseOver(mx, my, 550, 650, 50, 50)){
-                testString = "252. _baby_why (681199)"; // inconsistent
+                testString = "252. Zelda II: Palace Theme (Xtrullor Remix) (687436)";
             }
             // else change to zero
             else testString = "";
@@ -875,86 +876,86 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 testString = "261. Ena (681533)";
             }
             else if (mouseOver(mx, my, 350, 150, 50, 50)){
-                testString = "262. Reapers"; // todo: you stopped here
+                testString = "262. Reapers (714209)";
             }
             else if (mouseOver(mx, my, 450, 150, 50, 50)){
-                testString = "263. 866074";
+                testString = "263. Last Dance (866074)";
             }
             else if (mouseOver(mx, my, 550, 150, 50, 50)){
-                testString = "264. Reminisce";
+                testString = "264. Reminisce (836173)";
             }
             // third row
             else if (mouseOver(mx, my, 50, 250, 50, 50)){
-                testString = "265. 589599";
+                testString = "265. Who You Are";
             }
             else if (mouseOver(mx, my, 150, 250, 50, 50)){
-                testString = "266. 843207";
+                testString = "266. Stardrive";
             }
             else if (mouseOver(mx, my, 250, 250, 50, 50)){
-                testString = "267. 896264";
+                testString = "267. Level One";
             }
             else if (mouseOver(mx, my, 350, 250, 50, 50)){
-                testString = "268. 746583";
+                testString = "268. Lights";
             }
             else if (mouseOver(mx, my, 450, 250, 50, 50)){
-                testString = "269. Help Me Up";
+                testString = "269. Skybound";
             }
             else if (mouseOver(mx, my, 550, 250, 50, 50)){
-                testString = "270. 579626";
+                testString = "270. Open Your Eyes";
             }
             // fourth row
             else if (mouseOver(mx, my, 50, 350, 50, 50)){
-                testString = "271. Pae Ki (684892)";
+                testString = "271. Party Hard Remix";
             }
             else if (mouseOver(mx, my, 150, 350, 50, 50)){
-                testString = "272. Time Lapse";
+                testString = "272. Nice Vibes";
             }
             else if (mouseOver(mx, my, 250, 350, 50, 50)){
-                testString = "273. Blast Em";
+                testString = "273. Horizons Remix";
             }
             else if (mouseOver(mx, my, 350, 350, 50, 50)){
-                testString = "274. ";
+                testString = "274. Ablixa";
             }
             else if (mouseOver(mx, my, 450, 350, 50, 50)){
-                testString = "275. ";
+                testString = "275. Untitled";
             }
             else if (mouseOver(mx, my, 550, 350, 50, 50)){
-                testString = "276. ";
+                testString = "276. Litoff";
             }
             // fifth row
             else if (mouseOver(mx, my, 50, 450, 50, 50)){
-                testString = "277. ";
+                testString = "277. Nuetronium";
             }
             else if (mouseOver(mx, my, 150, 450, 50, 50)){
-                testString = "278. ";
+                testString = "278. Sky Venture";
             }
             else if (mouseOver(mx, my, 250, 450, 50, 50)){
-                testString = "279. ";
+                testString = "279. Sad Machine Remix";
             }
             else if (mouseOver(mx, my, 350, 450, 50, 50)){
-                testString = "280. ";
+                testString = "280. Jazz Jackrabbit Remix";
             }
             else if (mouseOver(mx, my, 450, 450, 50, 50)){
-                testString = "281. ";
+                testString = "281. Shadow Queen Pt. 2 Remix";
             }
             else if (mouseOver(mx, my, 550, 450, 50, 50)){
-                testString = "282. ";
+                testString = "282. Let's Stomp";
             }
             // sixth row
             else if (mouseOver(mx, my, 50, 550, 50, 50)){
-                testString = "283. ";
+                testString = "283. Twinrova";
             }
             else if (mouseOver(mx, my, 150, 550, 50, 50)){
-                testString = "284. ";
+                testString = "284. Our Home";
             }
             else if (mouseOver(mx, my, 250, 550, 50, 50)){
-                testString = "285. ";
+                testString = "285. Geometry Dance";
             }
             else if (mouseOver(mx, my, 350, 550, 50, 50)){
-                testString = "286. ";
+                testString = "286. This is Geometry Dash";
             }
             else if (mouseOver(mx, my, 450, 550, 50, 50)){
-                testString = "287. ";
+                testString = "287. Waves";
             }
             else if (mouseOver(mx, my, 550, 550, 50, 50)){
                 testString = "288. ";
@@ -986,1720 +987,1724 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
     // changing libraries might not show these errors bcz they are logical
     public void levelsList(int mx, int my) {
         if (game.loadstate == 100) {
+
+            // fix for delay, not working, remove this
+            isPlaying = false;
+
             if (page == 1) {
                 if (mouseOver(mx, my, 50, 50, 50, 50)) {
                     levelid = 1;
-                    System.out.println("world 1");
-                    if (game_.music) audioplayer_.getMusic("dead_meme").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("dead_meme").play();
                     // world misc
                     bpm = 125;
                     endBar = 84;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 50, 50, 50)) {
                     levelid = 2;
-                    System.out.println("world 2");
-                    if (game_.music) audioplayer_.getMusic("dead_meme_2").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("dead_meme_2").play();
                     // world misc
                     bpm = 126;
                     endBar = 130;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 50, 50, 50)) {
                     levelid = 3;
-                    System.out.println("world 3");
-                    if (game_.music) audioplayer_.getMusic("eschew").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("eschew").play();
                     // world misc
                     bpm = 120;
                     endBar = 144;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 50, 50, 50)) {
                     levelid = 4;
-                    System.out.println("world 4");
-                    if (game_.music) audioplayer_.getMusic("rock_the_house").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("rock_the_house").play();
                     // world misc
                     bpm = 128;
                     endBar = 106;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 50, 50, 50)) {
                     levelid = 5;
-                    System.out.println("world 5");
-                    if (game_.music) audioplayer_.getMusic("end_of_time").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("end_of_time").play();
                     // world misc
                     bpm = 132;
                     endBar = 122;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 50, 50, 50)) {
                     levelid = 6;
-                    System.out.println("world 6");
-                    if (game_.music) audioplayer_.getMusic("nova_music").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("nova_music").play();
                     // world misc
                     bpm = 105;
                     endBar = 102;
+                    // reset method
+                    resetMethod();
                 }
                 // second row
                 if (mouseOver(mx, my, 50, 150, 50, 50)) {
                     levelid = 7;
-                    System.out.println("world 7");
-                    if (game_.music) audioplayer_.getMusic("time_leaper").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("time_leaper").play();
                     // world misc
                     bpm = 87.5;
                     endBar = 88;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 150, 50, 50)) {
                     levelid = 8;
-                    System.out.println("world 8");
-                    if (game_.music) audioplayer_.getMusic("gg").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("gg").play();
                     // world misc
                     bpm = 87.5;
                     endBar = 110;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 150, 50, 50)) {
                     levelid = 9;
-                    System.out.println("world 9");
-                    if (game_.music) audioplayer_.getMusic("namice1").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("namice1").play();
                     // world misc
                     bpm = 128;
                     endBar = 90;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 150, 50, 50)) {
                     levelid = 10;
-                    System.out.println("world 10");
-                    if (game_.music) audioplayer_.getMusic("namice2").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("namice2").play();
                     // world misc
                     bpm = 128;
                     endBar = 94;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 150, 50, 50)) {
                     levelid = 11;
-                    System.out.println("world 11");
-                    if (game_.music) audioplayer_.getMusic("there").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("there").play();
                     // world misc
                     bpm = 127;
                     endBar = 139;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 150, 50, 50)) {
                     levelid = 12;
-                    System.out.println("world 12");
-                    if (game_.music) audioplayer_.getMusic("namice3").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("namice3").play();
                     // world misc
                     bpm = 128;
                     endBar = 72;
+                    // reset method
+                    resetMethod();
                 }
                 // third row
                 if (mouseOver(mx, my, 50, 250, 50, 50)) {
                     levelid = 13;
-                    System.out.println("world 13");
-                    if (game_.music) audioplayer_.getMusic("fisher_price").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("fisher_price").play();
                     // world misc
                     bpm = 92.5;
                     endBar = 73;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 250, 50, 50)) {
                     levelid = 14;
-                    System.out.println("world 14");
-                    if (game_.music) audioplayer_.getMusic("dance_violins").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("dance_violins").play();
                     // world misc
                     bpm = 130;
                     endBar = 179;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 250, 50, 50)) {
                     levelid = 15;
-                    System.out.println("world 15");
-                    if (game_.music) audioplayer_.getMusic("aether").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("aether").play();
                     // world misc
                     bpm = 165;
                     endBar = 66;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 250, 50, 50)) {
                     levelid = 16;
-                    System.out.println("world 16");
-                    if (game_.music) audioplayer_.getMusic("clickbait").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("clickbait").play();
                     // world misc
                     bpm = 140;
                     endBar = 113;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 250, 50, 50)) {
                     levelid = 17;
-                    System.out.println("world 17");
-                    if (game_.music) audioplayer_.getMusic("debug").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("debug").play();
                     // world misc
                     bpm = 130;
                     endBar = 218;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 250, 50, 50)) {
                     levelid = 18;
-                    System.out.println("world 18");
-                    if (game_.music) audioplayer_.getMusic("iy").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("iy").play();
                     // world misc
                     bpm = 114;
                     endBar = 125;
+                    // reset method
+                    resetMethod();
                 }
                 // fourth row
                 if (mouseOver(mx, my, 50, 350, 50, 50)) {
                     levelid = 19;
-                    System.out.println("world 19");
-                    if (game_.music) audioplayer_.getMusic("ye").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("ye").play();
                     // world misc
                     bpm = 110;
                     endBar = 30;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 350, 50, 50)) {
                     levelid = 20;
-                    System.out.println("world 20");
-                    if (game_.music) audioplayer_.getMusic("mocha").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("mocha").play();
                     // world misc
                     bpm = 160;
                     endBar = 138;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 350, 50, 50)) {
                     levelid = 21;
-                    System.out.println("world 21");
-                    if (game_.music) audioplayer_.getMusic("everything_falls").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("everything_falls").play();
                     // world misc
                     bpm = 90;
                     endBar = 66;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 350, 50, 50)) {
                     levelid = 22;
-                    System.out.println("world 22");
-                    if (game_.music) audioplayer_.getMusic("lonely_forest").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("lonely_forest").play();
                     // world misc
                     bpm = 101;
                     endBar = 66;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 350, 50, 50)) {
                     levelid = 23;
-                    System.out.println("world 23");
-                    if (game_.music) audioplayer_.getMusic("saxophone").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("saxophone").play();
                     // world misc
                     bpm = 96;
                     endBar = 31;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 350, 50, 50)) {
                     levelid = 24;
-                    System.out.println("world 24");
-                    if (game_.music) audioplayer_.getMusic("overcharge").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("overcharge").play();
                     // world misc
                     bpm = 80;
                     endBar = 70;
+                    // reset method
+                    resetMethod();
                 }
                 // fifth row
                 if (mouseOver(mx, my, 50, 450, 50, 50)) {
                     levelid = 25;
-                    System.out.println("world 25");
-                    if (game_.music) audioplayer_.getMusic("flavored_ice").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("flavored_ice").play();
                     // world misc
                     bpm = 160;
                     endBar = 66;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 450, 50, 50)) {
                     levelid = 26;
-                    System.out.println("world 26");
-                    if (game_.music) audioplayer_.getMusic("shape_of_the_sun").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("shape_of_the_sun").play();
                     // world misc
                     bpm = 82.52;
                     endBar = 68;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 450, 50, 50)) {
                     levelid = 27;
-                    System.out.println("world 27");
-                    if (game_.music) audioplayer_.getMusic("angels").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("angels").play();
                     // world misc
                     bpm = 128;
                     endBar = 114;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 450, 50, 50)) {
                     levelid = 28;
-                    System.out.println("world 28");
-                    if (game_.music) audioplayer_.getMusic("perseverance").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("perseverance").play();
                     // world misc
                     bpm = 130;
                     endBar = 162;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 450, 50, 50)) {
                     levelid = 29;
-                    System.out.println("world 29");
-                    if (game_.music) audioplayer_.getMusic("dynasty").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("dynasty").play();
                     // world misc
                     bpm = 128;
                     endBar = 131;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 450, 50, 50)) {
                     levelid = 30;
-                    System.out.println("world 30");
-                    if (game_.music) audioplayer_.getMusic("bloom").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("bloom").play();
                     // world misc
                     bpm = 106;
                     endBar = 86;
+                    // reset method
+                    resetMethod();
                 }
                 // sixth row
                 if (mouseOver(mx, my, 50, 550, 50, 50)) {
                     levelid = 31;
-                    System.out.println("world 31");
-                    if (game_.music) audioplayer_.getMusic("canyon").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("canyon").play();
                     // world misc
                     bpm = 85;
                     endBar = 66;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 550, 50, 50)) {
                     levelid = 32;
-                    System.out.println("world 32");
-                    if (game_.music) audioplayer_.getMusic("overcloud").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("overcloud").play();
                     // world misc
                     bpm = 150;
                     endBar = 138;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 550, 50, 50)) {
                     levelid = 33;
-                    System.out.println("world 33");
-                    if (game_.music) audioplayer_.getMusic("ppaper_pplanes").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("ppaper_pplanes").play();
                     // world misc
                     bpm = 89.8;
                     endBar = 57;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 550, 50, 50)) {
                     levelid = 34;
-                    System.out.println("world 34");
-                    if (game_.music) audioplayer_.getMusic("prelude").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("prelude").play();
                     // world misc
                     bpm = 113;
                     endBar = 100;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 550, 50, 50)) {
                     levelid = 35;
-                    System.out.println("world 35");
-                    if (game_.music) audioplayer_.getMusic("spirit").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("spirit").play();
                     // world misc
                     bpm = 87;
                     endBar = 91;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 550, 50, 50)) {
                     levelid = 36;
-                    System.out.println("world 36");
-                    if (game_.music) audioplayer_.getMusic("catalyze").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("catalyze").play();
                     // world misc
                     bpm = 128;
                     endBar = 170;
+                    // reset method
+                    resetMethod();
                 }
                 // seventh row
                 if (mouseOver(mx, my, 50, 650, 50, 50)) {
                     levelid = 37;
-                    System.out.println("world 37");
-                    if (game_.music) audioplayer_.getMusic("stray").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("stray").play();
                     // world misc
                     bpm = 108;
                     endBar = 99;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 650, 50, 50)) {
                     levelid = 38;
-                    System.out.println("world 38");
-                    if (game_.music) audioplayer_.getMusic("jazz").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("jazz").play();
                     // world misc
                     bpm = 110;
                     endBar = 91;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 650, 50, 50)) {
                     levelid = 39;
-                    System.out.println("world 39");
-                    if (game_.music) audioplayer_.getMusic("success").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("success").play();
                     // world misc
                     bpm = 110;
                     endBar = 140;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 650, 50, 50)) {
                     levelid = 40;
-                    System.out.println("world 40");
-                    if (game_.music) audioplayer_.getMusic("supernova").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("supernova").play();
                     // world misc
                     bpm = 85;
                     endBar = 110;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 650, 50, 50)) {
                     levelid = 41;
-                    System.out.println("world 41");
-                    if (game_.music) audioplayer_.getMusic("time").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("time").play();
                     // world misc
                     bpm = 170;
                     endBar = 116;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 650, 50, 50)) {
                     levelid = 42;
-                    System.out.println("world 42");
-                    if (game_.music) audioplayer_.getMusic("marbl").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("marbl").play();
                     // world misc
                     bpm = 128;
                     endBar = 134;
+                    // reset method
+                    resetMethod();
                 }
             }
             if (page == 2) {
                 // first row
                 if (mouseOver(mx, my, 50, 50, 50, 50)) {
                     levelid = 43;
-                    System.out.println("world 43");
-                    if (game_.music) audioplayer_.getMusic("dreamer").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("dreamer").play();
                     // world misc
                     bpm = 128;
                     endBar = 139;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 50, 50, 50)) {
                     levelid = 44;
-                    System.out.println("world 44");
-                    if (game_.music) audioplayer_.getMusic("ghost_house").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("ghost_house").play();
                     // world misc
                     bpm = 130;
                     endBar = 117;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 50, 50, 50)) {
                     levelid = 45;
-                    System.out.println("world 45");
-                    if (game_.music) audioplayer_.getMusic("jude").loop();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("jude").play();
+                    // world misc
+                    bpm = 90;
+                    endBar = 57;
                     // reset method
                     resetMethod();
-                    // world misc
-                    bpm = 180;
-                    endBar = 113;
                 }
                 if (mouseOver(mx, my, 350, 50, 50, 50)) {
                     levelid = 46;
-                    System.out.println("world 46");
-                    if (game_.music) audioplayer_.getMusic("don't_hold_back").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("don't_hold_back").play();
                     // world misc
                     bpm = 116;
                     endBar = 111;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 50, 50, 50)) {
                     levelid = 47;
-                    System.out.println("world 47");
-                    if (game_.music) audioplayer_.getMusic("ouais_ouais").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("ouais_ouais").play();
                     // world misc
                     bpm = 120;
                     endBar = 116;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 50, 50, 50)) {
                     levelid = 48;
-                    System.out.println("world 48");
-                    if (game_.music) audioplayer_.getMusic("things_that_you_do").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("things_that_you_do").play();
                     // world misc
                     bpm = 120;
                     endBar = 138;
+                    // reset method
+                    resetMethod();
                 }
                 // second row
                 if (mouseOver(mx, my, 50, 150, 50, 50)) {
                     levelid = 49;
-                    System.out.println("world 49");
-                    if (game_.music) audioplayer_.getMusic("sad_summer").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("sad_summer").play();
                     // world misc
                     bpm = 75;
                     endBar = 49;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 150, 50, 50)) {
                     levelid = 50;
-                    System.out.println("world 50");
-                    if (game_.music) audioplayer_.getMusic("wishing").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("wishing").play();
                     // world misc
                     bpm = 74;
                     endBar = 48;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 150, 50, 50)) {
                     levelid = 51;
-                    System.out.println("world 51");
-                    if (game_.music) audioplayer_.getMusic("popo").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("popo").play();
                     // world misc
                     bpm = 79;
                     endBar = 61;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 150, 50, 50)) {
                     levelid = 52;
-                    System.out.println("world 52");
-                    if (game_.music) audioplayer_.getMusic("ocean_biome").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("ocean_biome").play();
                     // world misc
                     bpm = 140;
                     endBar = 120;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 150, 50, 50)) {
                     levelid = 53;
-                    System.out.println("world 53");
-                    if (game_.music) audioplayer_.getMusic("snowcone").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("snowcone").play();
                     // world misc
                     bpm = 87;
                     endBar = 90;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 150, 50, 50)) {
                     levelid = 54;
-                    System.out.println("world 54");
-                    if (game_.music) audioplayer_.getMusic("sawdust_angels").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("sawdust_angels").play();
                     // world misc
                     bpm = 174;
                     endBar = 142;
+                    // reset method
+                    resetMethod();
                 }
                 // third row
                 if (mouseOver(mx, my, 50, 250, 50, 50)) {
                     levelid = 55;
-                    System.out.println("world 55");
-                    if (game_.music) audioplayer_.getMusic("sky_high").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("sky_high").play();
                     // world misc
                     bpm = 128;
                     endBar = 120;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 250, 50, 50)) {
                     levelid = 56;
-                    System.out.println("world 56");
-                    if (game_.music) audioplayer_.getMusic("my_heart").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("my_heart").play();
                     // world misc
                     bpm = 87;
                     endBar = 98;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 250, 50, 50)) {
                     levelid = 57;
-                    System.out.println("world 57");
-                    if (game_.music) audioplayer_.getMusic("nekozilla").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("nekozilla").play();
                     // world misc
                     bpm = 128;
                     endBar = 88;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 250, 50, 50)) {
                     levelid = 58;
-                    System.out.println("world 58");
-                    if (game_.music) audioplayer_.getMusic("cloud_9").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("cloud_9").play();
                     // world misc
                     bpm = 128;
                     endBar = 146;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 250, 50, 50)) {
                     levelid = 59;
-                    System.out.println("world 59");
-                    if (game_.music) audioplayer_.getMusic("sunburst").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("sunburst").play();
                     // world misc
                     bpm = 128;
                     endBar = 100;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 250, 50, 50)) {
                     levelid = 60;
-                    System.out.println("world 60");
-                    if (game_.music) audioplayer_.getMusic("hellcat").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("hellcat").play();
                     // world misc
                     bpm = 87;
                     endBar = 82;
+                    // reset method
+                    resetMethod();
                 }
                 // fourth row
                 if (mouseOver(mx, my, 50, 350, 50, 50)) {
                     levelid = 61;
-                    System.out.println("world 61");
-                    if (game_.music) audioplayer_.getMusic("denise").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("denise").play();
                     // world misc
                     bpm = 102.42;
                     endBar = 82;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 350, 50, 50)) {
                     levelid = 62;
-                    System.out.println("world 62");
-                    if (game_.music) audioplayer_.getMusic("dollar_needles_1").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("dollar_needles_1").play();
                     // world misc
                     bpm = 88;
                     endBar = 53;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 350, 50, 50)) {
                     levelid = 63;
-                    System.out.println("world 63");
-                    if (game_.music) audioplayer_.getMusic("dollar_needles_3").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("dollar_needles_3").play();
                     // world misc
                     bpm = 83;
                     endBar = 50;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 350, 50, 50)) {
                     levelid = 64;
-                    System.out.println("world 64");
-                    if (game_.music) audioplayer_.getMusic("behind_these_closed_doors").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("behind_these_closed_doors").play();
                     // world misc
                     bpm = 88;
                     endBar = 48;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 350, 50, 50)) {
                     levelid = 65;
-                    System.out.println("world 65");
-                    if (game_.music) audioplayer_.getMusic("otis_mcmusic").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("otis_mcmusic").play();
                     // world misc
                     bpm = 92;
                     endBar = 50;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 350, 50, 50)) {
                     levelid = 66;
-                    System.out.println("world 66");
-                    if (game_.music) audioplayer_.getMusic("not_for_nothing").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("not_for_nothing").play();
                     // world misc
                     bpm = 86.4;
                     endBar = 44;
+                    // reset method
+                    resetMethod();
                 }
                 // fifth row
                 if (mouseOver(mx, my, 50, 450, 50, 50)) {
                     levelid = 67;
-                    System.out.println("world 67");
-                    if (game_.music) audioplayer_.getMusic("mind_control").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("mind_control").play();
                     // world misc
                     bpm = 129.46;
                     endBar = 140;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 450, 50, 50)) {
                     levelid = 68;
-                    System.out.println("world 68");
-                    if (game_.music) audioplayer_.getMusic("memories").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("memories").play();
                     // world misc
                     bpm = 128;
                     endBar = 130;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 450, 50, 50)) {
                     levelid = 69;
-                    System.out.println("world 69");
-                    if (game_.music) audioplayer_.getMusic("2011").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("2011").play();
                     // world misc
                     bpm = 102.1;
                     endBar = 82;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 450, 50, 50)) {
                     levelid = 70;
-                    System.out.println("world 70");
-                    if (game_.music) audioplayer_.getMusic("10000").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("10000").play();
                     // world misc
                     bpm = 100;
                     endBar = 102;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 450, 50, 50)) {
                     levelid = 71;
-                    System.out.println("world 71");
-                    if (game_.music) audioplayer_.getMusic("merry_christmas").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("merry_christmas").play();
                     // world misc
                     bpm = 200;
                     endBar = 50;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 450, 50, 50)) {
                     levelid = 72;
-                    System.out.println("world 72");
-                    if (game_.music) audioplayer_.getMusic("crab_rave").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("crab_rave").play();
                     // world misc
                     bpm = 125;
                     endBar = 82;
+                    // reset method
+                    resetMethod();
                 }
                 // sixth row
                 if (mouseOver(mx, my, 50, 550, 50, 50)) {
                     levelid = 73;
-                    System.out.println("world 73");
-                    if (game_.music) audioplayer_.getMusic("insurgent").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("insurgent").play();
                     // world misc
                     bpm = 140;
-                    endBar = 127;
+                    endBar = 128;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 550, 50, 50)) {
                     levelid = 74;
-                    System.out.println("world 74");
-                    if (game_.music) audioplayer_.getMusic("late_night_lo-fi").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("late_night_lo-fi").play();
                     // world misc
                     bpm = 128;
                     endBar = 98;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 550, 50, 50)) {
                     levelid = 75;
-                    System.out.println("world 75");
-                    if (game_.music) audioplayer_.getMusic("lith_harbor").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("lith_harbor").play();
                     // world misc
                     bpm = 127;
                     endBar = 79;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 550, 50, 50)) {
                     levelid = 76;
-                    System.out.println("world 76");
-                    if (game_.music) audioplayer_.getMusic("lost_in_thought").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("lost_in_thought").play();
                     // world misc
                     bpm = 90;
                     endBar = 31;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 550, 50, 50)) {
                     levelid = 77;
-                    System.out.println("world 77");
-                    if (game_.music) audioplayer_.getMusic("holystone").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("holystone").play();
                     // world misc
                     bpm = 110;
                     endBar = 186;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 550, 50, 50)) {
                     levelid = 78;
-                    System.out.println("world 78");
-                    if (game_.music) audioplayer_.getMusic("pounce").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("pounce").play();
                     // world misc
                     bpm = 110;
                     endBar = 76;
+                    // reset method
+                    resetMethod();
                 }
                 // seventh row
                 if (mouseOver(mx, my, 50, 650, 50, 50)) {
                     levelid = 79;
-                    System.out.println("world 79");
-                    if (game_.music) audioplayer_.getMusic("dick").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("dick").play();
                     // world misc
                     bpm = 121;
                     endBar = 59;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 650, 50, 50)) {
                     levelid = 80;
-                    System.out.println("world 80");
-                    if (game_.music) audioplayer_.getMusic("golden_haze").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("golden_haze").play();
                     // world misc
                     bpm = 140;
                     endBar = 90;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 650, 50, 50)) {
                     levelid = 81;
-                    System.out.println("world 81");
-                    if (game_.music) audioplayer_.getMusic("grim_reaper").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("grim_reaper").play();
                     // world misc
                     bpm = 90;
                     endBar = 46;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 650, 50, 50)) {
                     levelid = 82;
-                    System.out.println("world 82");
-                    if (game_.music) audioplayer_.getMusic("highscore").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("highscore").play();
                     // world misc
                     bpm = 110;
                     endBar = 118;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 650, 50, 50)) {
                     levelid = 83;
-                    System.out.println("world 83");
-                    if (game_.music) audioplayer_.getMusic("purity").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("purity").play();
                     // world misc
                     bpm = 140;
                     endBar = 91;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 650, 50, 50)) {
                     levelid = 84;
-                    System.out.println("world 84");
-                    if (game_.music) audioplayer_.getMusic("yellow_orange").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("yellow_orange").play();
                     // world misc
                     bpm = 105;
                     endBar = 77;
+                    // reset method
+                    resetMethod();
                 }
             }
             if (page == 3) {
                 // first row
                 if (mouseOver(mx, my, 50, 50, 50, 50)) {
                     levelid = 85;
-                    System.out.println("world 85");
-                    if (game_.music) audioplayer_.getMusic("surface").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("surface").play();
                     // world misc
                     bpm = 85;
                     endBar = 91;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 50, 50, 50)) {
                     levelid = 86;
-                    System.out.println("world 86");
-                    if (game_.music) audioplayer_.getMusic("nokia_arabic").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("nokia_arabic").play();
                     // world misc
                     bpm = 82;
                     endBar = 38;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 50, 50, 50)) {
                     levelid = 87;
-                    System.out.println("world 87");
-                    if (game_.music) audioplayer_.getMusic("nrg_drink").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("nrg_drink").play();
                     // world misc
                     bpm = 128;
                     endBar = 162;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 50, 50, 50)) {
                     levelid = 88;
-                    System.out.println("world 88");
-                    if (game_.music) audioplayer_.getMusic("happy").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("happy").play();
                     // world misc
                     bpm = 195;
                     endBar = 125;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 50, 50, 50)) {
                     levelid = 89;
-                    System.out.println("world 89");
-                    if (game_.music) audioplayer_.getMusic("moonsugar").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("moonsugar").play();
                     // world misc
                     bpm = 128;
                     endBar = 140;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 50, 50, 50)) {
                     levelid = 90;
-                    System.out.println("world 90");
-                    if (game_.music) audioplayer_.getMusic("rubik").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("rubik").play();
                     // world misc
                     bpm = 128;
                     endBar = 109;
+                    // reset method
+                    resetMethod();
                 }
                 // second row
                 if (mouseOver(mx, my, 50, 150, 50, 50)) {
                     levelid = 91;
-                    System.out.println("world 91");
-                    if (game_.music) audioplayer_.getMusic("ignition").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("ignition").play();
                     // world misc
                     bpm = 104;
                     endBar = 66;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 150, 50, 50)) {
                     levelid = 92;
-                    System.out.println("world 92");
-                    if (game_.music) audioplayer_.getMusic("the_force").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("the_force").play();
                     // world misc
                     bpm = 140;
                     endBar = 139;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 150, 50, 50)) {
                     levelid = 93;
-                    System.out.println("world 93");
-                    if (game_.music) audioplayer_.getMusic("candyland").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("candyland").play();
                     // world misc
                     bpm = 128;
                     endBar = 107;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 150, 50, 50)) {
                     levelid = 94;
-                    System.out.println("world 94");
-                    if (game_.music) audioplayer_.getMusic("infectious").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("infectious").play();
                     // world misc
                     bpm = 128;
                     endBar = 138;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 150, 50, 50)) {
                     levelid = 95;
-                    System.out.println("world 95");
-                    if (game_.music) audioplayer_.getMusic("crazy").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("crazy").play();
                     // world misc
                     bpm = 120;
                     endBar = 110;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 150, 50, 50)) {
                     levelid = 96;
-                    System.out.println("world 96");
-                    if (game_.music) audioplayer_.getMusic("race").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("race").play();
                     // world misc
                     bpm = 90;
                     endBar = 65;
+                    // reset method
+                    resetMethod();
                 }
                 // third row
                 if (mouseOver(mx, my, 50, 250, 50, 50)) {
                     levelid = 97;
-                    System.out.println("world 97");
-                    if (game_.music) audioplayer_.getMusic("ice_flow").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("ice_flow").play();
                     // world misc
                     bpm = 140;
                     endBar = 82;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 250, 50, 50)) {
                     levelid = 98;
-                    System.out.println("world 98");
-                    if (game_.music) audioplayer_.getMusic("kalimba").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("kalimba").play();
                     // world misc
                     bpm = 119.7;
                     endBar = 174;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 250, 50, 50)) {
                     levelid = 99;
-                    System.out.println("world 99");
-                    if (game_.music) audioplayer_.getMusic("party").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("party").play();
                     // world misc
                     bpm = 117;
                     endBar = 127;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 250, 50, 50)) {
                     levelid = 100;
-                    System.out.println("world 100");
-                    if (game_.music) audioplayer_.getMusic("bass").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("bass").play();
                     // world misc
                     bpm = 160;
                     endBar = 160;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 250, 50, 50)) {
                     levelid = 101;
-                    System.out.println("world 101");
-                    if (game_.music) audioplayer_.getMusic("hazmat").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("hazmat").play();
                     // world misc
                     bpm = 110;
                     endBar = 56;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 250, 50, 50)) {
                     levelid = 102;
-                    System.out.println("world 102");
-                    if (game_.music) audioplayer_.getMusic("panda_dance").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("panda_dance").play();
                     // world misc
                     bpm = 128;
                     endBar = 63;
+                    // reset method
+                    resetMethod();
                 }
                 // fourth row
                 if (mouseOver(mx, my, 50, 350, 50, 50)) {
                     levelid = 103;
-                    System.out.println("world 103");
-                    if (game_.music) audioplayer_.getMusic("get_up").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("get_up").play();
                     // world misc
                     bpm = 84;
                     endBar = 58;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 350, 50, 50)) {
                     levelid = 104;
-                    System.out.println("world 104");
-                    if (game_.music) audioplayer_.getMusic("river").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("river").play();
                     // world misc
                     bpm = 82;
                     endBar = 30;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 350, 50, 50)) {
                     levelid = 105;
-                    System.out.println("world 105");
-                    if (game_.music) audioplayer_.getMusic("follow").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("follow").play();
                     // world misc
                     bpm = 144;
                     endBar = 141;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 350, 50, 50)) {
                     levelid = 106;
-                    System.out.println("world 106");
-                    if (game_.music) audioplayer_.getMusic("slime").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("slime").play();
                     // world misc
                     bpm = 115;
                     endBar = 107;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 350, 50, 50)) {
                     levelid = 107;
-                    System.out.println("world 107");
-                    if (game_.music) audioplayer_.getMusic("euphoria").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("euphoria").play();
                     // world misc
                     bpm = 110;
                     endBar = 84;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 350, 50, 50)) {
                     levelid = 108;
-                    System.out.println("world 108");
-                    if (game_.music) audioplayer_.getMusic("nautilus").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("nautilus").play();
                     // world misc
                     bpm = 124;
                     endBar = 167;
+                    // reset method
+                    resetMethod();
                 }
                 // fifth row
                 if (mouseOver(mx, my, 50, 450, 50, 50)) {
                     levelid = 109;
-                    System.out.println("world 109");
-                    if (game_.music) audioplayer_.getMusic("liaquo").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("liaquo").play();
                     // world misc
                     bpm = 128;
                     endBar = 183;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 450, 50, 50)) {
                     levelid = 110;
-                    System.out.println("world 110");
-                    if (game_.music) audioplayer_.getMusic("crazy_frog").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("crazy_frog").play();
                     // world misc
                     bpm = 138;
                     endBar = 98;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 450, 50, 50)) {
                     levelid = 111;
-                    System.out.println("world 111");
-                    if (game_.music) audioplayer_.getMusic("never_lose_hope").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("never_lose_hope").play();
                     // world misc
                     bpm = 170;
                     endBar = 125;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 450, 50, 50)) {
                     levelid = 112;
-                    System.out.println("world 112");
-                    if (game_.music) audioplayer_.getMusic("skystrike").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("skystrike").play();
                     // world misc
                     bpm = 128;
                     endBar = 114;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 450, 50, 50)) {
                     levelid = 113;
-                    System.out.println("world 113");
-                    if (game_.music) audioplayer_.getMusic("starchaser").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("starchaser").play();
                     // world misc
                     bpm = 128;
                     endBar = 168;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 450, 50, 50)) {
                     levelid = 114;
-                    System.out.println("world 114");
-                    if (game_.music) audioplayer_.getMusic("a_newer_dawn").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("a_newer_dawn").play();
                     // world misc
                     bpm = 105;
                     endBar = 73;
+                    // reset method
+                    resetMethod();
                 }
                 // sixth row
                 if (mouseOver(mx, my, 50, 550, 50, 50)) {
                     levelid = 115;
-                    System.out.println("world 115");
-                    if (game_.music) audioplayer_.getMusic("monody").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("monody").play();
                     // world misc
                     bpm = 107;
                     endBar = 128;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 550, 50, 50)) {
                     levelid = 116;
-                    System.out.println("world 116");
-                    if (game_.music) audioplayer_.getMusic("unity").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("unity").play();
                     // world misc
                     bpm = 105;
                     endBar = 105;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 550, 50, 50)) {
                     levelid = 117;
-                    System.out.println("world 117");
-                    if (game_.music) audioplayer_.getMusic("xenogenesis").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("xenogenesis").play();
                     // world misc
                     bpm = 145;
                     endBar = 140;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 550, 50, 50)) {
                     levelid = 118;
-                    System.out.println("world 118");
-                    if (game_.music) audioplayer_.getMusic("time_stops").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("time_stops").play();
                     // world misc
                     bpm = 160;
                     endBar = 177;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 550, 50, 50)) {
                     levelid = 119;
-                    System.out.println("world 119");
-                    if (game_.music) audioplayer_.getMusic("badland").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("badland").play();
                     // world misc
                     bpm = 128;
                     endBar = 154;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 550, 50, 50)) {
                     levelid = 120;
-                    System.out.println("world 120");
-                    if (game_.music) audioplayer_.getMusic("challenger").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("challenger").play();
                     // world misc
                     bpm = 128;
                     endBar = 94;
+                    // reset method
+                    resetMethod();
                 }
                 // seventh row
                 if (mouseOver(mx, my, 50, 650, 50, 50)) {
                     levelid = 121;
-                    System.out.println("world 121");
-                    if (game_.music) audioplayer_.getMusic("bluemoon").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("bluemoon").play();
                     // world misc
                     bpm = 112.5;
                     endBar = 120;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 650, 50, 50)) {
                     levelid = 122;
-                    System.out.println("world 122");
-                    if (game_.music) audioplayer_.getMusic("cherry_blossoms").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("cherry_blossoms").play();
                     // world misc
                     bpm = 138;
                     endBar = 141;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 650, 50, 50)) {
                     levelid = 123;
-                    System.out.println("world 123");
-                    if (game_.music) audioplayer_.getMusic("walkman").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("walkman").play();
                     // world misc
                     bpm = 128;
                     endBar = 102;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 650, 50, 50)) {
                     levelid = 124;
-                    System.out.println("world 124");
-                    if (game_.music) audioplayer_.getMusic("beyond_the_walls").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("beyond_the_walls").play();
                     // world misc
                     bpm = 140;
                     endBar = 148;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 650, 50, 50)) {
                     levelid = 125;
-                    System.out.println("world 125");
-                    if (game_.music) audioplayer_.getMusic("april").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("april").play();
                     // world misc
                     bpm = 118;
                     endBar = 149;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 650, 50, 50)) {
                     levelid = 126;
-                    System.out.println("world 126");
-                    if (game_.music) audioplayer_.getMusic("sunlight").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("sunlight").play();
                     // world misc
                     bpm = 106;
                     endBar = 76;
+                    // reset method
+                    resetMethod();
                 }
             }
             if (page == 4) {
                 // first row
                 if (mouseOver(mx, my, 50, 50, 50, 50)) {
                     levelid = 127;
-                    System.out.println("world 127");
-                    if (game_.music) audioplayer_.getMusic("cyptik_dance").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("cyptik_dance").play();
                     // world misc
                     bpm = 120;
                     endBar = 50;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 50, 50, 50)) {
                     levelid = 128;
-                    System.out.println("world 128");
-                    if (game_.music) audioplayer_.getMusic("leaving_leafwood_forest").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("leaving_leafwood_forest").play();
                     // world misc
                     bpm = 125;
                     endBar = 107;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 50, 50, 50)) {
                     levelid = 129;
-                    System.out.println("world 129");
-                    if (game_.music) audioplayer_.getMusic("troglodyte").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("troglodyte").play();
                     // world misc
                     bpm = 134;
                     endBar = 150;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 50, 50, 50)) {
                     levelid = 130;
-                    System.out.println("world 130");
-                    if (game_.music) audioplayer_.getMusic("mayo").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("mayo").play();
                     // world misc
                     bpm = 135;
                     endBar = 106;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 50, 50, 50)) {
                     levelid = 131;
-                    System.out.println("world 131");
-                    if (game_.music) audioplayer_.getMusic("starship_showdown").loop();
-                    // reset method
-                    resetMethod();
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("starship_showdown").play();
                     // world misc
                     bpm = 147;
                     endBar = 152;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 50, 50, 50)) {
                     levelid = 132;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("kumquat").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("kumquat").play();
                     // world misc
                     bpm = 100;
                     endBar = 75;
+                    // reset method
+                    resetMethod();
                 }
                 // second row
                 if (mouseOver(mx, my, 50, 150, 50, 50)) {
                     levelid = 133;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("jaclyn").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("jaclyn").play();
                     // world misc
                     bpm = 130;
                     endBar = 133;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 150, 50, 50)) {
                     levelid = 134;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("jacques").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("jacques").play();
                     // world misc
                     bpm = 115;
                     endBar = 69;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 150, 50, 50)) {
                     levelid = 135;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("liftoff").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("liftoff").play();
                     // world misc
                     bpm = 140;
                     endBar = 148;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 150, 50, 50)) {
                     levelid = 136;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("never_be_alone").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("never_be_alone").play();
                     // world misc
                     bpm = 132;
                     endBar = 143;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 150, 50, 50)) {
                     levelid = 137;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("solitude").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("solitude").play();
                     // world misc
                     bpm = 138;
                     endBar = 120;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 150, 50, 50)) {
                     levelid = 138;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("close_to_the_sun").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("close_to_the_sun").play();
                     // world misc
                     bpm = 89;
                     endBar = 71;
+                    // reset method
+                    resetMethod();
                 }
                 // third row
                 if (mouseOver(mx, my, 50, 250, 50, 50)) {
                     levelid = 139;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("nanamori").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("nanamori").play();
                     // world misc
                     bpm = 150;
                     endBar = 122;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 250, 50, 50)) {
                     levelid = 140;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("fury").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("fury").play();
                     // world misc
                     bpm = 150;
                     endBar = 115;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 250, 50, 50)) {
                     levelid = 141;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("desu_ka").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("desu_ka").play();
                     // world misc
                     bpm = 140;
                     endBar = 132;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 250, 50, 50)) {
                     levelid = 142;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("voices").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("voices").play();
                     // world misc
                     bpm = 75;
                     endBar = 85;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 250, 50, 50)) {
                     levelid = 143;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("dancing").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("dancing").play();
                     // world misc
                     bpm = 75;
                     endBar = 59;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 250, 50, 50)) {
                     levelid = 144;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("shining_space").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("shining_space").play();
                     // world misc
                     bpm = 150;
                     endBar = 116;
+                    // reset method
+                    resetMethod();
                 }
                 // fourth row
                 if (mouseOver(mx, my, 50, 350, 50, 50)) {
                     levelid = 145;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("space_invaders").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("space_invaders").play();
                     // world misc
                     bpm = 128;
                     endBar = 188;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 350, 50, 50)) {
                     levelid = 146;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("drippy_dub").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("drippy_dub").play();
                     // world misc
                     bpm = 150;
                     endBar = 160;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 350, 50, 50)) {
                     levelid = 147;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("fake_princess").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("fake_princess").play();
                     // world misc
                     bpm = 88;
                     endBar = 128;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 350, 50, 50)) {
                     levelid = 148;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("lazergun").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("lazergun").play();
                     // world misc
                     bpm = 128;
                     endBar = 116;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 350, 50, 50)) {
                     levelid = 149;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("afterimage").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("afterimage").play();
                     // world misc
                     bpm = 75;
                     endBar = 42;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 350, 50, 50)) {
                     levelid = 150;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("star_wars_remix").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("star_wars_remix").play();
                     // world misc
                     bpm = 71.5;
                     endBar = 56;
+                    // reset method
+                    resetMethod();
                 }
                 // fifth row
                 if (mouseOver(mx, my, 50, 450, 50, 50)) {
                     levelid = 151;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("kiss_me_kiss_you").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("kiss_me_kiss_you").play();
                     // world misc
                     bpm = 128;
                     endBar = 98;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 450, 50, 50)) {
                     levelid = 152;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("enigma").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("enigma").play();
                     // world misc
                     bpm = 125;
                     endBar = 123;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 450, 50, 50)) {
                     levelid = 153;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("never_make_it").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("never_make_it").play();
                     // world misc
                     bpm = 114;
                     endBar = 111;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 450, 50, 50)) {
                     levelid = 154;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("flight").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("flight").play();
                     // world misc
                     bpm = 180;
                     endBar = 204;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 450, 50, 50)) {
                     levelid = 155;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("journey").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("journey").play();
                     // world misc
                     bpm = 130;
                     endBar = 114;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 450, 50, 50)) {
                     levelid = 156;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("lonley_forest").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("lonley_forest").play();
                     // world misc
                     bpm = 125;
                     endBar = 108;
+                    // reset method
+                    resetMethod();
                 }
                 // sixth row
                 if (mouseOver(mx, my, 50, 550, 50, 50)) {
                     levelid = 157;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("pirate").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("pirate").play();
                     // world misc
                     bpm = 150;
                     endBar = 130;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 550, 50, 50)) {
                     levelid = 158;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("aquamarine").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("aquamarine").play();
                     // world misc
                     bpm = 128;
                     endBar = 128;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 550, 50, 50)) {
                     levelid = 159;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("boombox").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("boombox").play();
                     // world misc
                     bpm = 128;
                     endBar = 153;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 550, 50, 50)) {
                     levelid = 160;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("niconico_dreams").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("niconico_dreams").play();
                     // world misc
                     bpm = 75;
                     endBar = 48;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 550, 50, 50)) {
                     levelid = 161;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("requiem_dream").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("requiem_dream").play();
                     // world misc
                     bpm = 120;
                     endBar = 88;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 550, 50, 50)) {
                     levelid = 162;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("eurodancer").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("eurodancer").play();
                     // world misc
                     bpm = 150;
                     endBar = 80;
+                    // reset method
+                    resetMethod();
                 }
                 // seventh row
                 if (mouseOver(mx, my, 50, 650, 50, 50)) {
                     levelid = 163;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("hello").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("hello").play();
                     // world misc
                     bpm = 105;
                     endBar = 100;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 650, 50, 50)) {
                     levelid = 164;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("mayday").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("mayday").play();
                     // world misc
                     bpm = 150;
                     endBar = 154;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 650, 50, 50)) {
                     levelid = 165;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("fireflies_remix").loop();
+                    if (game_.music) audioplayer_.getMusic("fireflies_remix").play();
 //                    handler.addObject(new osc_(0, 0, ID.NULL));
-                    // reset method
-                    resetMethod();
                     // world misc
                     bpm = 87;
                     endBar = 124;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 650, 50, 50)) {
                     levelid = 166;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("echolands").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("echolands").play();
                     // world misc
                     bpm = 140;
                     endBar = 112;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 650, 50, 50)) {
                     levelid = 167;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("voiceless").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("voiceless").play();
                     // world misc
                     bpm = 128;
                     endBar = 139;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 650, 50, 50)) {
                     levelid = 168;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("vaporwave_aesthetics").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("vaporwave_aesthetics").play();
                     // world misc
                     bpm = 160;
                     endBar = 179;
+                    // reset method
+                    resetMethod();
                 }
             }
             if (page == 5) {
@@ -2707,286 +2712,1200 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 if (mouseOver(mx, my, 50, 50, 50, 50)) {
                     levelid = 169;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("happy_troll").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("happy_troll").play();
                     // world misc
                     bpm = 150;
                     endBar = 120;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 50, 50, 50)) {
                     levelid = 170;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("dimension").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("dimension").play();
                     // world misc
                     bpm = 115;
                     endBar = 91;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 50, 50, 50)) {
                     levelid = 171;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("crystal_caves").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("crystal_caves").play();
                     // world misc
                     bpm = 110;
                     endBar = 78;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 50, 50, 50)) {
                     levelid = 172;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("elevate").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("elevate").play();
                     // world misc
                     bpm = 87;
                     endBar = 84;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 50, 50, 50)) {
                     levelid = 173;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("okiba").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("okiba").play();
                     // world misc
                     bpm = 100;
                     endBar = 109;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 50, 50, 50)) {
                     levelid = 174;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("falling_mysts").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("falling_mysts").play();
                     // world misc
                     bpm = 132;
                     endBar = 161;
+                    // reset method
+                    resetMethod();
                 }
                 // second row
                 if (mouseOver(mx, my, 50, 150, 50, 50)) {
                     levelid = 175;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("newgrounds_return").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("newgrounds_return").play();
                     // world misc
                     bpm = 97;
                     endBar = 31;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 150, 50, 50)) {
                     levelid = 176;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("body_jammer").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("body_jammer").play();
                     // world misc
                     bpm = 140;
                     endBar = 153;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 150, 50, 50)) {
                     levelid = 177;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("flirt").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("flirt").play();
                     // world misc
                     bpm = 168;
                     endBar = 148;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 150, 50, 50)) {
                     levelid = 178;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("retry").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("retry").play();
                     // world misc
                     bpm = 111.11;
                     endBar = 68;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 150, 50, 50)) {
                     levelid = 179;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("jet_set").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("jet_set").play();
                     // world misc
                     bpm = 124;
                     endBar = 144;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 150, 50, 50)) {
                     levelid = 180;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("the_calling").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("the_calling").play();
                     // world misc
                     bpm = 110;
                     endBar = 108;
+                    // reset method
+                    resetMethod();
                 }
                 // third row
                 if (mouseOver(mx, my, 50, 250, 50, 50)) {
                     levelid = 181;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("tria").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("tria").play();
                     // world misc
                     bpm = 130;
                     endBar = 134;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 250, 50, 50)) {
                     levelid = 182;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("endgame").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("endgame").play();
                     // world misc
                     bpm = 123;
                     endBar = 72;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 250, 50, 50)) {
                     levelid = 183;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("night_out").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("night_out").play();
                     // world misc
                     bpm = 122;
                     endBar = 98;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 250, 50, 50)) {
                     levelid = 184;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("april_showers").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("april_showers").play();
                     // world misc
                     bpm = 94;
                     endBar = 107;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 250, 50, 50)) {
                     levelid = 185;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("bathtub").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("bathtub").play();
                     // world misc
                     bpm = 72.50;
                     endBar = 48;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 250, 50, 50)) {
                     levelid = 186;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("laszlo").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("laszlo").play();
                     // world misc
                     bpm = 128;
                     endBar = 174;
+                    // reset method
+                    resetMethod();
                 }
                 // fourth row
                 if (mouseOver(mx, my, 50, 350, 50, 50)) {
                     levelid = 187;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("force").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("force").play();
                     // world misc
                     bpm = 105;
                     endBar = 103;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 350, 50, 50)) {
                     levelid = 188;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("spectre").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("spectre").play();
                     // world misc
                     bpm = 128;
                     endBar = 123;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 350, 50, 50)) {
                     levelid = 189;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("fade").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("fade").play();
                     // world misc
                     bpm = 90;
                     endBar = 100;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 350, 50, 50)) {
                     levelid = 190;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("bangarang").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("bangarang").play();
                     // world misc
                     bpm = 110;
                     endBar = 99;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 450, 350, 50, 50)) {
                     levelid = 191;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("bun_dem").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("bun_dem").play();
                     // world misc
                     bpm = 140;
                     endBar = 123;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 550, 350, 50, 50)) {
                     levelid = 192;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("sleepyhead").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("sleepyhead").play();
                     // world misc
                     bpm = 125;
                     endBar = 140;
+                    // reset method
+                    resetMethod();
                 }
                 // fifth row
                 if (mouseOver(mx, my, 50, 450, 50, 50)) {
                     levelid = 193;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("dance_till_you're_dead").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("dance_till_you're_dead").play();
                     // world misc
                     bpm = 155;
                     endBar = 50;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 150, 450, 50, 50)) {
                     levelid = 194;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("animals").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("animals").play();
                     // world misc
                     bpm = 128;
                     endBar = 100;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 250, 450, 50, 50)) {
                     levelid = 195;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("yeah").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("yeah").play();
                     // world misc
                     bpm = 110;
                     endBar = 98;
+                    // reset method
+                    resetMethod();
                 }
                 if (mouseOver(mx, my, 350, 450, 50, 50)) {
                     levelid = 196;
                     System.out.println("world " + levelid);
-                    if (game_.music) audioplayer_.getMusic("november").loop();
-                    // reset method
-                    resetMethod();
+                    if (game_.music) audioplayer_.getMusic("november").play();
                     // world misc
                     bpm = 115;
                     endBar = 107;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 450, 50, 50)) {
+                    levelid = 197;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("florescence").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 132;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 550, 450, 50, 50)) {
+                    levelid = 198;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("mantis_shrimp_showdown").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 171;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 50, 550, 50, 50)) {
+                    levelid = 199;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("holy_war").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 133;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 150, 550, 50, 50)) {
+                    levelid = 200;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("massacre").play();
+                    // world misc
+                    bpm = 144.0;
+                    endBar = 128;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 250, 550, 50, 50)) {
+                    levelid = 201;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("believe").play();
+                    // world misc
+                    bpm = 87.0;
+                    endBar = 83;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 350, 550, 50, 50)) {
+                    levelid = 202;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("karma").play();
+                    // world misc
+                    bpm = 100.0;
+                    endBar = 94;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 550, 50, 50)) {
+                    levelid = 203;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("refraction").play();
+                    // world misc
+                    bpm = 140.0;
+                    endBar = 108;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 550, 550, 50, 50)) {
+                    levelid = 204;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("glome").play();
+                    // world misc
+                    bpm = 87.0;
+                    endBar = 93;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 50, 650, 50, 50)) {
+                    levelid = 205;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("red_roses").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 125;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 150, 650, 50, 50)) {
+                    levelid = 206;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("a_little_older").play();
+                    // world misc
+                    bpm = 90.0;
+                    endBar = 68;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 250, 650, 50, 50)) {
+                    levelid = 207;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("when_time_tears").play();
+                    // world misc
+                    bpm = 130.0;
+                    endBar = 70;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 350, 650, 50, 50)) {
+                    levelid = 208;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("hold_on_to_me").play();
+                    // world misc
+                    bpm = 115.0;
+                    endBar = 70;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 650, 50, 50)) {
+                    levelid = 209;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("i'm_still_alive").play();
+                    // world misc
+                    bpm = 132.0;
+                    endBar = 42;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 550, 650, 50, 50)) {
+                    levelid = 210;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("nirmiti").play();
+                    // world misc
+                    bpm = 91.0;
+                    endBar = 112;
+                    // reset method
+                    resetMethod();
+                }
+            }
+            if (page == 6) {
+                if (mouseOver(mx, my, 50, 50, 50, 50)) {
+                    levelid = 211;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("avast_your_ass").play();
+                    // world misc
+                    bpm = 160.0;
+                    endBar = 94;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 150, 50, 50, 50)) {
+                    levelid = 212;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("soulwind").play();
+                    // world misc
+                    bpm = 140.0;
+                    endBar = 187;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 250, 50, 50, 50)) {
+                    levelid = 213;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("zenith").play();
+                    // world misc
+                    bpm = 174.0;
+                    endBar = 180;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 350, 50, 50, 50)) {
+                    levelid = 214;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("portals").play();
+                    // world misc
+                    bpm = 100.0;
+                    endBar = 125;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 50, 50, 50)) {
+                    levelid = 215;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("mellow").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 132;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 550, 50, 50, 50)) {
+                    levelid = 216;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("lullaby_remix").play();
+                    // world misc
+                    bpm = 86.0;
+                    endBar = 79;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 50, 150, 50, 50)) {
+                    levelid = 217;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("florescentia").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 112;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 150, 150, 50, 50)) {
+                    levelid = 218;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("bioluminescent").play();
+                    // world misc
+                    bpm = 133.0;
+                    endBar = 214;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 250, 150, 50, 50)) {
+                    levelid = 219;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("let's_bounce").play();
+                    // world misc
+                    bpm = 140.0;
+                    endBar = 108;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 350, 150, 50, 50)) {
+                    levelid = 220;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("orbit").play();
+                    // world misc
+                    bpm = 160.0;
+                    endBar = 186;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 150, 50, 50)) {
+                    levelid = 221;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("luminous").play();
+                    // world misc
+                    bpm = 138.0;
+                    endBar = 145;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 550, 150, 50, 50)) {
+                    levelid = 222;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("mako").play();
+                    // world misc
+                    bpm = 129.0;
+                    endBar = 110;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 50, 250, 50, 50)) {
+                    levelid = 223;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("love_talk").play();
+                    // world misc
+                    bpm = 143.0;
+                    endBar = 154;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 150, 250, 50, 50)) {
+                    levelid = 224;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("trouble").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 87;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 250, 250, 50, 50)) {
+                    levelid = 225;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("peepee").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 78;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 350, 250, 50, 50)) {
+                    levelid = 226;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("rose").play();
+                    // world misc
+                    bpm = 174.0;
+                    endBar = 195;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 250, 50, 50)) {
+                    levelid = 227;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("fateful_mist").play();
+                    // world misc
+                    bpm = 140.0;
+                    endBar = 111;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 550, 250, 50, 50)) {
+                    levelid = 228;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("flashyizz_crazy").play();
+                    // world misc
+                    bpm = 140.0;
+                    endBar = 91;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 50, 350, 50, 50)) {
+                    levelid = 229;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("glorious_morning").play();
+                    // world misc
+                    bpm = 152.0;
+                    endBar = 72;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 150, 350, 50, 50)) {
+                    levelid = 230;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("flyboy_and_gabbergirl").play();
+                    // world misc
+                    bpm = 178.0;
+                    endBar = 173;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 250, 350, 50, 50)) {
+                    levelid = 231;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("battletown").play();
+                    // world misc
+                    bpm = 157.0;
+                    endBar = 124;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 350, 350, 50, 50)) {
+                    levelid = 232;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("nanobyte").play();
+                    // world misc
+                    bpm = 98.0;
+                    endBar = 52;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 350, 50, 50)) {
+                    levelid = 233;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("fantasy").play();
+                    // world misc
+                    bpm = 110.0;
+                    endBar = 96;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 550, 350, 50, 50)) {
+                    levelid = 234;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("artificial").play();
+                    // world misc
+                    bpm = 87.0;
+                    endBar = 95;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 50, 450, 50, 50)) {
+                    levelid = 235;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("run_away").play();
+                    // world misc
+                    bpm = 150.0;
+                    endBar = 138;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 150, 450, 50, 50)) {
+                    levelid = 236;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("dream").play();
+                    // world misc
+                    bpm = 125.0;
+                    endBar = 99;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 250, 450, 50, 50)) {
+                    levelid = 237;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("drained").play();
+                    // world misc
+                    bpm = 85.0;
+                    endBar = 84;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 350, 450, 50, 50)) {
+                    levelid = 238;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("just_kidding").play();
+                    // world misc
+                    bpm = 95.0;
+                    endBar = 78;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 450, 50, 50)) {
+                    levelid = 239;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("saunter").play();
+                    // world misc
+                    bpm = 150.0;
+                    endBar = 155;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 550, 450, 50, 50)) {
+                    levelid = 240;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("help_me_up").play();
+                    // world misc
+                    bpm = 79.0;
+                    endBar = 66;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 50, 550, 50, 50)) {
+                    levelid = 241;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("ocean_of_stars").play();
+                    // world misc
+                    bpm = 171.0;
+                    endBar = 181;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 150, 550, 50, 50)) {
+                    levelid = 242;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("bash").play();
+                    // world misc
+                    bpm = 125.0;
+                    endBar = 50;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 250, 550, 50, 50)) {
+                    levelid = 243;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("whirlwind").play();
+                    // world misc
+                    bpm = 110.0;
+                    endBar = 35;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 350, 550, 50, 50)) {
+                    levelid = 244;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("screamroom").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 126;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 550, 50, 50)) {
+                    levelid = 245;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("ichor").play();
+                    // world misc
+                    bpm = 156.0;
+                    endBar = 136;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 550, 550, 50, 50)) {
+                    levelid = 246;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("time_lapse").play();
+                    // world misc
+                    bpm = 127.0;
+                    endBar = 97;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 50, 650, 50, 50)) {
+                    levelid = 247;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("calm").play();
+                    // world misc
+                    bpm = 97.72;
+                    endBar = 119;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 150, 650, 50, 50)) {
+                    levelid = 248;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("gloomy").play();
+                    // world misc
+                    bpm = 128.92;
+                    endBar = 128;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 250, 650, 50, 50)) {
+                    levelid = 249;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("love's_song").play();
+                    // world misc
+                    bpm = 140.0;
+                    endBar = 117;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 350, 650, 50, 50)) {
+                    levelid = 250;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("blast_em").play();
+                    // world misc
+                    bpm = 75.0;
+                    endBar = 60;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 650, 50, 50)) {
+                    levelid = 251;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("lost_in_the_rhythm").play();
+                    // world misc
+                    bpm = 120.0;
+                    endBar = 126;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 550, 650, 50, 50)) {
+                    levelid = 252;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("zelda_palace").play();
+                    // world misc
+                    bpm = 75.0;
+                    endBar = 71;
+                    // reset method
+                    resetMethod();
+                }
+            }
+            if (page == 7) {
+                if (mouseOver(mx, my, 50, 50, 50, 50)) {
+                    levelid = 253;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("form").play();
+                    // world misc
+                    bpm = 105.0;
+                    endBar = 71;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 150, 50, 50, 50)) {
+                    levelid = 254;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("paladin").play();
+                    // world misc
+                    bpm = 130.0;
+                    endBar = 129;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 250, 50, 50, 50)) {
+                    levelid = 255;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("myriad").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 115;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 350, 50, 50, 50)) {
+                    levelid = 256;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("pyrolysis").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 171;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 50, 50, 50)) {
+                    levelid = 257;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("elevatia").play();
+                    // world misc
+                    bpm = 100.0;
+                    endBar = 92;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 550, 50, 50, 50)) {
+                    levelid = 258;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("prelude_remix").play();
+                    // world misc
+                    bpm = 77.5;
+                    endBar = 80;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 50, 150, 50, 50)) {
+                    levelid = 259;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("could_it_be").play();
+                    // world misc
+                    bpm = 81.0;
+                    endBar = 34;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 150, 150, 50, 50)) {
+                    levelid = 260;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("spooky").play();
+                    // world misc
+                    bpm = 90.0;
+                    endBar = 29;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 250, 150, 50, 50)) {
+                    levelid = 261;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("ena").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 107;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 350, 150, 50, 50)) {
+                    levelid = 262;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("reapers").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 117;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 150, 50, 50)) {
+                    levelid = 263;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("last_dance").play();
+                    // world misc
+                    bpm = 175.0;
+                    endBar = 151;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 550, 150, 50, 50)) {
+                    levelid = 264;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("reminisce").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 84;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 50, 250, 50, 50)) {
+                    levelid = 265;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("who_you_are").play();
+                    // world misc
+                    bpm = 140.0;
+                    endBar = 146;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 150, 250, 50, 50)) {
+                    levelid = 266;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("stardrive").play();
+                    // world misc
+                    bpm = 185.0;
+                    endBar = 204;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 250, 250, 50, 50)) {
+                    levelid = 267;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("level_one").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 113;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 350, 250, 50, 50)) {
+                    levelid = 268;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("lights").play();
+                    // world misc
+                    bpm = 140.0;
+                    endBar = 116;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 250, 50, 50)) {
+                    levelid = 269;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("skybound").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 228;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 550, 250, 50, 50)) {
+                    levelid = 270;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("open_your_eyes").play();
+                    // world misc
+                    bpm = 140.0;
+                    endBar = 35;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 50, 350, 50, 50)) {
+                    levelid = 271;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("party_hard_remix").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 197;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 150, 350, 50, 50)) {
+                    levelid = 272;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("nice_vibes").play();
+                    // world misc
+                    bpm = 110.0;
+                    endBar = 104;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 250, 350, 50, 50)) {
+                    levelid = 273;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("horizons_remix").play();
+                    // world misc
+                    bpm = 130.0;
+                    endBar = 220;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 350, 350, 50, 50)) {
+                    levelid = 274;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("ablixa").play();
+                    // world misc
+                    bpm = 122.0;
+                    endBar = 129;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 350, 50, 50)) {
+                    levelid = 275;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("untitled").play();
+                    // world misc
+                    bpm = 111.0;
+                    endBar = 75;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 550, 350, 50, 50)) {
+                    levelid = 276;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("litoff").play();
+                    // world misc
+                    bpm = 140.0;
+                    endBar = 148;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 50, 450, 50, 50)) {
+                    levelid = 277;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("nuetronium").play();
+                    // world misc
+                    bpm = 140.0;
+                    endBar = 182;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 150, 450, 50, 50)) {
+                    levelid = 278;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("sky_venture").play();
+                    // world misc
+                    bpm = 125.0;
+                    endBar = 40;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 250, 450, 50, 50)) {
+                    levelid = 279;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("sad_machine_remix").play();
+                    // world misc
+                    bpm = 177.0;
+                    endBar = 244;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 350, 450, 50, 50)) {
+                    levelid = 280;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("jazz_jackrabbit_remix").play();
+                    // world misc
+                    bpm = 100.0;
+                    endBar = 81;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 450, 50, 50)) {
+                    levelid = 281;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("shadow_queen_part_2_remix").play();
+                    // world misc
+                    bpm = 140.0;
+                    endBar = 135;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 550, 450, 50, 50)) {
+                    levelid = 282;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("let's_stomp").play();
+                    // world misc
+                    bpm = 128.0;
+                    endBar = 133;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 50, 550, 50, 50)) {
+                    levelid = 283;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("twinrova").play();
+                    // world misc
+                    bpm = 110.0;
+                    endBar = 88;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 150, 550, 50, 50)) {
+                    levelid = 284;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("our_home").play();
+                    // world misc
+                    bpm = 105.0;
+                    endBar = 100;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 250, 550, 50, 50)) {
+                    levelid = 285;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("geometry_dance").play();
+                    // world misc
+                    bpm = 112.0;
+                    endBar = 71;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 350, 550, 50, 50)) {
+                    levelid = 286;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("this_is_geometry_dash").play();
+                    // world misc
+                    bpm = 87.0;
+                    endBar = 82;
+                    // reset method
+                    resetMethod();
+                }
+                if (mouseOver(mx, my, 450, 550, 50, 50)) {
+                    levelid = 287;
+                    System.out.println("world " + levelid);
+                    if (game_.music) audioplayer_.getMusic("waves").play();
+                    // world misc
+                    bpm = 100.0;
+                    endBar = 100;
+                    // reset method
+                    resetMethod();
                 }
             }
         }
@@ -3002,21 +3921,21 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
     public void mouseReleased(MouseEvent e) {
         // spam fix
         if (lazyDelayFix == 0) {
-            if (game.gameState == game_.STATE.LevelSelect) {
+            if (game.gameState == STATE.LevelSelect) {
                 int mx = e.getX();
                 int my = e.getY();
                 // prev button
                 if (page > 1) {
                     if (mouseOver(mx, my, 16, 366, 20, 20)) {
                         page--;
-                        if (game_.music) audioplayer_.getSound("click_sound").play();
+                        if (game_.sfx) audioplayer_.getSound("click_sound").play();
                     }
                 }
                 // next button
                 if (page < maxPage) {
                     if (mouseOver(mx, my, 616, 366, 20, 20)) {
                         page++;
-                        if (game_.music) audioplayer_.getSound("click_sound").play();
+                        if (game_.sfx) audioplayer_.getSound("click_sound").play();
                     }
                 }
                 // grid
@@ -3024,7 +3943,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     for (int y = 50; y <= 650; y += 100) {
                         if (x < mx && mx % 100 > 50) {
                             if (y < my && my % 100 > 50) {
-                                if (game_.music) audioplayer_.getSound("click_sound").play();
+                                if (game_.sfx) audioplayer_.getSound("click_sound").play();
                             }
                         }
                     }
@@ -3036,7 +3955,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
 
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
-        if (game.gameState == game_.STATE.LevelSelect) {
+        if (game.gameState == STATE.LevelSelect) {
             if (!game.isSelecting) {
                 switch (key) {
                     case KeyEvent.VK_LEFT:
@@ -3094,7 +4013,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 handler.addObject(new CURSOR_SELECT(gridSelectX + 10, gridSelectY + 10, ID.CURSORSELECT));
                 // run level
                 if (key == KeyEvent.VK_ENTER) {
-                    if (game.music) audioplayer_.getSound("click_sound").play();
+                    if (game_.sfx) audioplayer_.getSound("click_sound").play();
                     if (gridSelectX == 0 && gridSelectY == 350 && page > 1){
                         page--;
                     } else if (gridSelectX == 600 && gridSelectY == 350 && page < maxPage){
@@ -3122,11 +4041,14 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
     double ns = 1000000000 / amountOfTicks;
     public double delta = 0;
 
+    // test for player
+    public static boolean isPlaying = false;
+
     public void tick() {
         if (lazyDelayFix != 0) lazyDelayFix--;
 
         // hover
-        if (game.isSelecting && game.gameState == game_.STATE.LevelSelect)
+        if (game.isSelecting && game.gameState == STATE.LevelSelect)
             hoverOnLevels(gridSelectX + 30, gridSelectY + 30);
 
         // THE GODDAMN GAMELOOP WORKS! still has issues at starting and pausing the tick
@@ -3139,7 +4061,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
 
         while (delta >= 1) {
             delta--;
-            if (game.gameState == game_.STATE.GameBeta) {
+            if (game.gameState == STATE.GameBeta/* && isPlaying*/) {
                 levelTick++;
                 // THE LOGIC THAT MADE ME INSANE!, pls fix this if gameloop is noob
                 // edit: see comments above about gameloop
@@ -3279,13 +4201,13 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
             }
         }
         // duration bar
-        double formulaForDuration = ((double) handler.total_steps / ((double) endBar * 16 - 15)) * 100;
+        double formulaForDuration = ((double) handler.total_steps / ((double) endBar * 16 - 15)) * 100; // more accurate than beats
         durationBar = formulaForDuration;
         durationValue = (int) durationBar * 2;
         durationValue = game.clamp(durationValue, 0, 255);
     }
     public void render(Graphics g) {
-        if (game.gameState == game_.STATE.LevelSelect) {
+        if (game.gameState == STATE.LevelSelect) {
             g.setColor(Color.green);
             g.drawString(testString, 0, 40);
             g.drawString("Page: " + page, game.WIDTH - 70, 38);
@@ -3332,7 +4254,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
             }
         }
         // my monstrosity
-        if (game.gameState == game_.STATE.GameBeta && !game.hideHud) {
+        if (game.gameState == STATE.GameBeta && !game.hideHud) {
             // offset is 16
             g.drawString("Level ID: " + levelid + ", BPm: " + bpm + ", End (Bar): " + endBar,
                     game.WIDTH - 300, 15);
@@ -3344,6 +4266,22 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                     game.WIDTH - 300, 96);
             g.drawString("Difference (Steps): " + stepDifference,
                     game.WIDTH - 300, 112);
+            // TODO: sync this with crappy watch
+            // beta audio engine info
+            /*g.drawString("Time: " + osc_.audioTime + ", Progress: " + osc_.audioProgress,
+                    game.WIDTH - 300, 128);
+            g.drawString("Time: " + hud.tellTime(),
+                    game.WIDTH - 300, 144);*/
+            // slick2d
+            g.drawString("Elapsed: " + musicTime(audioplayer_.getMusic(audioplayer_.currentMusic).getPosition()) +
+                    ", Total: " + trimCenti(),
+                    game.WIDTH - 300, 128); // TODO: add total time
+            // xt audio stuff
+            /*g.drawString("BYTES (" + BYTES.length + "): " + Arrays.toString(BYTES).,
+                    game.WIDTH - 300, 144);
+            g.drawString("bytesToFloats (" + bytesToFloats(BYTES).length + "): " + Arrays.toString(bytesToFloats(BYTES)),
+                    game.WIDTH - 300, 160);*/
+
             /*g.drawString("???: " + (hud.score/100) + "|" + (hud.hudTick/100) + "|" + (levelTick/100),
                     game.WIDTH - 300, 128);*/
             // duration bar
@@ -3353,6 +4291,32 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
             g.drawRect(game.WIDTH - 300, 18, 200, 32);
             g.drawString((int)durationBar + "%", game.WIDTH - 64, 38);
         }
+    }
+
+    public String musicTime(float var){
+        try {
+            int centi = (int)(var * 100) % 100, sec = (int)(var % 60), min = (int)(var / 60);
+            String tempCenti, tempSec, tempMin;
+
+            if (sec < 10) tempSec = "0" + sec;
+            else tempSec = String.valueOf(sec);
+
+            if (min < 10) tempMin = "0" + min;
+            else tempMin = String.valueOf(min);
+
+            if (centi < 10) tempCenti = "0" + centi;
+            else tempCenti = String.valueOf(centi);
+
+            return tempMin + ":" + tempSec + ":" + tempCenti;
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return "null";
+    }
+
+    public String trimCenti(){
+        String var = musicTime((60000f/(float)levels_.bpm/1000f) * ((float)levels_.endBar * 4 - 3));
+        return var.substring(0, var.length() - 3);
     }
 
     private boolean mouseOver(int mx, int my, int x, int y, int width, int height) {
@@ -3365,12 +4329,13 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
 
     public void resetMethod() {
         // reset
-        game.gameState = game_.STATE.GameBeta;
+        game.gameState = STATE.GameBeta;
         hud.resetTimer();
         handler.clearEnemies();
         hud.setLevel(1);
         scoreKeep = 0;
         scoreKeepStep = 0;
+
         // p1 reset
         hud.setScore(0);
         hud.setXp(0);
@@ -3378,6 +4343,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
         handler_.spdp1 = 5;
         hud_.bounds = 0;
         hud.heartsTaken = 0;
+
         // p2 reset
         hud2.setScore(0);
         hud2.setXp(0);
@@ -3385,6 +4351,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
         handler_.spdp2 = 5;
         hud2_.bounds = 0;
         hud2.heartsTaken = 0;
+
         // reset music
         handler.total_bars = 1;
         handler.total_beats = 1;
@@ -3393,13 +4360,10 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
         handler.total_bars_steps = 1;
         handler.total_steps = 1;
         handler.fourbarsteps = 1;
+
         // gameloop fix
-        lastTime = System.nanoTime();
-        delta = 0;
-        hud.lastTime = System.nanoTime();
-        hud.delta = 0;
-        hud2.lastTime = System.nanoTime();
-        hud2.delta = 0;
+        game.gameloopFix(); // gameloop fix
+
         // for test purposes
         levelTick = 0;
         hud.hudTick = 0;
@@ -3407,15 +4371,17 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
                 handler,0, 0));
         handler.addObject(new portalred_(r.nextInt(game.WIDTH-64), r.nextInt(game.HEIGHT-64), ID.PortalRed,
                 handler,0, 0));
+
     }
     public int levelTick = 0; // responsible for time
 
     private void winCode() {
         // end code
         if (handler.total_bars == endBar) {
-            if (game_.music) audioplayer_.getSound("win_1").play();
+            if (game_.sfx) audioplayer_.getSound("win_1").play();
             if (game_.music) audioplayer_.getMusic(audioplayer_.currentMusic).pause();
-            game.gameState = game_.STATE.End;
+            game.gameState = STATE.End;
+            // modified endCode for beta gameplay
             handler.clearEnemies();
             if (game.customTicksBoolean) game.customTicksMethod();
             else {
@@ -3448,7 +4414,7 @@ public class levels_ implements MouseMotionListener, MouseListener, KeyListener,
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (game.gameState == game_.STATE.GameBeta){
+        if (game.gameState == STATE.GameBeta){
             System.out.println("action triggered");
         }
     }
