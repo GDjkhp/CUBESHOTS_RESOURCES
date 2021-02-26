@@ -7,6 +7,7 @@ package gamemakerstudio_.gui;
 
 import gamemakerstudio_.game_;
 import gamemakerstudio_.misc.GunManager;
+import gamemakerstudio_.misc.STATE;
 
 import java.awt.*;
 
@@ -40,7 +41,7 @@ public class hud2_ {
             greenValue = HEALTH * 2;
             greenValue = game_.clamp(greenValue, 0, 255);
             if (HEALTH != 0) {
-                if (!game_.isInvincible && game_.gameState != game_.STATE.Edit && game_.gameState != game_.STATE.End) {
+                if (!game_.isInvincible && game_.gameState != STATE.Edit && game_.gameState != STATE.End) {
                     score++;
                     xp++;
                 }
@@ -51,6 +52,7 @@ public class hud2_ {
     public void render(Graphics g) {
         // player hud
         // health bar
+        // TODO: fix pos, must snap to grid
         g.setColor(Color.gray);
         g.fillRect(15, 103, 200 + bounds, 32);
         g.setColor(new Color(75, greenValue, 0));

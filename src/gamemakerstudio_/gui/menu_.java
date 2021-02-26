@@ -9,7 +9,6 @@ import gamemakerstudio_.entities.RangeArea;
 import gamemakerstudio_.entities.ghost_;
 import gamemakerstudio_.entities.player2_;
 import gamemakerstudio_.game_;
-import gamemakerstudio_.game_.STATE;
 import gamemakerstudio_.misc.*;
 import gamemakerstudio_.world.levels_;
 
@@ -76,18 +75,18 @@ public class menu_ implements KeyListener, MouseMotionListener, MouseListener {
 //                rotateTick++;
 
                 game.gameState = STATE.Select;
-                if (game_.music) audioplayer_.getSound("click_sound").play();;
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();;
                 return;
             }
             // help
             if (mouseOver(mx, my, xOffset, 175, 200, 50)) {
                 game.gameState = STATE.Help;
-                if (game_.music) audioplayer_.getSound("click_sound").play();;
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();;
                 return;
             }
             // quit
             if (mouseOver(mx, my, xOffset, 250, 200, 50)) {
-                if (game_.music) audioplayer_.getSound("click_sound").play();
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
                 if (game.JOptionPaneOption) {
                     int a = JOptionPane.showConfirmDialog(null, "Are you sure?", "Quit", JOptionPane.INFORMATION_MESSAGE);
                     if (a == JOptionPane.YES_OPTION) System.exit(0);
@@ -98,20 +97,22 @@ public class menu_ implements KeyListener, MouseMotionListener, MouseListener {
                 if (game.loadstate == 100) {
                     if (game_.music) {
                         game_.music = false;
+                        game_.sfx = false;
                         audioplayer_.getSound("null").play();
                         audioplayer_.getMusic("null").play(); // library change error
                     }
                     else {
                         game_.music = true;
+                        game_.sfx = true;
                         audioplayer_.getMusic("music").loop(); // library change error
                     }
 
-                    if (game_.music) audioplayer_.getSound("click_sound").play();
+                    if (game_.sfx) audioplayer_.getSound("click_sound").play();
                 }
             }
             // ldm
             if (mouseOver(mx, my, xOffset + 100, 325, 100, 50)) {
-                if (game_.music) audioplayer_.getSound("click_sound").play();
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
                 if (game_.ldm) game_.ldm = false;
                 else game_.ldm = true;
             }
@@ -121,22 +122,23 @@ public class menu_ implements KeyListener, MouseMotionListener, MouseListener {
             // easy
             if (mouseOver(mx, my, xOffset, 100, 200, 50)) {
                 game.easy();
-                if (game_.music) audioplayer_.getSound("click_sound").play();
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
             }
             // medium
             if (mouseOver(mx, my, xOffset, 175, 200, 50)) {
                 game.medium();
-                if (game_.music) audioplayer_.getSound("click_sound").play();
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
             }
             // hard?
             if (mouseOver(mx, my, xOffset, 250, 200, 50)) {
                 System.out.println("u are too gei to die_");
-                // ideas: circle of darkness mode, just like in caves on pokemon
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
+                // TODO: ideas: circle of darkness mode, just like in caves on pokemon
             }
             // beta
             if (mouseOver(mx, my, xOffset, 325, 200, 50)) {
                 game.gameState = STATE.LevelSelect;
-                if (game_.music) audioplayer_.getSound("tick").play();
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
                 levels_.lazyDelayFix = 100;
             }
         }
@@ -156,10 +158,10 @@ public class menu_ implements KeyListener, MouseMotionListener, MouseListener {
                         if (tempObject.getId() == ID.Player2 || tempObject.getId() == ID.P2Range)
                             handler.removeObject(tempObject);
                     }
-                    if (game_.music) audioplayer_.getSound("alert").play();
+                    if (game_.sfx) audioplayer_.getSound("alert").play();
                 }
                 else {
-                    if (game_.music) audioplayer_.getSound("alert").play();
+                    if (game_.sfx) audioplayer_.getSound("alert").play();
                     game_.multiplayer = true;
                     handler.addObject(new player2_(game_.WIDTH - 128, 200, ID.Player2, handler, hud2));
                     handler.addObject(new RangeArea(0, 0, ID.P2Range, handler));
@@ -168,20 +170,22 @@ public class menu_ implements KeyListener, MouseMotionListener, MouseListener {
             if (mouseOver(mx, my, xOffset, 325, 100, 50)) {
                 if (game.computerP1) game.computerP1 = false;
                 else game.computerP1 = true;
-                if (game_.music) audioplayer_.getSound("click_sound").play();
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
             }
             if (mouseOver(mx, my, xOffset + 100, 325, 100, 50)) {
                 if (game.computerP2) game.computerP2 = false;
                 else game.computerP2 = true;
-                if (game_.music) audioplayer_.getSound("click_sound").play();
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
             }
         }
         // back menu for game over
         if (game.gameState == STATE.End) {
             if (mouseOver(mx, my, xOffset, 325, 200, 50)) {
                 game.gameState = STATE.Menu;
-                if (game_.music) audioplayer_.getSound("click_sound").play();
-                if (game_.music) audioplayer_.getMusic("music").loop(); // library change error
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
+                if (game_.music) {
+                    audioplayer_.getMusic("music").loop(); // library change error
+                }
             }
         }
         // credits
@@ -219,30 +223,12 @@ public class menu_ implements KeyListener, MouseMotionListener, MouseListener {
         } else return false;
     }
 
+    // rip old codes
     int percentHud, percentHud2;
 
     double tpmTemp, spmTemp;
     
     public void tick() {
-        // dumb init
-        try {
-            // old
-            percentHud = (int) ((((double) hud.getScore()) /
-                    (((60000 / levels_.bpm) / 10) * ((double) (levels_.endBar * 4) - 3))) * 100);
-            percentHud2 = (int) ((((double) hud2.getScore()) /
-                    (((60000 / levels_.bpm) / 10) * ((double) (levels_.endBar * 4) - 3))) * 100);
-            // new
-            /* fix the percentHud code */
-            tpmTemp = (60000 / levels_.bpm) / 10;
-            spmTemp = tpmTemp * 4 / 16;
-            // 99% fix, this was dumb
-            if (percentHud == 99) percentHud = 100;
-            if (percentHud2 == 99) percentHud2 = 100;
-
-        } catch (Exception e){
-            System.out.println("weird shit happened!");
-            e.printStackTrace();
-        }
         col = new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255));
         // easter egg
         if (ghost_.isControlled) {
@@ -257,6 +243,8 @@ public class menu_ implements KeyListener, MouseMotionListener, MouseListener {
         Graphics2D g2d = (Graphics2D) g;
         AffineTransform old = g2d.getTransform();
 //        if (isRotating) g2d.rotate(Math.toRadians(rotateTick), 0, 0);
+
+        // TODO: fix pos, must snap to grid
         // menu
         if (game.gameState == STATE.Menu) {
             Font fnthead = new Font("mojangles", 1, 50);
@@ -341,9 +329,9 @@ public class menu_ implements KeyListener, MouseMotionListener, MouseListener {
             if (!game.currentGameStateIsBeta)
                 g.drawString("p1_: " + hud.getScore(), xOffset + 10, 125);
             else {
-                g.drawString("p1_: " + hud.getScore() + " - " + game.clamp(percentHud, 0, 100) + "%",
-                        xOffset + 10, 125);
-
+                g.drawString("p1_: " + hud.getScore() + " - " + Math.round(((((double) hud.getScore()) /
+                                ((((60000 / levels_.bpm) / 10) * 4 / 16) * ((double) (levels_.endBar * 16) - 15))) * 100f)) + "%",
+                        xOffset + 10, 125); // WHY IS THIS 17?!
                 g.drawString("hearts_: " + hud.heartsTaken,
                         xOffset + 10, 150);
             }
@@ -353,7 +341,8 @@ public class menu_ implements KeyListener, MouseMotionListener, MouseListener {
                 if (!game.currentGameStateIsBeta)
                     g.drawString("p2_: " + hud2.getScore(), xOffset + 10, 200);
                 else {
-                    g.drawString("p2_: " + hud2.getScore() + " - " + game.clamp(percentHud2, 0, 100) + "%",
+                    g.drawString("p2_: " + hud2.getScore() + " - " + Math.round(((((double) hud2.getScore()) /
+                                    ((((60000 / levels_.bpm) / 10) * 4 / 16) * ((double) (levels_.endBar * 16) - 15))) * 100f)) + "%",
                             xOffset + 10, 200);
                     g.drawString("hearts_: " + hud2.heartsTaken,
                             xOffset + 10, 225);
@@ -402,6 +391,7 @@ public class menu_ implements KeyListener, MouseMotionListener, MouseListener {
             g.drawString("worlds beta_", xOffset + 10, 350);
             g.drawRect(xOffset, 325, 200, 50);
         }
+        // secret
         if (game.gameState == STATE.Credits) {
             // credits
 //        g.drawString("Engine based on RealTutsGML's Wave© game", 0, game_.HEIGHT - 100);
@@ -414,20 +404,7 @@ public class menu_ implements KeyListener, MouseMotionListener, MouseListener {
 
         // default
         g.setFont(new Font("mojangles", 0, 15));
-        // fps
-        g.setColor(Color.green);
-
-        String waitInfo = "Wait Time: " + game_.throwWait + ", Loss: " + game_.throwErrorWait;
-        String FPS = "FPS/TPS: " + game_.throwFrames + "/" + game_.throwTick;
-        String objectInfo = "Objects: " + handler.object.size();
-
-        g.drawString(waitInfo,
-                game_.WIDTH - game_.getTextWidth(g, waitInfo) - 10, game_.HEIGHT - 100);
-        g.drawString(FPS,
-                game_.WIDTH - game_.getTextWidth(g, FPS) - 10, game_.HEIGHT - 75);
-        g.drawString(objectInfo,
-                game_.WIDTH - game_.getTextWidth(g, objectInfo) - 10, game_.HEIGHT - 50);
-
+        g.setColor(col);
         g.drawString("© The Karakters Kompany", 0, game_.HEIGHT - 50);
         g.drawRect(0, game_.HEIGHT - 65, 220, 20);
     }

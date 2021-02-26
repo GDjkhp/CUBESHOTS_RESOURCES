@@ -3,10 +3,7 @@ package gamemakerstudio_.gui;
 import gamemakerstudio_.entities.*;
 import gamemakerstudio_.entities.experimental.*;
 import gamemakerstudio_.game_;
-import gamemakerstudio_.misc.FACE;
-import gamemakerstudio_.misc.ID;
-import gamemakerstudio_.misc.audioplayer_;
-import gamemakerstudio_.misc.handler_;
+import gamemakerstudio_.misc.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,8 +11,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.List;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Random;
 
 public class devconsole_ extends JFrame implements ActionListener, KeyListener {
     // random
@@ -117,11 +116,13 @@ public class devconsole_ extends JFrame implements ActionListener, KeyListener {
                 case "sound":
                     if (game_.music) {
                         game_.music = false;
+                        game_.sfx = false;
                         audioplayer_.getSound("null").play();
                         audioplayer_.getMusic("null").play(); // library change error
                     }
                     else {
                         game_.music = true;
+                        game_.sfx = true;
                         audioplayer_.getMusic("music").loop(); // library change error
                     }
                     updateConsole(now + ": Sound " + game.music);
@@ -139,6 +140,19 @@ public class devconsole_ extends JFrame implements ActionListener, KeyListener {
                         updateConsole("Syntax error: " + tokens.get(1) + " is not a valid player!");
                         updateConsole("Usage: ai [p1 | p2]");
                     }
+                    break;
+                case "smoothfix":
+                    if (game.smoothFix) game.smoothFix = false;
+                    else game.smoothFix = true;
+                    // main gameloop vars fix, no need to use this, i extracted the vars to while(running)
+                    // edit: i was wrong lol
+                    game.delta = 0;
+                    game.lastTime = System.nanoTime();
+                    updateConsole(now + ": Smooth Fix " + game.smoothFix);
+                    break;
+                case "load":
+                    game.gameState = STATE.Load;
+                    updateConsole(now + ": Forced Load Screen");
                     break;
                 default:
                     updateConsole("Syntax error: " + tokens.get(0) + " is not a valid command!");
@@ -198,7 +212,14 @@ public class devconsole_ extends JFrame implements ActionListener, KeyListener {
                 handler.addObject(new moresmarterenemy_(x, y, ID.MoreSmarter, handler, 20, 20));
                 return true;
             case "osc_":
-                handler.addObject(new osc_(x, y, ID.NULL));
+                handler.addObject(new osc_(x, y, ID.OSC));
+                return true;
+            case "camera_":
+                handler.addObject(new camera_(0, 0, ID.NULL, game));
+                return true;
+            case "rendertexture_":
+                handler.addObject(new rendertexture_(game_.WIDTH/2 - (game_.WIDTH/2)/2, game_.HEIGHT/2 - (game_.HEIGHT/2)/2, ID.RenderTexture, game_.WIDTH/2, game_.HEIGHT/2, 0, 0));
+                handler.addObject(new rendertexture_(game_.WIDTH/2 - (game_.WIDTH/4)/2, game_.HEIGHT/2 - (game_.HEIGHT/4)/2, ID.RenderTexture, game_.WIDTH/4, game_.HEIGHT/4, 0, 0));
                 return true;
             default:
                 return false;

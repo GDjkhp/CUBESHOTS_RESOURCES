@@ -14,6 +14,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
 import java.util.Random;
 /**
  *
@@ -24,15 +25,28 @@ public class window_ extends WindowAdapter implements KeyListener {
     game_ game;
 
     static Random r = new Random();
-    int randomLimit = 350;
-    int randIntFormula = r.nextInt(randomLimit) + 1;
     int randInt = 112 /*randIntFormula*/;
     boolean obfuscated = false;
     int obfuscatedChance = r.nextInt(100) + 1;
 
-    public JFrame frame = new JFrame();
+    public static JFrame frame = new JFrame();
+
+    // hide cursor
+
+    // Transparent 16 x 16 pixel cursor image.
+    BufferedImage cursorImg = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
+
+    // Create a new blank cursor.
+    Cursor blankCursor = Toolkit.getDefaultToolkit().createCustomCursor(
+            cursorImg, new Point(0, 0), "blank cursor");
+
 
     public window_ (int width, int height, String title, game_ game, handler_ handler) {
+        // blank
+        frame.getContentPane().setCursor(blankCursor);
+        // default
+        frame.getContentPane().setCursor(Cursor.getDefaultCursor());
+
         if (obfuscatedChance == 1) obfuscated = true;
 
         this.handler = handler;
@@ -108,19 +122,19 @@ public class window_ extends WindowAdapter implements KeyListener {
             case 17:
                 return "<pack.png Minecraft Seed>";
             case 18:
-                return "<minecraft seed 0>"; // jump to line 302 for more
+                return "<minecraft seed 0>"; // jump to case 302 for more
             case 19:
                 return "wubba lubba dub dub";
             case 20:
-                return "Not to be confused with \"Just Shapes and Beats\"";
+                return "Not to be confused with Just Shapes and Beats"; // NOT TO BE CONFUSED
             case 21:
-                return "Not to be confused with \"Touhou Project\"";
+                return "Not to be confused with Touhou Project";
             case 22:
-                return "Not to be confused with \"GALAGA\"";
+                return "Not to be confused with GALAGA";
             case 23:
                 return "matpat's holy number";
             case 24:
-                return "Not to be confused with \"Space Invaders\"";
+                return "Not to be confused with Space Invaders";
             case 25:
                 return "gg terraria";
             case 26:
@@ -222,25 +236,25 @@ public class window_ extends WindowAdapter implements KeyListener {
             case 74:
                 return "rip adobe flash";
             case 75:
-                return "also try geometry dash";
+                return "also try Geometry Dash";
             case 76:
-                return "also try minecraft";
+                return "also try Minecraft";
             case 77:
-                return "also try terraria";
+                return "also try Terraria";
             case 78:
-                return "also try super meat boy";
+                return "also try Super Meat Boy";
             case 79:
-                return "also try electronic super joy";
+                return "also try Electronic Super Joy";
             case 80:
-                return "also try among us";
+                return "also try Among Us";
             case 81:
-                return "also try bombsquad";
+                return "also try Bombsquad";
             case 82:
-                return "also try cuphead";
+                return "also try Cuphead";
             case 83:
-                return "also try cave story";
+                return "also try Cave Story";
             case 84:
-                return "also try stick fight: the game";
+                return "also try Stick Fight: The Game";
             case 85:
                 return "what, you never played tuber simulator?";
             case 86:
@@ -276,7 +290,7 @@ public class window_ extends WindowAdapter implements KeyListener {
             case 101:
                 return "unintelligible";
             case 102:
-                return "also try the henry stickmin collection";
+                return "also try The Henry Stickmin Collection";
             case 103:
                 return "there are 4 impostors among us";
             case 104:
@@ -522,9 +536,9 @@ public class window_ extends WindowAdapter implements KeyListener {
             case 225:
                 return "auto tune and it's finest";
             case 226:
-                return "also try carrion";
+                return "also try Carrion";
             case 227:
-                return "also try kindergarten";
+                return "also try Kindergarten";
             case 228:
                 return "under pressure";
             case 229:
@@ -586,7 +600,7 @@ public class window_ extends WindowAdapter implements KeyListener {
             case 257:
                 return "lord gaben take my money";
             case 258:
-                return "im'ma end this man's whole career";
+                return "imma end this man's whole career";
             case 259:
                 return "glasses, jacket, shirt";
             case 260:
@@ -610,7 +624,7 @@ public class window_ extends WindowAdapter implements KeyListener {
             case 269:
                 return "too many toasters";
             case 270:
-                return "i hope she made lotta spaghetti";
+                return "i hope she made lots of spaghetti";
             case 271:
                 return "all toasters toast toast";
             case 272:
@@ -636,7 +650,7 @@ public class window_ extends WindowAdapter implements KeyListener {
             case 282:
                 return "what happened to Unus Annus?";
             case 283:
-                return "momento mori";
+                return "memento mori";
             case 284:
                 return "includes navier stokes equations";
             case 285:
@@ -652,7 +666,7 @@ public class window_ extends WindowAdapter implements KeyListener {
             case 290:
                 return "electric boogaloo";
             case 291:
-                return "OH SHUT UP!"; // ksi among us random wheel video
+                return "it is what it is";
             case 292:
                 return "moist";
             case 293:
@@ -738,62 +752,350 @@ public class window_ extends WindowAdapter implements KeyListener {
             case 333:
                 return "baloney and donut code";
             case 334:
-                return "";
+                return "my code is mine, it belongs to me, you can't have my code";
             case 335:
-                return "";
+                return "DOOR STUCK! DOOR STUCK!";
             case 336:
-                return "";
+                return "nosebleed";
             case 337:
-                return "";
+                return "photoshop has gone too far";
             case 338:
-                return "";
+                return "tumbleweed";
             case 339:
-                return "";
+                return "procrastinate";
             case 340:
-                return "";
+                return "terrain generation";
             case 341:
-                return "";
+                return "quantum computing";
             case 342:
-                return "";
+                return "being dumb the smart way";
             case 343:
-                return "";
+                return "being smart the dumb way";
             case 344:
-                return "";
+                return "sorry my crosshair was 0.5 pixel off";
             case 345:
-                return "";
+                return "where physics has gone wrong";
             case 346:
-                return "";
+                return "hyperbolic rendering";
             case 347:
-                return "";
+                return "death to facepunch";
             case 348:
-                return "";
+                return "pentesting";
             case 349:
-                return "";
+                return "starstuff";
             case 350:
-                return "";
+                return "3fish.exe";
             case 351:
-                return "";
+                return "infinite stairs";
             case 352:
-                return "";
+                return "byte[] pcmData";
             case 353:
-                return "";
+                return "the art of bodging";
             case 354:
-                return "";
+                return "will return in 1000000000ms";
             case 355:
-                return "";
+                return "ritar, iterate elements of array in reverse order";
             case 356:
-                return "";
+                return "weeeeeeeeeeeeeeeeeee";
             case 357:
-                return "";
+                return "also try Friday Night Funkin";
             case 358:
-                return "";
+                return "also try Beat Stomper";
             case 359:
+                return "also try Smash Hit";
+            case 360:
+                return "also try Antichamber";
+            case 361:
+                return "also try Superliminal";
+            case 362:
+                return "also try VVVVVV";
+            case 363:
+                return "ok take your time";
+            case 364:
+                return "we can do this the easy way, or we can do it the hard way";
+            case 365:
+                return "akinator almost beat my game";
+            case 366:
+                return "VIP Edit";
+            case 367:
+                return "low pass filter";
+            case 368:
+                return "wrap text";
+            case 369:
+                return "what? how?";
+            case 370:
+                return "zipf mystery explained";
+            case 371:
+                return "infinite procedural platforms";
+            case 372:
+                return "3d maze generator";
+            case 373:
+                return "rtx rtx rtx";
+            case 374:
+                return "eagle eye";
+            case 375:
+                return "falcon punch";
+            case 376:
+                return "god i love myself";
+            case 377:
+                return "say, fuzzy pickles";
+            case 378:
+                return "=+ is different from +=";
+            case 379:
+                return "++x is the same as x++";
+            case 380:
+                return "still a prototype";
+            case 381:
+                return "Robot robot = new Robot();";
+            case 382:
+                return "your computer is an advanced clock";
+            case 383:
+                return "Math.round(inaccurateData)";
+            case 384:
+                return "thank you sjoerd van kreel";
+            case 385:
+                return "co-produced by marcus hutchins";
+            case 386:
+                return "created by aaron mcgruder";
+            case 387:
+                return "i made it despite your directions";
+            case 388:
                 return "";
-
+            case 389:
+                return "";
+            case 390:
+                return "";
+            case 391:
+                return "";
+            case 392:
+                return "";
+            case 393:
+                return "";
+            case 394:
+                return "";
+            case 395:
+                return "";
+            case 396:
+                return "";
+            case 397:
+                return "";
+            case 398:
+                return "";
+            case 399:
+                return "";
+            case 400:
+                return "";
+            case 401:
+                return "";
+            case 402:
+                return "";
+            case 403:
+                return "";
+            case 404:
+                return "";
+            case 405:
+                return "";
+            case 406:
+                return "";
+            case 407:
+                return "";
+            case 408:
+                return "";
+            case 409:
+                return "";
+            case 410:
+                return "";
+            case 411:
+                return "";
+            case 412:
+                return "";
+            case 413:
+                return "";
+            case 414:
+                return "";
+            case 415:
+                return "";
+            case 416:
+                return "";
+            case 417:
+                return "";
+            case 418:
+                return "";
+            case 419:
+                return "";
+            case 420:
+                return "";
+            case 421:
+                return "";
+            case 422:
+                return "";
+            case 423:
+                return "";
+            case 424:
+                return "";
+            case 425:
+                return "";
+            case 426:
+                return "";
+            case 427:
+                return "";
+            case 428:
+                return "";
+            case 429:
+                return "";
+            case 430:
+                return "";
+            case 431:
+                return "";
+            case 432:
+                return "";
+            case 433:
+                return "";
+            case 434:
+                return "";
+            case 435:
+                return "";
+            case 436:
+                return "";
+            case 437:
+                return "";
+            case 438:
+                return "";
+            case 439:
+                return "";
+            case 440:
+                return "";
+            case 441:
+                return "";
+            case 442:
+                return "";
+            case 443:
+                return "";
+            case 444:
+                return "";
+            case 445:
+                return "";
+            case 446:
+                return "";
+            case 447:
+                return "";
+            case 448:
+                return "";
+            case 449:
+                return "";
+            case 450:
+                return "";
+            case 451:
+                return "";
+            case 452:
+                return "";
+            case 453:
+                return "";
+            case 454:
+                return "";
+            case 455:
+                return "";
+            case 456:
+                return "";
+            case 457:
+                return "";
+            case 458:
+                return "";
+            case 459:
+                return "";
+            case 460:
+                return "";
+            case 461:
+                return "";
+            case 462:
+                return "";
+            case 463:
+                return "";
+            case 464:
+                return "";
+            case 465:
+                return "";
+            case 466:
+                return "";
+            case 467:
+                return "";
+            case 468:
+                return "";
+            case 469:
+                return "";
+            case 470:
+                return "";
+            case 471:
+                return "";
+            case 472:
+                return "";
+            case 473:
+                return "";
+            case 474:
+                return "";
+            case 475:
+                return "";
+            case 476:
+                return "";
+            case 477:
+                return "";
+            case 478:
+                return "";
+            case 479:
+                return "";
+            case 480:
+                return "";
+            case 481:
+                return "";
+            case 482:
+                return "";
+            case 483:
+                return "";
+            case 484:
+                return "";
+            case 485:
+                return "";
+            case 486:
+                return "";
+            case 487:
+                return "";
+            case 488:
+                return "";
+            case 489:
+                return "";
+            case 490:
+                return "";
+            case 491:
+                return "";
+            case 492:
+                return "";
+            case 493:
+                return "";
+            case 494:
+                return "";
+            case 495:
+                return "";
+            case 496:
+                return "";
+            case 497:
+                return "";
+            case 498:
+                return "";
+            case 499:
+                return "";
+            case 500:
+                return "";
             default:
                 return "";
         }
     }
+    int randomLimit = 387;
+    int randIntFormula = r.nextInt(randomLimit) + 1;
+
+    public static String title(){
+        return frame.getTitle();
+    }
+
     public void keyReleased(KeyEvent e) {
         int key = e.getKeyCode();
         if (key == KeyEvent.VK_F4) randInt = randIntFormula;
