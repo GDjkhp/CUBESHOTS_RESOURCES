@@ -11,7 +11,10 @@ public class GunManager {
         Ricochet,
         Whip,
         Rocket,
-        Arkhalis
+        Arkhalis,
+        Lasergun,
+        Terraprisma,
+        Boomerang
     }
 
     // player gun load out
@@ -19,20 +22,23 @@ public class GunManager {
     public static GUN playerTwoGunLoadOut = GUN.Default;
 
     public static GUN switchWeapon(GUN current){
-        if (current == GUN.Default)
-            return GUN.Chlorophyte;
-        else if (current == GUN.Chlorophyte)
-            return GUN.Electrocute;
-        else if (current == GUN.Electrocute)
-            return GUN.Ricochet;
-        else if (current == GUN.Ricochet)
-            return GUN.Rocket;
-        else if (current == GUN.Rocket)
-            return GUN.Default;
-        else return GUN.Default;
+        switch (current){
+            case Default:
+                return GUN.Chlorophyte;
+            case Chlorophyte:
+                return GUN.Electrocute;
+            case Electrocute:
+                return GUN.Ricochet;
+            case Ricochet:
+                return GUN.Rocket;
+            case Rocket:
+                return GUN.Lasergun;
+            default:
+                return GUN.Default;
+        }
     }
 
-    public static void shootCodes(float x, float y, handler_ handler, GUN current){
+    public static void shootCodes(float x, float y, handler_ handler, GUN current, ID player){
         // default bullets
         if (current == GunManager.GUN.Default) {
             handler.addObject(new bullet_(x + 10, y + 10, ID.BulletHell,
@@ -44,17 +50,33 @@ public class GunManager {
         }
         // chlorophyte bullets
         if (current == GunManager.GUN.Chlorophyte) {
-            handler.addObject(new chlorophyte_(x + 10, y + 10, ID.ChlorophyteP1,
-                    handler, 0, -15));
-            handler.addObject(new chlorophyte_(x + 20, y + 20, ID.ChlorophyteP1,
-                    handler, 15, -15));
-            handler.addObject(new chlorophyte_(x, y + 20, ID.ChlorophyteP1, handler,
-                    -15, -15));
+            if (player == ID.Player){
+                handler.addObject(new chlorophyte_(x + 10, y + 10, ID.ChlorophyteP1,
+                        handler, 0, -15));
+                handler.addObject(new chlorophyte_(x + 20, y + 20, ID.ChlorophyteP1,
+                        handler, 15, -15));
+                handler.addObject(new chlorophyte_(x, y + 20, ID.ChlorophyteP1, handler,
+                        -15, -15));
+            }
+            if (player == ID.Player2){
+                handler.addObject(new chlorophyte_(x + 10, y + 10, ID.ChlorophyteP2,
+                        handler, 0, -15));
+                handler.addObject(new chlorophyte_(x + 20, y + 20, ID.ChlorophyteP2,
+                        handler, 15, -15));
+                handler.addObject(new chlorophyte_(x, y + 20, ID.ChlorophyteP2, handler,
+                        -15, -15));
+            }
         }
         // electrocute bullets
         if (current == GunManager.GUN.Electrocute) {
-            handler.addObject(new electrocutebullet_(x + 10, y + 10, ID.ElectrocuteP1,
-                    handler, 0, -15));
+            if (player == ID.Player){
+                handler.addObject(new electrocutebullet_(x + 10, y + 10, ID.ElectrocuteP1,
+                        handler, 0, -15));
+            }
+            if (player == ID.Player2){
+                handler.addObject(new electrocutebullet_(x + 10, y + 10, ID.ElectrocuteP2,
+                        handler, 0, -15));
+            }
         }
         // ricochet
         if (current == GunManager.GUN.Ricochet){
@@ -70,5 +92,14 @@ public class GunManager {
         // rocket
         if (current == GUN.Rocket)
             handler.addObject(new rocket_(x, y, ID.Rocket, handler, 0, -3));
+        // laser
+        if (current == GUN.Lasergun) {
+            if (player == ID.Player)
+                handler.addObject(new lasergun_(x + 15, y + 15, ID.LasergunP1, handler));
+            if (player == ID.Player2) {
+                handler.addObject(new lasergun_(x + 15, y + 15, ID.LasergunP2, handler));
+            }
+        }
+
     }
 }

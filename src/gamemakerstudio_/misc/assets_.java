@@ -10,7 +10,7 @@ public class assets_ {
     public static BufferedImage tile1, tile2, tile3, xgamer, heartimage,
             soundiconon, soundiconoff, crazyboss, targetimage, explode, 
             portalBlue1, portalBlue2, portalBlue3, portalBlue4,
-            portalRed1, portalRed2, portalRed3, portalRed4;
+            portalRed1, portalRed2, portalRed3, portalRed4, laser, spike;
     public static Image upscaledxgamer, upscaledcrazyboss, locktargetimage, maxExplode,
             maxBlue1, maxBlue2, maxBlue3, maxBlue4,
             maxRed1, maxRed2, maxRed3, maxRed4;
@@ -24,6 +24,8 @@ public class assets_ {
         heartimage = ss.grabImage(1, 1, 16, 16);
         soundiconon = ss.grabImage(2, 1, 32, 32);
         soundiconoff = ss.grabImage(3, 1, 32, 32);
+        laser = ss.grabImage(9, 5, 32, 32);
+        spike = ss.grabImage(9, 7, 64, 64);
 
         // test for upscale
         xgamer = ss.grabImage(2, 2, 32, 32);
@@ -40,22 +42,23 @@ public class assets_ {
         portalRed3 = ss.grabImage(13, 3, 64, 64);
         portalRed4 = ss.grabImage(15, 3, 64, 64);
 
-        upscaledxgamer = upscale(xgamer, 256, 256);
-        upscaledcrazyboss = upscale(crazyboss, 256, 256);
-        locktargetimage = upscale(targetimage, 30, 30);
-        maxExplode = upscale(explode, 512, 512);
+        upscaledxgamer = scaleImage(xgamer, 256, 256);
+        upscaledcrazyboss = scaleImage(crazyboss, 256, 256);
+        locktargetimage = scaleImage(targetimage, 30, 30);
+        maxExplode = scaleImage(explode, 512, 512);
         
-        maxBlue1 = upscale(portalBlue1, 128, 128);
-        maxBlue2 = upscale(portalBlue2, 128, 128);
-        maxBlue3 = upscale(portalBlue3, 128, 128);
-        maxBlue4 = upscale(portalBlue4, 128, 128);
-        maxRed1 = upscale(portalRed1, 128, 128);
-        maxRed2 = upscale(portalRed2, 128, 128);
-        maxRed3 = upscale(portalRed3, 128, 128);
-        maxRed4 = upscale(portalRed4, 128, 128);
+        maxBlue1 = scaleImage(portalBlue1, 128, 128);
+        maxBlue2 = scaleImage(portalBlue2, 128, 128);
+        maxBlue3 = scaleImage(portalBlue3, 128, 128);
+        maxBlue4 = scaleImage(portalBlue4, 128, 128);
+        maxRed1 = scaleImage(portalRed1, 128, 128);
+        maxRed2 = scaleImage(portalRed2, 128, 128);
+        maxRed3 = scaleImage(portalRed3, 128, 128);
+        maxRed4 = scaleImage(portalRed4, 128, 128);
     }
-    public static Image upscale(BufferedImage img, int width, int height){
-        return img.getScaledInstance(width, height, Image.SCALE_SMOOTH);  // scale it the smooth way
+    public static Image scaleImage(Image img, float width, float height){
+//        return img.getScaledInstance(width, height, Image.SCALE_SMOOTH);  // scale it the smooth way
+        return img.getScaledInstance((int)width, (int)height, Image.SCALE_SMOOTH);  // scale it the smooth way
     }
 
 }

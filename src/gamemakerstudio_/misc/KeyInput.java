@@ -5,11 +5,11 @@
  */
 package gamemakerstudio_.misc;
 
+import gamemakerstudio_.entities.CURSOR_POINTER;
 import gamemakerstudio_.entities.RangeArea;
 import gamemakerstudio_.entities.player2_;
 import gamemakerstudio_.entities.player_;
 import gamemakerstudio_.game_;
-import gamemakerstudio_.game_.STATE;
 import gamemakerstudio_.gui.devconsole_;
 import gamemakerstudio_.gui.hud2_;
 import gamemakerstudio_.gui.hud_;
@@ -18,15 +18,17 @@ import gamemakerstudio_.world.levels_;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Random;
 
 /**
  *
  * @author ACER
  */
-public class KeyInput extends KeyAdapter {
+public class KeyInput extends KeyAdapter implements MouseListener {
     // class
-    private handler_ handler;
+    handler_ handler;
     game_ game;
     levels_ levels;
     hud_ hud;
@@ -105,6 +107,7 @@ public class KeyInput extends KeyAdapter {
         }
 
     }
+
     public void keyReleased(KeyEvent e) {
         int key = e.getKeyCode();
 
@@ -159,13 +162,13 @@ public class KeyInput extends KeyAdapter {
             if (key == KeyEvent.VK_SLASH) {
                 if (game.multiplayer){
                     GunManager.playerTwoGunLoadOut = GunManager.switchWeapon(GunManager.playerTwoGunLoadOut);
-                    if (game_.music) audioplayer_.getSound("click_sound").play();
+                    if (game_.sfx) audioplayer_.getSound("click_sound").play();
                 }
             }
             // p1 switch gun
             if (key == KeyEvent.VK_C) {
                 GunManager.playerOneGunLoadOut = GunManager.switchWeapon(GunManager.playerOneGunLoadOut);
-                if (game_.music) audioplayer_.getSound("click_sound").play();
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
             }
             // editor
             if (key == KeyEvent.VK_F) {
@@ -178,30 +181,28 @@ public class KeyInput extends KeyAdapter {
                 levels.difference = 0;
                 levels.stepDifference = 0;
                 audioplayer_.currentMusic = "null";
-                if (game_.music) audioplayer_.getSound("click_sound").play();
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
                 audioplayer_.getMusic("null").play(); // library change error
             }
             // shop
             if (key == KeyEvent.VK_SPACE) {
                 if (game.gameState == STATE.Game) {
-                    if (game_.music) audioplayer_.getMusic("shop_music").loop(); // library change error
+                    if (game_.music) {
+                        audioplayer_.getMusic("shop_music").loop(); // library change error
+                    }
                     game.gameState = STATE.Shop;
                 }
                 else if (game.gameState == STATE.Shop) {
-                    if (game_.music) audioplayer_.getMusic("music").loop(); // library change error
+                    if (game_.music) {
+                        audioplayer_.getMusic("music").loop(); // library change error
+                    }
                     game.gameState = STATE.Game;
-                    // gameloop fix
-                    game.spawner.lastTime = System.nanoTime();
-//                game.spawner.delta = 0;
-                    hud.lastTime = System.nanoTime();
-//                hud.delta = 0;
-                    hud2.lastTime = System.nanoTime();
-//                hud2.delta = 0;
-                    if (game_.music) audioplayer_.getSound("click_sound").play();
+                    game.gameloopFixDeltaOff(); // gameloop fix
+                    if (game_.sfx) audioplayer_.getSound("click_sound").play();
 
                 }
                 if (game.gameState == STATE.Game)
-                    if (game_.music) audioplayer_.getSound("click_sound").play();
+                    if (game_.sfx) audioplayer_.getSound("click_sound").play();
             }
             // shop keys
             if (game.gameState == STATE.Game || game.gameState == STATE.Shop) {
@@ -210,7 +211,7 @@ public class KeyInput extends KeyAdapter {
                         hud.setXp(hud.getXp() - shop_.B1);
                         shop_.B1 += shop_.B1;
                         hud_.bounds += 20;
-                        if (game_.music) audioplayer_.getSound("click_sound").play();
+                        if (game_.sfx) audioplayer_.getSound("click_sound").play();
                     }
                 }
                 if (key == KeyEvent.VK_2) {
@@ -218,7 +219,7 @@ public class KeyInput extends KeyAdapter {
                         hud.setXp(hud.getXp() - shop_.B2);
                         shop_.B2 += shop_.B2;
                         handler_.spdp1 += 5;
-                        if (game_.music) audioplayer_.getSound("click_sound").play();
+                        if (game_.sfx) audioplayer_.getSound("click_sound").play();
                     }
                 }
                 if (key == KeyEvent.VK_3) {
@@ -226,7 +227,7 @@ public class KeyInput extends KeyAdapter {
                         if (hud.HEALTH != (100 + (hud.bounds / 2))) {
                             hud.setXp(hud.getXp() - shop_.B3);
                             hud.HEALTH = (100 + (hud.bounds / 2));
-                            if (game_.music) audioplayer_.getSound("click_sound").play();
+                            if (game_.sfx) audioplayer_.getSound("click_sound").play();
                         }
                     }
                 }
@@ -235,7 +236,7 @@ public class KeyInput extends KeyAdapter {
                         hud2.setXp(hud2.getXp() - shop_.B4);
                         shop_.B4 += shop_.B4;
                         hud2_.bounds += 20;
-                        if (game_.music) audioplayer_.getSound("click_sound").play();
+                        if (game_.sfx) audioplayer_.getSound("click_sound").play();
                     }
                 }
                 if (key == KeyEvent.VK_5) {
@@ -243,7 +244,7 @@ public class KeyInput extends KeyAdapter {
                         hud2.setXp(hud2.getXp() - shop_.B5);
                         shop_.B5 += shop_.B5;
                         handler_.spdp2 += 5;
-                        if (game_.music) audioplayer_.getSound("click_sound").play();
+                        if (game_.sfx) audioplayer_.getSound("click_sound").play();
                     }
                 }
                 if (key == KeyEvent.VK_6) {
@@ -251,7 +252,7 @@ public class KeyInput extends KeyAdapter {
                         if (hud2.HEALTH != (100 + (hud2.bounds / 2))) {
                             hud2.setXp(hud2.getXp() - shop_.B6);
                             hud2.HEALTH = (100 + (hud2.bounds / 2));
-                            if (game_.music) audioplayer_.getSound("click_sound").play();
+                            if (game_.sfx) audioplayer_.getSound("click_sound").play();
                         }
                     }
                 }
@@ -260,22 +261,106 @@ public class KeyInput extends KeyAdapter {
 
         // misc, if paused
 
+        // smooth fix
+        if (key == KeyEvent.VK_F12){
+            if (game.smoothFix) game.smoothFix = false;
+            else game.smoothFix = true;
+            // main gameloop vars fix, no need to use this, i extracted the vars to while(running)
+            // edit: i was wrong lol
+            game.delta = 0;
+            game.lastTime = System.nanoTime();
+        }
+        // tp to level select
+        if (key == KeyEvent.VK_BACK_SPACE){
+            // modified escape code
+            if (game.paused) game.paused = false;
+            if (audioplayer_.currentMusic != "") // TODO: this triggers a bug when currentmusic is not null, it stops the main menu music, same as the original escape and play new music
+                if (game_.music) audioplayer_.getMusic(audioplayer_.currentMusic).pause();
+            if (game.gameState != STATE.Menu)
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
+            // end codes
+            if (game.gameState == STATE.Game || game.gameState == STATE.GameBeta) {
+                game.endCodes();
+            }
+            // xbox feature escape
+            handler.removeAllSelectedObjects(ID.CURSORSELECT);
+            game.isSelecting = false;
+            // actual code
+            game.gameState = STATE.LevelSelect;
+            if (game_.sfx) audioplayer_.getSound("tick").play();
+            levels_.lazyDelayFix = 100;
+        }
+        // ldm
+        if (key == KeyEvent.VK_L) {
+            if (game.ldm) game.ldm = false;
+            else game.ldm = true;
+            if (game_.sfx) audioplayer_.getSound("click_sound").play();
+        }
+        // hud
+        if (key == KeyEvent.VK_F1) {
+            if (game.hideHud) game.hideHud = false;
+            else game.hideHud = true;
+            if (game_.sfx) audioplayer_.getSound("click_sound").play();
+        }
+        // god
+        if (key == KeyEvent.VK_X) {
+            if (game.isInvincible) game.isInvincible = false;
+            else game.isInvincible = true;
+            if (game_.sfx) audioplayer_.getSound("click_sound").play();
+        }
+        // quick game, speedrun
+        if (key == KeyEvent.VK_F3) {
+            // easy
+//            game.easy();
+            // medium
+            game.medium();
+            // sfx
+            if (game_.sfx) audioplayer_.getSound("click_sound").play();
+        }
+        // multiplayer
+        if (key == KeyEvent.VK_F2) {
+            if (game.gameState != STATE.End) {
+                if (game_.multiplayer) {
+                    game_.multiplayer = false;
+                    for (int i = handler.object.size() - 1; i >= 0; i--) {
+                        gameobject_ tempObject = handler.object.get(i);
+                        if (tempObject.getId() == ID.Player2 || tempObject.getId() == ID.P2Range)
+                            handler.removeObject(tempObject);
+                    }
+                    if (game_.sfx) audioplayer_.getSound("alert").play();
+                } else {
+                    if (game_.sfx) audioplayer_.getSound("alert").play();
+                    game_.multiplayer = true;
+                    handler.addObject(new player2_(game_.WIDTH - 128, 200, ID.Player2, handler, hud2));
+                    handler.addObject(new RangeArea(0, 0, ID.P2Range, handler));
+                }
+            }
+        }
+        // console
+        if (key == 192) {
+            devconsole.setVisible(true);
+        }
+
+        // IMPORTANT KEYS
+
         // restart
         if (key == KeyEvent.VK_Z) {
+            levels.isPlaying = false; // bug fix test
             game.restartBeta();
             if ((game.gameState == STATE.Game || game.gameState == STATE.End) && game.diff == 0 && !game.currentGameStateIsBeta) {
                 // reset
                 game.easy();
-                if (game_.music) audioplayer_.getSound("click_sound").play();
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
             }
             if ((game.gameState == STATE.Game || game.gameState == STATE.End) && game.diff == 1 && !game.currentGameStateIsBeta) {
                 // reset
                 game.medium();
-                if (game_.music) audioplayer_.getSound("click_sound").play();
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
             }
         }
         // random
         if (key == KeyEvent.VK_R && lazyFixForRandomLevels && delayCount == 0) {
+            levels.isPlaying = false; // bug fix test
             if (game.paused) game.paused = false;
             if (audioplayer_.currentMusic != "")
                 if (game_.music) audioplayer_.getMusic(audioplayer_.currentMusic).pause();
@@ -290,35 +375,20 @@ public class KeyInput extends KeyAdapter {
             int x = ((r.nextInt(6) * 100) + 50) + 25;
             int y = ((r.nextInt(7) * 100) + 50) + 25;
             levels.page = r.nextInt(levels.maxPage) + 1;
-            if (game_.music) audioplayer_.getSound("click_sound").play();
+            if (game_.sfx) audioplayer_.getSound("click_sound").play();
             levels.levelsList(x, y);
             // post lazy fix
             lazyFixForRandomLevels = true;
         }
-        // ldm
-        if (key == KeyEvent.VK_L) {
-            if (game.ldm) game.ldm = false;
-            else game.ldm = true;
-            if (game_.music) audioplayer_.getSound("click_sound").play();
-        }
-        // hud
-        if (key == KeyEvent.VK_F1) {
-            if (game.hideHud) game.hideHud = false;
-            else game.hideHud = true;
-            if (game_.music) audioplayer_.getSound("click_sound").play();
-        }
-        // god
-        if (key == KeyEvent.VK_X) {
-            if (game.isInvincible) game.isInvincible = false;
-            else game.isInvincible = true;
-            if (game_.music) audioplayer_.getSound("click_sound").play();
-        }
-        // main menu
+        // main menu TODO: merge pause here
         if (key == KeyEvent.VK_ESCAPE) {
+            levels.isPlaying = false; // bug fix test
             if (game.paused) game.paused = false;
             if (audioplayer_.currentMusic != "")
-                if (game_.music) audioplayer_.getMusic(audioplayer_.currentMusic).pause();
-            if (game_.music && game.gameState != STATE.Menu) audioplayer_.getSound("click_sound").play();
+                if (audioplayer_.getMusic(audioplayer_.currentMusic) != null)
+                    if (game_.music) audioplayer_.getMusic(audioplayer_.currentMusic).pause();
+            if (game.gameState != STATE.Menu)
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
             // end codes
             if (game.gameState == STATE.Game || game.gameState == STATE.GameBeta) {
                 game.endCodes();
@@ -329,51 +399,14 @@ public class KeyInput extends KeyAdapter {
             // escape, pls fix this
             game.gameState = STATE.Menu;
         }
-        // quick game, speedrun
-        if (key == KeyEvent.VK_F3) {
-            // easy
-//            game.easy();
-            // medium
-            game.medium();
-            // sfx
-            if (game_.music) audioplayer_.getSound("click_sound").play();
-        }
-        // multiplayer
-        if (key == KeyEvent.VK_F2) {
-            if (game.gameState != STATE.End) {
-                if (game_.multiplayer) {
-                    game_.multiplayer = false;
-                    for (int i = handler.object.size() - 1; i >= 0; i--) {
-                        gameobject_ tempObject = handler.object.get(i);
-                        if (tempObject.getId() == ID.Player2 || tempObject.getId() == ID.P2Range)
-                            handler.removeObject(tempObject);
-                    }
-                    if (game_.music) audioplayer_.getSound("alert").play();
-                } else {
-                    if (game_.music) audioplayer_.getSound("alert").play();
-                    game_.multiplayer = true;
-                    handler.addObject(new player2_(game_.WIDTH - 128, 200, ID.Player2, handler, hud2));
-                    handler.addObject(new RangeArea(0, 0, ID.P2Range, handler));
-                }
-            }
-        }
-        // console
-        if (key == 192) {
-            devconsole.setVisible(true);
-        }
         // pause
         if (key == KeyEvent.VK_P) {
+            levels.isPlaying = false; // bug fix test
             if (game.gameState == STATE.Game || game.gameState == STATE.Edit) {
                 if (game_.paused) game_.paused = false;
                 else game_.paused = true;
-                // gameloop fix
-                game.spawner.lastTime = System.nanoTime();
-//                game.spawner.delta = 0;
-                hud.lastTime = System.nanoTime();
-//                hud.delta = 0;
-                hud2.lastTime = System.nanoTime();
-//                hud2.delta = 0;
-                if (game_.music) audioplayer_.getSound("click_sound").play();
+                game.gameloopFixDeltaOff(); // gameloop fix
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
             }
             if (game.gameState == STATE.GameBeta) {
                 if (game.paused) {
@@ -383,24 +416,51 @@ public class KeyInput extends KeyAdapter {
                     game.paused = true;
                     if (game_.music)audioplayer_.getMusic(audioplayer_.currentMusic).pause();
                 }
-                if (game_.music) audioplayer_.getSound("click_sound").play();
+                if (game_.sfx) audioplayer_.getSound("click_sound").play();
 
-                // gameloop fix
-                // edit: when pausing the tick, DO NOT WRITE DELTA TO 0!, it will unsync!
-                // only write access when resetting
-                levels.lastTime = System.nanoTime();
-//                levels.delta = 0;
-                hud.lastTime = System.nanoTime();
-//                hud.delta = 0;
-                hud2.lastTime = System.nanoTime();
-//                hud2.delta = 0;
+                game.gameloopFixDeltaOff(); // gameloop fix
             }
         }
     }
+
     // i did this to lazily fix r button, which suck
     public void tick(){
         if(lazyFixForRandomLevels && delayCount != 0){
             delayCount--;
         } else if (!lazyFixForRandomLevels && delayCount == 0) delayCount = 100;
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        int button = e.getButton();
+        if (button == MouseEvent.BUTTON3){
+            if (game.mouseCursor){
+                game.mouseCursor = false;
+                handler.removeObject(handler.getObject(ID.CURSOR));
+            } else {
+                game.mouseCursor = true;
+                handler.addObject(new CURSOR_POINTER(0, 0, ID.CURSOR, game));
+            }
+        }
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
     }
 }

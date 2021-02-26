@@ -14,6 +14,8 @@ public enum ID {
     Player(),
     Player2(),
     // misc
+    Camera(), RenderTexture(),
+
     PortalBlue(), PortalRed(),
 
     RocketRange(), RocketRangeP1(), RocketRangeP2(),
@@ -23,14 +25,18 @@ public enum ID {
     Rocket(), RocketP1(), RocketP2,
     Whip(),
     Arkhalis(),
+    Terraprisma(),
+    Boomerang(),
     Ricochet(),
     BulletHell(),
     ChlorophyteP1(), ChlorophyteP2(),
     ElectrocuteP1(), ElectrocuteP2(), ElectrocuteFriend(),
     Pulse(),
+    LasergunP1(), LasergunP2(),
 
     NULL(),
     Water(),
+    OSC(),
     CURSORSELECT(), CURSOR(),
     Trail(),
     Spicy(),
