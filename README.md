@@ -24,7 +24,6 @@ Slick2D: https://slick.ninjacave.com/
 Xt-Audio: https://sjoerdvankreel.github.io/xt-audio/
 \
 Beads: http://www.beadsproject.net/
-\
 # Notes
 The code will not work properly if you didn't follow these:
 1. Edit the main code's (game_.java) run configuration's VM options to -Djava.library.path="path to libraries"
