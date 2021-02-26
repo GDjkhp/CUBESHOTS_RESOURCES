@@ -18,9 +18,13 @@ A rhythmic bullet hell game written in Java (based from the tutorial and game Wa
 ![image 7](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/water.PNG)
 # Libraries
 Java 11: https://www.oracle.com/ph/java/technologies/javase-jdk11-downloads.html/
+\
 Slick2D: https://slick.ninjacave.com/
+\
 Xt-Audio: https://sjoerdvankreel.github.io/xt-audio/
+\
 Beads: http://www.beadsproject.net/
+\
 # Notes
 The code will not work properly if you didn't follow these:
 1. Edit the main code's (game_.java) run configuration's VM options to -Djava.library.path="path to libraries"
