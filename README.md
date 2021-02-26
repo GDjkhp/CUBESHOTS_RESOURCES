@@ -1,7 +1,7 @@
 # CUBESHOTS
 A rhythmic bullet hell game written in Java (based from the tutorial and game Wave© by RealTutsGML).\
 \
-Note: This game requires Java, no ifs and buts...\
+[CUBESHOTS PORTABLE](https://github.com/GDjkhp/CUBESHOTS_PORTABLE)\ (for Android and HTML)\
 \
 ![image 1](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/1%20attempt%20storm.PNG)\
 \
@@ -17,16 +17,19 @@ Note: This game requires Java, no ifs and buts...\
 \
 ![image 7](https://github.com/GDjkhp/CUBESHOTS/blob/master/readme%20pics/water.PNG)
 # Libraries
+Java 11: https://www.oracle.com/ph/java/technologies/javase-jdk11-downloads.html/
 Slick2D: https://slick.ninjacave.com/
+Xt-Audio: https://sjoerdvankreel.github.io/xt-audio/
+Beads: http://www.beadsproject.net/
 # Notes
 The code will not work properly if you didn't follow these:
-1. Edit the main code's (game_.java) run configuration's VM options to -Djava.library.path="path to Slick2D library"
+1. Edit the main code's (game_.java) run configuration's VM options to -Djava.library.path="path to libraries"
 2. Add paths of the libraries and resources_ used.
 # Building
 You need JarSplice to compile the code (sorry i'm so lazy), so follow the instructions carefully.
-1. Make sure ".idea\artifacts\CUBESHOTS__release_alpha__jar.xml" exist.
+1. Make sure ".idea\artifacts\CUBESHOTS__release_alpha__jar.xml" exist, or you can create your own.
 2. Build > Build Artifacts > CUBESHOTS (release alpha).jar > Build
-3. Open JarSplice then Add Jars > Import CUBESHOTS (release alpha).jar, all Slick2D jars
+3. Open JarSplice then Add Jars > Import CUBESHOTS (release alpha).jar, all library jars
 4. Leave natives blank.
 5. Input main class "gamemakerstudio_.game_"
 6. Create Fat Jar.
