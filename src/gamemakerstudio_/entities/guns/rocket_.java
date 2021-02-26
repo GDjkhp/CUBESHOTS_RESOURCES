@@ -2,10 +2,7 @@ package gamemakerstudio_.entities.guns;
 
 import gamemakerstudio_.entities.RangeArea;
 import gamemakerstudio_.game_;
-import gamemakerstudio_.misc.ID;
-import gamemakerstudio_.misc.assets_;
-import gamemakerstudio_.misc.gameobject_;
-import gamemakerstudio_.misc.handler_;
+import gamemakerstudio_.misc.*;
 
 import java.awt.*;
 
@@ -37,6 +34,7 @@ public class rocket_ extends gameobject_ {
             blastBounds = blastRange.getBounds();
             handler.removeObject(blastRange);
             renderAnimation = true;
+            if (game_.sfx) audioplayer_.getSound("boom").play();
         }
         // weird codes
         if (renderAnimation){
@@ -91,6 +89,7 @@ public class rocket_ extends gameobject_ {
             }
         }
     }
+
     public boolean detectCollision(gameobject_ current) {
         for (int i = 0; i < handler.object.size(); i++) {
             gameobject_ tempObject = handler.object.get(i);

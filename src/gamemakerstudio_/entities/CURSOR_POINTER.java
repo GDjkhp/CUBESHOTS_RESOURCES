@@ -16,6 +16,8 @@ public class CURSOR_POINTER extends gameobject_ implements MouseMotionListener {
     public CURSOR_POINTER(float x, float y, ID id, game_ game) {
         super(x, y, id);
         this.game = game;
+        width = 32;
+        height = 32;
         game.addMouseMotionListener(this);
     }
 

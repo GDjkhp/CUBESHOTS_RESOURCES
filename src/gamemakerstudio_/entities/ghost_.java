@@ -2,6 +2,7 @@ package gamemakerstudio_.entities;
 
 import gamemakerstudio_.game_;
 import gamemakerstudio_.misc.ID;
+import gamemakerstudio_.misc.STATE;
 import gamemakerstudio_.misc.gameobject_;
 
 import java.awt.*;
@@ -18,7 +19,7 @@ public class ghost_ extends gameobject_ {
         this.velY = velY;
     }
     public void tick() {
-        if (!isControlled || game_.gameState == game_.STATE.Game || game_.gameState == game_.STATE.GameBeta) {
+        if (!isControlled || game_.gameState == STATE.Game || game_.gameState == STATE.GameBeta) {
             x += velX;
             y += velY;
         }

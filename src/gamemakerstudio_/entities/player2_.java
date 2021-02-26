@@ -88,12 +88,12 @@ public class player2_ extends gameobject_ {
                 y += pathY;
             }
             if (!game_.isInvincible &&
-                    (game_.gameState == game_.STATE.Game || game_.gameState == game_.STATE.GameBeta)) collision();
+                    (game_.gameState == STATE.Game || game_.gameState == STATE.GameBeta)) collision();
         }
         if (isShooting) {
             if (cooldownp2 == 0) {
                 cooldownp2 = defaultcooldown;
-                GunManager.shootCodes(x, y, handler, GunManager.playerTwoGunLoadOut);
+                GunManager.shootCodes(x, y, handler, GunManager.playerTwoGunLoadOut, id);
             } else cooldownp2--;
         }
 
@@ -107,7 +107,7 @@ public class player2_ extends gameobject_ {
             x += velX;
             y += velY;
             if (!game_.isInvincible &&
-                    (game_.gameState == game_.STATE.Game || game_.gameState == game_.STATE.GameBeta)) collision();
+                    (game_.gameState == STATE.Game || game_.gameState == STATE.GameBeta)) collision();
         }
         
         if (hud2_.HEALTH == 0) {
@@ -147,7 +147,7 @@ public class player2_ extends gameobject_ {
                         hud2.HEALTH -= 2;
 //                        handler.removeObject(tempObject);
                         if (hud2.HEALTH == 0)
-                            if (game_.music) audioplayer_.getSound("death").play();
+                            if (game_.sfx) audioplayer_.getSound("death").play();
                     }
             }
             /*if(tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy || tempObject.getId() == ID.SmartEnemy || tempObject.getId() == ID.CreeperBoss) {
@@ -170,6 +170,14 @@ public class player2_ extends gameobject_ {
     public void render(Graphics g) {
         g.setColor(color);
         g.fillRect((int) x, (int) y, width, height);
+        g.setColor(Color.CYAN);
+        if (game_.espLineP2) {
+            for (int i = 0; i < handler.object.size(); i++) {
+                gameobject_ gO = handler.object.get(i);
+                g.drawLine((int) x + 15, (int) y + 15,
+                        (int) gO.getX() + (gO.getWidth() / 2), (int) gO.getY() + (gO.getHeight() / 2));
+            }
+        }
     }
 
 

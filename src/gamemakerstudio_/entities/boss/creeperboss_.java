@@ -5,7 +5,6 @@
  */
 package gamemakerstudio_.entities.boss;
 
-import gamemakerstudio_.entities.trail_;
 import gamemakerstudio_.game_;
 import gamemakerstudio_.misc.ID;
 import gamemakerstudio_.misc.gameobject_;

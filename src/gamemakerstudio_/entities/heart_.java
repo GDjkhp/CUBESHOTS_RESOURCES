@@ -46,6 +46,7 @@ public class heart_ extends gameobject_ {
         // screen limit
         if (x <= 0 || x >= game_.WIDTH) velX *= -1;
         if (y <= 0 || y >= game_.HEIGHT) velY *= -1;
+        // todo: delete this if offscreen
 
 //        collision();
 

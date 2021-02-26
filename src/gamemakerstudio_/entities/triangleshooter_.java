@@ -56,6 +56,7 @@ public class triangleshooter_ extends gameobject_ {
 
     @Override
     public void tick() {
+        // todo: add dvd and/or delete this if offscreen
         if (spawnTimer == 0) {
             spawnTimer = defaultSpawnTimer;
             if (defaultFace == FACE.SOUTH) {

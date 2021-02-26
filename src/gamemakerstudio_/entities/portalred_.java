@@ -40,6 +40,7 @@ public class portalred_ extends gameobject_ {
 
     @Override
     public void tick() {
+        // todo: add dvd and/or delete this if offscreen
         for (int i = 0; i < handler.object.size(); i++){
             gameobject_ tempObject = handler.object.get(i);
             if (ignoreList(tempObject)) {

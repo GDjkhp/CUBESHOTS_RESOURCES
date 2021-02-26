@@ -134,7 +134,7 @@ public class bullethellgenerator_ extends gameobject_ implements KeyListener, Mo
         customizePanel.add(OK);
 
         // jframe init
-        frameCustom.setTitle(String.valueOf(this));
+        frameCustom.setTitle(String.valueOf(this).replace("gamemakerstudio_.entities.experimental.", ""));
         frameCustom.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frameCustom.add(customizePanel);
         frameCustom.setSize(400, 300);
@@ -166,7 +166,7 @@ public class bullethellgenerator_ extends gameobject_ implements KeyListener, Mo
                 double projectileMoveDirectionX = (projectileDirXPosition - ((double) startPoint.getX() + 10)) * projectileSpeed;
                 double projectileMoveDirectionY = (projectileDirYPosition - ((double) startPoint.getY() + 10)) * projectileSpeed;
 
-                // direction and curve, tbd
+                // TODO: direction and curve, tbd
                 // where's the god damn code???
 
                 handler.addObject(new circlewithpatterns_((int) projectileDirXPosition, (int) projectileDirYPosition,

@@ -61,9 +61,11 @@ public class basecircle_ extends gameobject_ {
         } else {
             x += velX;
             y += velY;
-            if (this.id == ID.BaseCircle) spawnTimer--;
+            if (this.id == ID.BaseCircle) {
+                // TODO: delete this if offscreen
+                spawnTimer--;
+            }
         }
-
     }
 
     public void render(Graphics g) {

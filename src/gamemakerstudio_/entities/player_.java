@@ -42,7 +42,7 @@ public class player_ extends gameobject_ {
     // dumb ai
     // TODO: create an ai that targets the nearest hearts by using range area and pythagoras theory
     boolean searchHearts = true;
-    gameobject_ heart;
+    gameobject_ heart, range;
 
     public player_(int x, int y, ID id, handler_ handler, hud_ hud) {
         super(x, y, id);
@@ -83,12 +83,12 @@ public class player_ extends gameobject_ {
                 y += pathY;
             }
             if (!game_.isInvincible &&
-                    (game_.gameState == game_.STATE.Game || game_.gameState == game_.STATE.GameBeta)) collision();
+                    (game_.gameState == STATE.Game || game_.gameState == STATE.GameBeta)) collision();
         }
         if (isShooting) {
             if (cooldownp1 == 0) {
                 cooldownp1 = defaultcooldown;
-                GunManager.shootCodes(x, y, handler, GunManager.playerOneGunLoadOut);
+                GunManager.shootCodes(x, y, handler, GunManager.playerOneGunLoadOut, id);
             } else cooldownp1--;
         }
 
@@ -103,7 +103,7 @@ public class player_ extends gameobject_ {
             x += velX;
             y += velY;
             if (!game_.isInvincible &&
-                    (game_.gameState == game_.STATE.Game || game_.gameState == game_.STATE.GameBeta)) collision();
+                    (game_.gameState == STATE.Game || game_.gameState == STATE.GameBeta)) collision();
         }
         
         if (hud_.HEALTH == 0) {
@@ -144,7 +144,7 @@ public class player_ extends gameobject_ {
                         hud.HEALTH -= 2;
 //                        handler.removeObject(tempObject);
                         if (hud.HEALTH == 0)
-                            if (game_.music) audioplayer_.getSound("death").play();
+                            if (game_.sfx) audioplayer_.getSound("death").play();
                     }
             }
             /*if(tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy || tempObject.getId() == ID.SmartEnemy || tempObject.getId() == ID.CreeperBoss || tempObject.getId() == ID.Xgamer) {
@@ -167,5 +167,13 @@ public class player_ extends gameobject_ {
     public void render(Graphics g) {
         g.setColor(color);
         g.fillRect((int) x, (int) y, width, height);
+        g.setColor(Color.GREEN);
+        if (game_.espLineP1) {
+            for (int i = 0; i < handler.object.size(); i++) {
+                gameobject_ gO = handler.object.get(i);
+                g.drawLine((int) x + 15, (int) y + 15,
+                        (int) gO.getX() + (gO.getWidth() / 2), (int) gO.getY() + (gO.getHeight() / 2));
+            }
+        }
     }
 }

@@ -55,6 +55,8 @@ public class circlewithpatterns_ extends gameobject_ {
     public void render(Graphics g) {
         g.setColor(color);
         g.fillOval((int) x, (int) y, width, height);
+        /*g.setColor(Color.RED);
+        g.drawRect((int)x, (int)y, width, height);*/
     }
 
 
